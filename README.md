@@ -4,6 +4,8 @@ A JSON-driven portfolio platform with multiple design systems. Built with React 
 
 **[Live Demo](https://portfolio-template-ten-eta.vercel.app/)**
 
+![Design Systems Demo](docs/assets/design-systems.gif)
+
 ## Quick Start
 
 1. Click **"Use this template"** → **"Create a new repository"**
