@@ -92,4 +92,4 @@ Inspired by:
 
 ## License
 
-MIT
+MIT - See [LICENSES.md](LICENSES.md) for third-party job API attributions.
