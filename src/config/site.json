@@ -1,15 +1,15 @@
 {
   "meta": {
-    "title": "Morgan Taylor | Senior Software Engineer",
+    "title": "John Doe | Senior Software Engineer",
     "description": "Ex-Meta engineer with 5+ years building systems at scale. Expertise in backend architecture, distributed systems, and technical leadership.",
     "language": "en",
     "themeColor": "#0668E1",
-    "url": "https://morgantaylor.dev",
+    "url": "https://johndoe.dev",
     "ogImage": "/og-image.jpg",
     "keywords": "Senior Software Engineer, Ex-Meta, Instagram, Backend Engineer, Distributed Systems, Python, Go, Staff Engineer",
-    "author": "Morgan Taylor",
+    "author": "John Doe",
     "robots": "index, follow",
-    "ogSiteName": "Morgan Taylor Portfolio",
+    "ogSiteName": "John Doe Portfolio",
     "locale": "en_US",
     "favicon": "/favicon.svg"
   },
@@ -78,22 +78,22 @@
   "social": [
     {
       "platform": "github",
-      "url": "https://github.com/morgantaylor",
+      "url": "https://github.com/johndoe",
       "label": "GitHub"
     },
     {
       "platform": "linkedin",
-      "url": "https://linkedin.com/in/morgan-taylor",
+      "url": "https://linkedin.com/in/john-doe",
       "label": "LinkedIn"
     },
     {
       "platform": "twitter",
-      "url": "https://twitter.com/morgantaylor_dev",
+      "url": "https://twitter.com/johndoe_dev",
       "label": "Twitter"
     },
     {
       "platform": "email",
-      "value": "hello@morgantaylor.dev",
+      "value": "hello@johndoe.dev",
       "label": "Email"
     }
   ],

@@ -12,7 +12,7 @@
     "contact"
   ],
   "hero": {
-    "name": "Morgan Taylor",
+    "name": "John Doe",
     "title": "Senior Software Engineer",
     "tagline": "{{yearsSince:careerStartYear}}+ years building systems at scale. Ex-Meta engineer with deep expertise in distributed systems and backend architecture.",
     "cta": {
