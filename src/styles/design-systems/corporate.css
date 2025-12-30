@@ -1,0 +1,148 @@
+/* Corporate Design System - Professional Navy & Brass */
+
+[data-design-system='corporate'] {
+  /* Typography - Modern Tech Aesthetic */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Color Palette - Sophisticated Navy & Warm Brass */
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-slate-950: #020617;
+
+  /* Navy - Primary Brand */
+  --color-navy-50: #f0f4f8;
+  --color-navy-100: #d9e2ec;
+  --color-navy-200: #bcccdc;
+  --color-navy-300: #9fb3c8;
+  --color-navy-400: #829ab1;
+  --color-navy-500: #627d98;
+  --color-navy-600: #486581;
+  --color-navy-700: #334e68;
+  --color-navy-800: #243b53;
+  --color-navy-900: #102a43;
+  --color-navy-950: #0a1929;
+
+  /* Brass - Warm Accent */
+  --color-brass-50: #fdf8f3;
+  --color-brass-100: #f9edd8;
+  --color-brass-200: #f3d9b0;
+  --color-brass-300: #ecc27e;
+  --color-brass-400: #d4a855;
+  --color-brass-500: #c49545;
+  --color-brass-600: #a87a38;
+  --color-brass-700: #8c6230;
+  --color-brass-800: #734f2a;
+  --color-brass-900: #5f4126;
+  --color-brass-950: #362113;
+
+  /* Semantic Colors */
+  --color-background: var(--color-slate-50);
+  --color-foreground: var(--color-navy-950);
+  --color-muted: var(--color-slate-100);
+  --color-muted-foreground: var(--color-slate-500);
+  --color-card: #ffffff;
+  --color-card-foreground: var(--color-navy-900);
+  --color-border: var(--color-slate-200);
+  --color-primary: var(--color-navy-900);
+  --color-primary-foreground: #ffffff;
+  --color-secondary: var(--color-slate-100);
+  --color-secondary-foreground: var(--color-navy-900);
+  --color-accent: var(--color-brass-500);
+  --color-accent-foreground: #ffffff;
+
+  /* Border Radius - Standard rounded corners */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-card: 0.75rem;
+  --radius-button: 0.5rem;
+  --radius-badge: 9999px;
+
+  /* Shadows - Refined & Subtle (blurred) */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+  --shadow-md:
+    0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg:
+    0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+  --shadow-xl:
+    0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+  --shadow-card:
+    0 1px 3px 0 rgb(0 0 0 / 0.04), 0 1px 2px -1px rgb(0 0 0 / 0.04);
+  --shadow-card-hover: 0 10px 40px -10px rgb(0 0 0 / 0.08);
+  --shadow-button: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+
+  /* Borders */
+  --border-width: 1px;
+  --border-style: solid;
+
+  /* Decorative - None for corporate */
+  --rotation-card: 0deg;
+  --paper-texture-opacity: 0.015;
+
+  /* Flip Card Animation - Smooth professional */
+  --flip-duration: 400ms;
+  --flip-easing: ease-in-out;
+}
+
+/* Corporate Dark Mode */
+[data-design-system='corporate'].dark {
+  --color-background: #0c1a2a;
+  --color-foreground: var(--color-slate-100);
+  --color-muted: var(--color-navy-900);
+  --color-muted-foreground: var(--color-slate-400);
+  --color-card: var(--color-navy-900);
+  --color-card-foreground: var(--color-slate-100);
+  --color-border: var(--color-navy-700);
+  --color-primary: var(--color-brass-400);
+  --color-primary-foreground: var(--color-navy-950);
+  --color-secondary: var(--color-navy-800);
+  --color-secondary-foreground: var(--color-slate-100);
+  --color-accent: var(--color-brass-400);
+  --color-accent-foreground: var(--color-navy-950);
+
+  /* Dark mode shadows - more subtle, glow-like */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg:
+    0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+  --shadow-xl:
+    0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.2);
+  --shadow-card-hover:
+    0 10px 40px -10px rgb(0 0 0 / 0.5), 0 0 20px -5px rgba(196, 149, 69, 0.1);
+
+  /* Darker paper texture in dark mode */
+  --paper-texture-opacity: 0.03;
+}
+
+/* Corporate card states */
+[data-design-system='corporate'] .card {
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+[data-design-system='corporate'] .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px -10px rgb(0 0 0 / 0.12);
+}
+
+[data-design-system='corporate'].dark .card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 40px -10px rgb(0 0 0 / 0.5),
+    0 0 30px -5px rgba(196, 149, 69, 0.15);
+}

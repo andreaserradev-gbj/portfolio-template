@@ -1,0 +1,369 @@
+{
+  "variables": {
+    "careerStartYear": 2017
+  },
+  "sections": [
+    "hero",
+    "metrics",
+    "experience",
+    "achievements",
+    "skills",
+    "contact"
+  ],
+  "hero": {
+    "name": "Casey Thompson",
+    "title": "HR Manager",
+    "tagline": "{{yearsSince:careerStartYear}}+ years building high-performing teams and engaged workforces. Strategic HR leader driving business results through people.",
+    "cta": {
+      "primary": {
+        "text": "View Impact",
+        "target": "#impact"
+      },
+      "secondary": {
+        "text": "Connect",
+        "target": "#contact"
+      }
+    },
+    "statusBadge": {
+      "text": "Open to HR Leadership Roles",
+      "active": true
+    },
+    "valuePills": [
+      { "label": "SHRM-SCP", "sublabel": "Certified", "highlight": true },
+      {
+        "label": "{{yearsSince:careerStartYear}}yr",
+        "sublabel": "HR Experience",
+        "highlight": false
+      },
+      { "label": "500+", "sublabel": "Employee Org", "highlight": false }
+    ],
+    "quickStats": [
+      {
+        "value": "{{yearsSince:careerStartYear}}",
+        "suffix": "+",
+        "label": "Years HR Experience"
+      },
+      {
+        "value": "92",
+        "suffix": "%",
+        "label": "Retention Rate"
+      }
+    ],
+    "badge": {
+      "value": "SHRM",
+      "title": "SCP Certified",
+      "subtitle": "Senior Professional"
+    }
+  },
+  "metrics": [
+    {
+      "label": "Team Size Managed",
+      "value": 5,
+      "suffix": "",
+      "description": "Direct reports across HR functions",
+      "max": 10,
+      "achievementId": "team"
+    },
+    {
+      "label": "Employee Retention",
+      "value": 92,
+      "suffix": "%",
+      "description": "Annual retention rate, up from 75%",
+      "max": 100,
+      "achievementId": "retention"
+    },
+    {
+      "label": "Training Programs",
+      "value": 20,
+      "suffix": "+",
+      "description": "L&D initiatives developed and launched",
+      "max": 30,
+      "achievementId": "training"
+    },
+    {
+      "label": "Headcount Supported",
+      "value": 500,
+      "suffix": "+",
+      "description": "Employees across multiple locations",
+      "max": 600,
+      "achievementId": "scale"
+    }
+  ],
+  "experience": [
+    {
+      "company": "ScaleUp Tech",
+      "role": "HR Manager",
+      "period": "March 2020 - Present",
+      "location": "Denver, CO",
+      "highlights": [
+        "Lead team of 5 HR professionals supporting 500-employee organization across 3 locations",
+        "Reduced voluntary turnover from 25% to 8% through engagement initiatives and manager training",
+        "Implemented Workday HCM, managing full lifecycle from vendor selection to go-live",
+        "Built DEI program increasing underrepresented hiring by 40% over 2 years",
+        "Partnered with leadership on workforce planning for 150% headcount growth"
+      ],
+      "techStack": ["Workday", "Culture Amp", "LinkedIn Recruiter", "Lattice"]
+    },
+    {
+      "company": "Enterprise Corp",
+      "role": "HR Generalist",
+      "period": "June 2018 - February 2020",
+      "location": "Phoenix, AZ",
+      "highlights": [
+        "Managed full employee lifecycle for 200-person business unit",
+        "Led annual performance review process and calibration sessions",
+        "Administered benefits programs and vendor relationships",
+        "Handled employee relations issues with 95% resolution rate"
+      ],
+      "techStack": ["SAP SuccessFactors", "ADP", "Greenhouse"]
+    },
+    {
+      "company": "StartupXYZ",
+      "role": "HR Coordinator",
+      "period": "January 2017 - May 2018",
+      "location": "Austin, TX",
+      "highlights": [
+        "First HR hire, built HR function from ground up for 50-person startup",
+        "Established employee handbook, policies, and compliance programs",
+        "Managed recruiting, hiring 30+ employees in 18 months",
+        "Implemented BambooHR as first HRIS system"
+      ],
+      "techStack": ["BambooHR", "Lever", "Gusto"]
+    }
+  ],
+  "achievements": [
+    {
+      "id": "retention",
+      "title": "Retention Transformation",
+      "category": "engagement",
+      "summary": "Reduced voluntary turnover from 25% to 8% in 2 years",
+      "impact": "Saved estimated $2M in replacement costs annually",
+      "details": [
+        "Conducted comprehensive exit interview analysis to identify root causes",
+        "Implemented stay interview program for high performers",
+        "Launched manager effectiveness training reaching 50+ people leaders",
+        "Created career pathing framework with clear advancement criteria",
+        "Introduced quarterly pulse surveys with action planning"
+      ],
+      "metrics": [
+        { "label": "Turnover Reduction", "value": "17 points" },
+        { "label": "Cost Savings", "value": "$2M/year" }
+      ]
+    },
+    {
+      "id": "dei",
+      "title": "DEI Program Launch",
+      "category": "diversity",
+      "summary": "Built comprehensive diversity, equity, and inclusion program",
+      "impact": "Increased underrepresented hiring by 40%",
+      "details": [
+        "Partnered with CEO to establish DEI vision and goals",
+        "Trained 50+ hiring managers on inclusive interviewing",
+        "Launched 4 employee resource groups with executive sponsors",
+        "Implemented blind resume screening and diverse interview panels",
+        "Published annual DEI report with transparent metrics"
+      ],
+      "metrics": [
+        { "label": "URG Hiring Increase", "value": "40%" },
+        { "label": "ERGs Launched", "value": "4" }
+      ]
+    },
+    {
+      "id": "hris",
+      "title": "Workday Implementation",
+      "category": "technology",
+      "summary": "Led successful enterprise HRIS implementation",
+      "impact": "Reduced HR admin time by 40%, improved data accuracy to 99%",
+      "details": [
+        "Managed RFP process evaluating 5 enterprise HRIS vendors",
+        "Led cross-functional implementation team of 12 stakeholders",
+        "Migrated 500+ employee records with 99.5% accuracy",
+        "Trained 50+ managers and 500 employees on self-service features",
+        "Completed project on time and 10% under budget"
+      ],
+      "metrics": [
+        { "label": "Admin Time Saved", "value": "40%" },
+        { "label": "Data Accuracy", "value": "99%" }
+      ]
+    }
+  ],
+  "skillCategories": [
+    {
+      "name": "Strategic HR",
+      "skills": [
+        {
+          "name": "Workforce Planning",
+          "context": "Partnered on 150% headcount growth strategy",
+          "aliases": ["workforce planning", "headcount planning"],
+          "weight": 8
+        },
+        {
+          "name": "Talent Management",
+          "context": "Performance, succession, and career development programs",
+          "aliases": ["talent management", "talent development"],
+          "weight": 8
+        },
+        {
+          "name": "Compensation Analysis",
+          "context": "Market benchmarking and pay equity reviews",
+          "aliases": ["compensation", "total rewards", "pay equity"],
+          "weight": 7
+        },
+        {
+          "name": "DEI Strategy",
+          "context": "Built program increasing diverse hiring 40%",
+          "aliases": ["dei", "diversity", "inclusion", "d&i"],
+          "weight": 8
+        },
+        {
+          "name": "Employee Relations",
+          "context": "Complex investigations and conflict resolution",
+          "aliases": ["employee relations", "er"],
+          "weight": 7
+        }
+      ]
+    },
+    {
+      "name": "HRIS & Systems",
+      "skills": [
+        {
+          "name": "Workday",
+          "context": "Led full implementation and ongoing administration",
+          "aliases": ["workday", "workday hcm"],
+          "weight": 9
+        },
+        {
+          "name": "SAP SuccessFactors",
+          "context": "Admin experience at Enterprise Corp",
+          "aliases": ["successfactors", "sap sf"],
+          "weight": 6
+        },
+        {
+          "name": "Culture Amp",
+          "context": "Employee engagement surveys and analytics",
+          "aliases": ["culture amp", "engagement surveys"],
+          "weight": 7
+        },
+        {
+          "name": "Lattice",
+          "context": "Performance management and goals platform",
+          "aliases": ["lattice", "performance management"],
+          "weight": 6
+        }
+      ]
+    },
+    {
+      "name": "Leadership",
+      "skills": [
+        {
+          "name": "Team Management",
+          "context": "Leading team of 5 HR professionals",
+          "aliases": ["people management", "team leadership"],
+          "weight": 8
+        },
+        {
+          "name": "Executive Partnership",
+          "context": "Advising C-suite on people strategy",
+          "aliases": ["hrbp", "business partner"],
+          "weight": 8
+        },
+        {
+          "name": "Change Management",
+          "context": "Led HRIS implementation and policy changes",
+          "aliases": ["change management", "organizational change"],
+          "weight": 7
+        },
+        {
+          "name": "Coaching",
+          "context": "Manager development and performance coaching",
+          "aliases": ["coaching", "mentoring"],
+          "weight": 7
+        }
+      ]
+    }
+  ],
+  "skillsSection": {
+    "eyebrow": "HR Expertise",
+    "headline": "Skills & Certifications",
+    "description": "Strategic HR leader with deep expertise in talent management, DEI, and HR technology.",
+    "summary": [
+      { "title": "SHRM-SCP", "subtitle": "Certified" },
+      { "title": "Strategic", "subtitle": "HR Leadership" },
+      { "title": "DEI", "subtitle": "Program Builder" }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Get in Touch",
+    "headline": "Let's Connect",
+    "description": "Seeking Director of People or HR Business Partner roles where I can drive strategic people initiatives.",
+    "ctaText": "Let's discuss how I can help build your people strategy.",
+    "location": "London, UK (Open to Remote)",
+    "preferredMethod": "linkedin",
+    "showSocial": true
+  },
+  "custom": [],
+  "jobBoardScoring": {
+    "defaultSkillWeight": 5,
+    "bonuses": {
+      "remotePosition": 15,
+      "regionFriendly": 10,
+      "seniorityMatch": 20,
+      "domainRelevance": 15
+    },
+    "relevantDomains": [
+      "hr",
+      "human resources",
+      "people",
+      "people ops",
+      "people operations",
+      "talent",
+      "talent management",
+      "hrbp",
+      "employee engagement"
+    ],
+    "seniorityKeywords": [
+      "manager",
+      "director",
+      "head of",
+      "vp",
+      "senior",
+      "lead",
+      "hrbp",
+      "hr business partner",
+      "people operations",
+      "people partner"
+    ],
+    "temperaturePresets": {
+      "strict": {
+        "value": 0.1,
+        "label": "Strict",
+        "description": "Near-perfect skill matches only"
+      },
+      "balanced": {
+        "value": 0.4,
+        "label": "Balanced",
+        "description": "Good balance of relevance and variety"
+      },
+      "exploratory": {
+        "value": 0.7,
+        "label": "Exploratory",
+        "description": "Partial matches welcome, more variety"
+      },
+      "loose": {
+        "value": 0.95,
+        "label": "Loose",
+        "description": "Show everything with any relevance"
+      }
+    },
+    "skillCeiling": {
+      "baseSkillCount": 8,
+      "temperatureSensitivity": 0.6,
+      "minSkillCount": 4,
+      "maxSkillCount": 12
+    },
+    "scoreWeights": {
+      "skills": 0.6,
+      "bonuses": 0.4
+    }
+  }
+}

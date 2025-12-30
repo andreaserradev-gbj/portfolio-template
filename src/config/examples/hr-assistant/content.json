@@ -1,0 +1,325 @@
+{
+  "variables": {
+    "careerStartYear": 2023
+  },
+  "sections": ["hero", "experience", "achievements", "skills", "contact"],
+  "hero": {
+    "name": "Riley Martinez",
+    "title": "HR Professional",
+    "tagline": "SHRM-CP certified HR professional passionate about creating exceptional employee experiences. Combining strong organizational skills with genuine care for people.",
+    "cta": {
+      "primary": {
+        "text": "View Experience",
+        "target": "#experience"
+      },
+      "secondary": {
+        "text": "Contact Me",
+        "target": "#contact"
+      }
+    },
+    "statusBadge": {
+      "text": "Seeking HR Opportunities",
+      "active": true
+    },
+    "valuePills": [
+      { "label": "SHRM-CP", "sublabel": "Certified", "highlight": true },
+      {
+        "label": "{{yearsSince:careerStartYear}}yr",
+        "sublabel": "HR Experience",
+        "highlight": false
+      },
+      { "label": "200+", "sublabel": "Hires Supported", "highlight": false }
+    ],
+    "quickStats": [
+      {
+        "value": "200",
+        "suffix": "+",
+        "label": "Hires Supported"
+      },
+      {
+        "value": "95",
+        "suffix": "%",
+        "label": "Onboarding Satisfaction"
+      }
+    ],
+    "badge": {
+      "value": "SHRM",
+      "title": "CP Certified",
+      "subtitle": "2023"
+    }
+  },
+  "experience": [
+    {
+      "company": "TechStartup Inc",
+      "role": "HR Assistant",
+      "period": "June 2023 - Present",
+      "location": "Austin, TX",
+      "highlights": [
+        "Managed full-cycle onboarding for 80+ new hires, achieving 95% satisfaction rating",
+        "Administered BambooHR system for 250-person organization, maintaining 99% data accuracy",
+        "Coordinated benefits enrollment for annual open enrollment, supporting 200+ employees",
+        "Processed bi-weekly payroll for 250 employees using ADP Workforce Now",
+        "Created standardized onboarding templates reducing new hire setup time by 30%"
+      ],
+      "techStack": ["BambooHR", "ADP", "Slack", "Google Workspace", "DocuSign"]
+    },
+    {
+      "company": "Enterprise Solutions Corp",
+      "role": "HR Intern",
+      "period": "January 2023 - May 2023",
+      "location": "Dallas, TX",
+      "highlights": [
+        "Assisted with recruiting coordination, scheduling 100+ interviews across departments",
+        "Maintained employee records and ensured I-9 compliance for 500-person workforce",
+        "Supported employee engagement initiatives including quarterly town halls",
+        "Created monthly HR metrics reports for leadership team"
+      ],
+      "techStack": ["Workday", "LinkedIn Recruiter", "Excel", "SharePoint"]
+    },
+    {
+      "company": "University of Texas",
+      "role": "Student HR Coordinator",
+      "period": "August 2021 - December 2022",
+      "location": "Austin, TX",
+      "highlights": [
+        "Managed hiring paperwork for 50+ student workers in Athletics department",
+        "Organized orientation sessions for new student employees each semester",
+        "Maintained confidential personnel files and timesheet records"
+      ],
+      "techStack": ["Workday", "Excel", "Microsoft Office"]
+    }
+  ],
+  "achievements": [
+    {
+      "id": "onboarding",
+      "title": "Onboarding Program Improvement",
+      "category": "process",
+      "summary": "Redesigned new hire onboarding process at TechStartup Inc",
+      "impact": "Increased new hire satisfaction from 78% to 95%",
+      "details": [
+        "Created comprehensive onboarding checklists for managers and new hires",
+        "Developed welcome kit templates with company culture resources",
+        "Implemented buddy program pairing new hires with experienced employees",
+        "Reduced time-to-productivity from 4 weeks to 2.5 weeks"
+      ],
+      "metrics": [
+        { "label": "Satisfaction Score", "value": "95%" },
+        { "label": "Setup Time Reduction", "value": "30%" }
+      ]
+    },
+    {
+      "id": "certification",
+      "title": "SHRM-CP Certification",
+      "category": "education",
+      "summary": "Earned SHRM Certified Professional credential",
+      "impact": "Demonstrated commitment to HR excellence and continuous learning",
+      "details": [
+        "Completed 60+ hours of exam preparation study",
+        "Passed exam on first attempt with score in top 25th percentile",
+        "Gained comprehensive knowledge of HR competencies and practices"
+      ],
+      "metrics": [
+        { "label": "Study Hours", "value": "60+" },
+        { "label": "Percentile", "value": "Top 25%" }
+      ]
+    },
+    {
+      "id": "compliance",
+      "title": "I-9 Compliance Audit",
+      "category": "compliance",
+      "summary": "Led successful I-9 compliance audit with zero findings",
+      "impact": "Ensured legal compliance for 500-person organization",
+      "details": [
+        "Audited 500+ I-9 forms for accuracy and completeness",
+        "Implemented systematic review process for ongoing compliance",
+        "Created training materials for hiring managers on proper I-9 procedures"
+      ],
+      "metrics": [
+        { "label": "Forms Audited", "value": "500+" },
+        { "label": "Audit Findings", "value": "0" }
+      ]
+    }
+  ],
+  "skillCategories": [
+    {
+      "name": "HRIS & Systems",
+      "skills": [
+        {
+          "name": "BambooHR",
+          "context": "Primary HRIS administration at TechStartup Inc",
+          "aliases": ["bamboohr", "bamboo hr"],
+          "weight": 7
+        },
+        {
+          "name": "Workday",
+          "context": "Employee data management during internship",
+          "aliases": ["workday", "workday hcm"],
+          "weight": 6
+        },
+        {
+          "name": "ADP",
+          "context": "Payroll processing and workforce management",
+          "aliases": ["adp", "adp workforce now"],
+          "weight": 6
+        },
+        {
+          "name": "LinkedIn Recruiter",
+          "context": "Candidate sourcing and outreach",
+          "aliases": ["linkedin recruiter", "linkedin"],
+          "weight": 5
+        },
+        {
+          "name": "Greenhouse",
+          "context": "Applicant tracking system familiarity",
+          "aliases": ["greenhouse", "ats"],
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "name": "HR Functions",
+      "skills": [
+        {
+          "name": "Onboarding",
+          "context": "End-to-end new hire experience management",
+          "aliases": ["onboarding", "new hire orientation"],
+          "weight": 8
+        },
+        {
+          "name": "Benefits Administration",
+          "context": "Open enrollment coordination and employee support",
+          "aliases": ["benefits", "benefits administration"],
+          "weight": 6
+        },
+        {
+          "name": "Recruiting Support",
+          "context": "Interview scheduling, candidate coordination",
+          "aliases": ["recruiting", "talent acquisition"],
+          "weight": 6
+        },
+        {
+          "name": "Compliance",
+          "context": "I-9 verification, E-Verify, employment law basics",
+          "aliases": ["compliance", "i-9", "e-verify"],
+          "weight": 7
+        },
+        {
+          "name": "Payroll",
+          "context": "Bi-weekly payroll processing for 250 employees",
+          "aliases": ["payroll", "payroll processing"],
+          "weight": 5
+        }
+      ]
+    },
+    {
+      "name": "Soft Skills",
+      "skills": [
+        {
+          "name": "Communication",
+          "context": "Clear written and verbal communication with employees at all levels",
+          "weight": 8
+        },
+        {
+          "name": "Confidentiality",
+          "context": "Handling sensitive employee information with discretion",
+          "weight": 8
+        },
+        {
+          "name": "Organization",
+          "context": "Managing multiple priorities in fast-paced environment",
+          "weight": 7
+        },
+        {
+          "name": "Problem Solving",
+          "context": "Resolving employee inquiries and process improvements",
+          "weight": 6
+        }
+      ]
+    }
+  ],
+  "skillsSection": {
+    "eyebrow": "HR Expertise",
+    "headline": "Skills & Certifications",
+    "description": "SHRM-CP certified with hands-on experience in HRIS administration, onboarding, and employee relations.",
+    "summary": [
+      { "title": "SHRM-CP", "subtitle": "Certified" },
+      { "title": "HRIS", "subtitle": "Systems Expert" },
+      { "title": "Onboarding", "subtitle": "Process Design" }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Get in Touch",
+    "headline": "Let's Connect",
+    "description": "Seeking HR Coordinator or HR Specialist roles where I can grow and contribute to building great employee experiences.",
+    "ctaText": "Interested in connecting? I'd love to discuss opportunities in HR.",
+    "location": "Sydney, Australia",
+    "preferredMethod": "email",
+    "showSocial": true
+  },
+  "custom": [],
+  "jobBoardScoring": {
+    "defaultSkillWeight": 4,
+    "bonuses": {
+      "remotePosition": 15,
+      "regionFriendly": 10,
+      "seniorityMatch": 25,
+      "domainRelevance": 15
+    },
+    "relevantDomains": [
+      "hr",
+      "human resources",
+      "people",
+      "people ops",
+      "people operations",
+      "talent",
+      "recruiting",
+      "staffing",
+      "onboarding",
+      "employee relations"
+    ],
+    "seniorityKeywords": [
+      "assistant",
+      "coordinator",
+      "associate",
+      "specialist",
+      "entry",
+      "entry-level",
+      "junior",
+      "hr assistant",
+      "hr coordinator",
+      "people operations"
+    ],
+    "temperaturePresets": {
+      "strict": {
+        "value": 0.1,
+        "label": "Strict",
+        "description": "Near-perfect skill matches only"
+      },
+      "balanced": {
+        "value": 0.4,
+        "label": "Balanced",
+        "description": "Good balance of relevance and variety"
+      },
+      "exploratory": {
+        "value": 0.7,
+        "label": "Exploratory",
+        "description": "Partial matches welcome, more variety"
+      },
+      "loose": {
+        "value": 0.95,
+        "label": "Loose",
+        "description": "Show everything with any relevance"
+      }
+    },
+    "skillCeiling": {
+      "baseSkillCount": 8,
+      "temperatureSensitivity": 0.6,
+      "minSkillCount": 4,
+      "maxSkillCount": 12
+    },
+    "scoreWeights": {
+      "skills": 0.5,
+      "bonuses": 0.5
+    }
+  }
+}

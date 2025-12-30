@@ -1,0 +1,338 @@
+{
+  "variables": {
+    "careerStartYear": 2020
+  },
+  "sections": [
+    "hero",
+    "metrics",
+    "experience",
+    "achievements",
+    "skills",
+    "contact"
+  ],
+  "hero": {
+    "name": "Quinn Rodriguez",
+    "title": "Product Marketing Manager",
+    "tagline": "{{yearsSince:careerStartYear}}+ years driving B2B SaaS go-to-market success. Turning complex products into compelling stories that win deals.",
+    "cta": {
+      "primary": {
+        "text": "See Launches",
+        "target": "#achievements"
+      },
+      "secondary": {
+        "text": "Get in Touch",
+        "target": "#contact"
+      }
+    },
+    "statusBadge": {
+      "text": "Open to PMM Opportunities",
+      "active": true
+    },
+    "valuePills": [
+      {
+        "label": "{{yearsSince:careerStartYear}}yr",
+        "sublabel": "PMM",
+        "highlight": true
+      },
+      { "label": "15+", "sublabel": "Launches", "highlight": false },
+      { "label": "$50M", "sublabel": "ARR Products", "highlight": false }
+    ],
+    "quickStats": [
+      {
+        "value": "15",
+        "suffix": "+",
+        "label": "Product Launches"
+      },
+      {
+        "value": "35",
+        "suffix": "%",
+        "label": "Win Rate Lift"
+      }
+    ],
+    "badge": {
+      "value": "15+",
+      "title": "Launches",
+      "subtitle": "B2B SaaS"
+    }
+  },
+  "metrics": [
+    {
+      "label": "Product Launches",
+      "value": 15,
+      "suffix": "+",
+      "description": "Major product and feature launches",
+      "max": 20,
+      "achievementId": "enterprise"
+    },
+    {
+      "label": "Win Rate Improvement",
+      "value": 35,
+      "suffix": "%",
+      "description": "Competitive win rate increase",
+      "max": 50,
+      "achievementId": "competitive"
+    },
+    {
+      "label": "Sales Enablement Assets",
+      "value": 100,
+      "suffix": "+",
+      "description": "Battle cards, one-pagers, and decks created",
+      "max": 150,
+      "achievementId": "enablement"
+    },
+    {
+      "label": "Pipeline Influenced",
+      "value": 20,
+      "suffix": "M",
+      "description": "Annual pipeline from PMM activities",
+      "max": 30,
+      "achievementId": "pipeline"
+    }
+  ],
+  "experience": [
+    {
+      "company": "CloudScale (Series D)",
+      "role": "Senior Product Marketing Manager",
+      "period": "January 2022 - Present",
+      "location": "Seattle, WA",
+      "highlights": [
+        "Own GTM strategy for $30M ARR enterprise product line",
+        "Led enterprise tier launch generating $20M pipeline in first quarter",
+        "Built competitive intelligence program tracking 12 key competitors",
+        "Increased win rate against primary competitor from 35% to 52%",
+        "Partner with sales leadership on $100M ARR enablement strategy"
+      ],
+      "techStack": ["Salesforce", "Gong", "Highspot", "Klue", "Marketo"]
+    },
+    {
+      "company": "TechFlow (Series B)",
+      "role": "Product Marketing Manager",
+      "period": "June 2020 - December 2021",
+      "location": "San Francisco, CA",
+      "highlights": [
+        "Launched 8 major features driving 40% of new business pipeline",
+        "Created positioning framework adopted across all GTM teams",
+        "Developed sales playbooks reducing ramp time for new AEs by 30%",
+        "Conducted 50+ customer interviews for persona development"
+      ],
+      "techStack": ["HubSpot", "Seismic", "UserTesting", "Pendo"]
+    }
+  ],
+  "achievements": [
+    {
+      "id": "enterprise",
+      "title": "Enterprise Tier Launch",
+      "category": "launch",
+      "summary": "Led GTM for new enterprise product tier",
+      "impact": "Generated $20M pipeline in first quarter post-launch",
+      "details": [
+        "Developed positioning differentiating from 3 enterprise competitors",
+        "Created comprehensive launch kit with 25+ sales assets",
+        "Trained 40 account executives on enterprise messaging",
+        "Partnered with demand gen on $500K launch campaign",
+        "Achieved 150% of Q1 pipeline target"
+      ],
+      "metrics": [
+        { "label": "Pipeline Generated", "value": "$20M" },
+        { "label": "Target Achievement", "value": "150%" }
+      ]
+    },
+    {
+      "id": "competitive",
+      "title": "Competitive Win Rate Turnaround",
+      "category": "competitive",
+      "summary": "Built competitive program reversing losses to key competitor",
+      "impact": "Increased win rate from 35% to 52% in 6 months",
+      "details": [
+        "Established win/loss analysis program with 100+ interviews",
+        "Created battle cards used in 80% of competitive deals",
+        "Developed objection handling guides for top 5 objections",
+        "Launched competitive Slack channel with real-time intel"
+      ],
+      "metrics": [
+        { "label": "Win Rate Increase", "value": "17 points" },
+        { "label": "Battle Card Adoption", "value": "80%" }
+      ]
+    },
+    {
+      "id": "positioning",
+      "title": "Product Repositioning",
+      "category": "strategy",
+      "summary": "Led company-wide repositioning from point solution to platform",
+      "impact": "Enabled move upmarket with 40% larger deal sizes",
+      "details": [
+        "Conducted 30 customer interviews and market analysis",
+        "Developed new messaging framework and value propositions",
+        "Rolled out positioning across website, sales, and marketing",
+        "Trained entire GTM organization of 80+ people"
+      ],
+      "metrics": [
+        { "label": "Deal Size Increase", "value": "40%" },
+        { "label": "GTM Team Trained", "value": "80+" }
+      ]
+    }
+  ],
+  "skillCategories": [
+    {
+      "name": "Go-To-Market",
+      "skills": [
+        {
+          "name": "Product Launches",
+          "context": "15+ major launches driving $50M+ ARR",
+          "aliases": ["product launch", "gtm", "go-to-market"],
+          "weight": 9
+        },
+        {
+          "name": "Positioning & Messaging",
+          "context": "Frameworks adopted across GTM organizations",
+          "aliases": ["positioning", "messaging", "value proposition"],
+          "weight": 9
+        },
+        {
+          "name": "Competitive Intelligence",
+          "context": "Programs increasing win rates 17+ points",
+          "aliases": ["competitive intel", "competitive analysis", "win/loss"],
+          "weight": 8
+        },
+        {
+          "name": "Sales Enablement",
+          "context": "100+ assets, reduced ramp time 30%",
+          "aliases": ["sales enablement", "enablement"],
+          "weight": 8
+        }
+      ]
+    },
+    {
+      "name": "Research & Analysis",
+      "skills": [
+        {
+          "name": "Customer Research",
+          "context": "50+ interviews for persona development",
+          "aliases": ["customer research", "user research", "interviews"],
+          "weight": 7
+        },
+        {
+          "name": "Win/Loss Analysis",
+          "context": "100+ interviews driving competitive strategy",
+          "aliases": ["win loss", "win/loss analysis"],
+          "weight": 7
+        },
+        {
+          "name": "Market Analysis",
+          "context": "Tracking 12 competitors and market trends",
+          "aliases": ["market analysis", "market research"],
+          "weight": 6
+        }
+      ]
+    },
+    {
+      "name": "Tools & Platforms",
+      "skills": [
+        {
+          "name": "Salesforce",
+          "context": "Pipeline analysis and reporting",
+          "aliases": ["salesforce", "sfdc"],
+          "weight": 7
+        },
+        {
+          "name": "Gong",
+          "context": "Call analysis for competitive insights",
+          "aliases": ["gong", "conversation intelligence"],
+          "weight": 7
+        },
+        {
+          "name": "Highspot",
+          "context": "Sales content management and analytics",
+          "aliases": ["highspot", "seismic"],
+          "weight": 6
+        },
+        {
+          "name": "Marketo",
+          "context": "Campaign collaboration with demand gen",
+          "aliases": ["marketo", "marketing automation"],
+          "weight": 5
+        }
+      ]
+    }
+  ],
+  "skillsSection": {
+    "eyebrow": "PMM Expertise",
+    "headline": "Skills & Tools",
+    "description": "Full-stack product marketer with deep expertise in B2B SaaS go-to-market strategy.",
+    "summary": [
+      { "title": "GTM", "subtitle": "Strategy" },
+      { "title": "Launches", "subtitle": "15+ Products" },
+      { "title": "Competitive", "subtitle": "Win Rates" }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Get in Touch",
+    "headline": "Let's Connect",
+    "description": "Seeking Senior PMM or Head of Product Marketing roles at B2B SaaS companies.",
+    "ctaText": "Let's discuss how I can drive your GTM success.",
+    "location": "Tokyo, Japan (Open to Remote)",
+    "preferredMethod": "email",
+    "showSocial": true
+  },
+  "custom": [],
+  "jobBoardScoring": {
+    "defaultSkillWeight": 5,
+    "bonuses": {
+      "remotePosition": 15,
+      "regionFriendly": 10,
+      "seniorityMatch": 20,
+      "domainRelevance": 15
+    },
+    "relevantDomains": [
+      "marketing",
+      "product marketing",
+      "pmm",
+      "gtm",
+      "go-to-market",
+      "b2b",
+      "saas",
+      "enterprise"
+    ],
+    "seniorityKeywords": [
+      "senior",
+      "lead",
+      "head of",
+      "director",
+      "pmm",
+      "product marketing",
+      "product marketing manager"
+    ],
+    "temperaturePresets": {
+      "strict": {
+        "value": 0.1,
+        "label": "Strict",
+        "description": "Near-perfect skill matches only"
+      },
+      "balanced": {
+        "value": 0.4,
+        "label": "Balanced",
+        "description": "Good balance of relevance and variety"
+      },
+      "exploratory": {
+        "value": 0.7,
+        "label": "Exploratory",
+        "description": "Partial matches welcome, more variety"
+      },
+      "loose": {
+        "value": 0.95,
+        "label": "Loose",
+        "description": "Show everything with any relevance"
+      }
+    },
+    "skillCeiling": {
+      "baseSkillCount": 8,
+      "temperatureSensitivity": 0.6,
+      "minSkillCount": 4,
+      "maxSkillCount": 12
+    },
+    "scoreWeights": {
+      "skills": 0.6,
+      "bonuses": 0.4
+    }
+  }
+}

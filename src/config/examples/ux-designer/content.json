@@ -1,0 +1,351 @@
+{
+  "variables": {
+    "careerStartYear": 2021
+  },
+  "sections": [
+    "hero",
+    "metrics",
+    "experience",
+    "achievements",
+    "skills",
+    "contact"
+  ],
+  "hero": {
+    "name": "Taylor Nguyen",
+    "title": "UX Designer",
+    "tagline": "{{yearsSince:careerStartYear}}+ years crafting intuitive digital experiences. User-centered designer passionate about solving complex problems through design.",
+    "cta": {
+      "primary": {
+        "text": "View Work",
+        "target": "#achievements"
+      },
+      "secondary": {
+        "text": "Get in Touch",
+        "target": "#contact"
+      }
+    },
+    "statusBadge": {
+      "text": "Open to UX Opportunities",
+      "active": true
+    },
+    "valuePills": [
+      {
+        "label": "{{yearsSince:careerStartYear}}yr",
+        "sublabel": "UX Design",
+        "highlight": true
+      },
+      { "label": "15+", "sublabel": "Products", "highlight": false },
+      { "label": "1M+", "sublabel": "Users", "highlight": false }
+    ],
+    "quickStats": [
+      {
+        "value": "15",
+        "suffix": "+",
+        "label": "Products Designed"
+      },
+      {
+        "value": "40",
+        "suffix": "%",
+        "label": "Avg. Satisfaction Lift"
+      }
+    ],
+    "badge": {
+      "value": "15+",
+      "title": "Products",
+      "subtitle": "Designed"
+    }
+  },
+  "metrics": [
+    {
+      "label": "Products Designed",
+      "value": 15,
+      "suffix": "+",
+      "description": "Mobile and web applications shipped",
+      "max": 20,
+      "achievementId": "checkout"
+    },
+    {
+      "label": "User Satisfaction",
+      "value": 40,
+      "suffix": "%",
+      "description": "Average improvement in user satisfaction scores",
+      "max": 60,
+      "achievementId": "research"
+    },
+    {
+      "label": "Design System Components",
+      "value": 80,
+      "suffix": "+",
+      "description": "Reusable components built and documented",
+      "max": 100,
+      "achievementId": "designsystem"
+    },
+    {
+      "label": "Users Impacted",
+      "value": 1,
+      "suffix": "M+",
+      "description": "Active users of designed products",
+      "max": 2,
+      "achievementId": "impact"
+    }
+  ],
+  "experience": [
+    {
+      "company": "FinFlow",
+      "role": "UX Designer",
+      "period": "January 2022 - Present",
+      "location": "Los Angeles, CA",
+      "highlights": [
+        "Lead design for mobile banking app serving 500K+ active users",
+        "Redesigned checkout flow increasing conversion rate by 25%",
+        "Built and maintained component library with 80+ reusable components",
+        "Conducted 30+ usability tests informing product roadmap decisions",
+        "Collaborate with 3 PMs and 8 engineers on feature development"
+      ],
+      "techStack": ["Figma", "Maze", "Mixpanel", "Jira", "Notion"]
+    },
+    {
+      "company": "DesignCraft Agency",
+      "role": "Junior UX Designer",
+      "period": "June 2021 - December 2021",
+      "location": "San Diego, CA",
+      "highlights": [
+        "Designed interfaces for 8 client projects across e-commerce and SaaS",
+        "Created wireframes, prototypes, and high-fidelity mockups",
+        "Participated in client presentations and design critiques",
+        "Assisted with user research including interviews and surveys"
+      ],
+      "techStack": ["Figma", "Sketch", "InVision", "Miro"]
+    }
+  ],
+  "achievements": [
+    {
+      "id": "checkout",
+      "title": "Checkout Redesign",
+      "category": "product",
+      "summary": "Complete redesign of mobile checkout experience",
+      "impact": "25% increase in conversion rate, $2M additional annual revenue",
+      "details": [
+        "Conducted competitive analysis of 10 leading fintech apps",
+        "Ran 5 usability tests to identify pain points in existing flow",
+        "Reduced checkout steps from 5 to 3 screens",
+        "Implemented progressive disclosure for complex fields",
+        "A/B tested with 50K users before full rollout"
+      ],
+      "metrics": [
+        { "label": "Conversion Lift", "value": "25%" },
+        { "label": "Revenue Impact", "value": "$2M/year" }
+      ]
+    },
+    {
+      "id": "designsystem",
+      "title": "Design System Creation",
+      "category": "systems",
+      "summary": "Built comprehensive design system from scratch",
+      "impact": "40% reduction in design-to-dev handoff time",
+      "details": [
+        "Created 80+ reusable components with accessibility built-in",
+        "Documented usage guidelines and interaction patterns",
+        "Established color, typography, and spacing tokens",
+        "Collaborated with engineers on component implementation",
+        "Maintained system across iOS, Android, and web platforms"
+      ],
+      "metrics": [
+        { "label": "Components Built", "value": "80+" },
+        { "label": "Handoff Time", "value": "-40%" }
+      ]
+    },
+    {
+      "id": "research",
+      "title": "User Research Program",
+      "category": "research",
+      "summary": "Established ongoing user research practice",
+      "impact": "Research-informed decisions increased feature adoption 35%",
+      "details": [
+        "Built research repository with 100+ user insights",
+        "Conducted monthly usability testing sessions",
+        "Created user personas based on 50+ interview sessions",
+        "Trained PMs and engineers on research methods"
+      ],
+      "metrics": [
+        { "label": "User Insights", "value": "100+" },
+        { "label": "Feature Adoption", "value": "+35%" }
+      ]
+    }
+  ],
+  "skillCategories": [
+    {
+      "name": "Design Tools",
+      "skills": [
+        {
+          "name": "Figma",
+          "context": "Primary design tool for all projects",
+          "aliases": ["figma"],
+          "weight": 9
+        },
+        {
+          "name": "Sketch",
+          "context": "Used at agency for legacy projects",
+          "aliases": ["sketch"],
+          "weight": 6
+        },
+        {
+          "name": "Adobe XD",
+          "context": "Prototyping and handoff",
+          "aliases": ["adobe xd", "xd"],
+          "weight": 5
+        },
+        {
+          "name": "Framer",
+          "context": "Advanced prototyping with interactions",
+          "aliases": ["framer"],
+          "weight": 6
+        },
+        {
+          "name": "Miro",
+          "context": "Workshops and collaborative ideation",
+          "aliases": ["miro", "figjam"],
+          "weight": 7
+        }
+      ]
+    },
+    {
+      "name": "UX Skills",
+      "skills": [
+        {
+          "name": "User Research",
+          "context": "30+ usability tests, 50+ interviews conducted",
+          "aliases": ["user research", "ux research", "usability testing"],
+          "weight": 8
+        },
+        {
+          "name": "Wireframing",
+          "context": "Low and high-fidelity wireframes for all projects",
+          "aliases": ["wireframing", "wireframes"],
+          "weight": 8
+        },
+        {
+          "name": "Prototyping",
+          "context": "Interactive prototypes for testing and handoff",
+          "aliases": ["prototyping", "prototypes"],
+          "weight": 8
+        },
+        {
+          "name": "Design Systems",
+          "context": "Built 80+ component library from scratch",
+          "aliases": ["design systems", "component library"],
+          "weight": 8
+        },
+        {
+          "name": "Information Architecture",
+          "context": "Navigation and content structure",
+          "aliases": ["ia", "information architecture"],
+          "weight": 7
+        }
+      ]
+    },
+    {
+      "name": "Technical Skills",
+      "skills": [
+        {
+          "name": "HTML/CSS",
+          "context": "Understanding for design feasibility",
+          "aliases": ["html", "css", "html/css"],
+          "weight": 6
+        },
+        {
+          "name": "React Basics",
+          "context": "Component-based thinking for design systems",
+          "aliases": ["react"],
+          "weight": 4
+        },
+        {
+          "name": "Accessibility",
+          "context": "WCAG compliance in all designs",
+          "aliases": ["accessibility", "a11y", "wcag"],
+          "weight": 7
+        }
+      ]
+    }
+  ],
+  "skillsSection": {
+    "eyebrow": "Design Expertise",
+    "headline": "Skills & Tools",
+    "description": "Full-stack UX designer with expertise in research, design systems, and product design.",
+    "summary": [
+      { "title": "User", "subtitle": "Centered" },
+      { "title": "Systems", "subtitle": "Thinker" },
+      { "title": "Research", "subtitle": "Driven" }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Get in Touch",
+    "headline": "Let's Connect",
+    "description": "Seeking Senior UX Designer or Product Designer roles at product-focused companies.",
+    "ctaText": "Let's discuss how I can help design your next great product.",
+    "location": "Toronto, Canada (Open to Remote)",
+    "preferredMethod": "email",
+    "showSocial": true
+  },
+  "custom": [],
+  "jobBoardScoring": {
+    "defaultSkillWeight": 5,
+    "bonuses": {
+      "remotePosition": 15,
+      "regionFriendly": 10,
+      "seniorityMatch": 20,
+      "domainRelevance": 15
+    },
+    "relevantDomains": [
+      "design",
+      "ux",
+      "ui",
+      "product design",
+      "user experience",
+      "user research",
+      "figma",
+      "design systems"
+    ],
+    "seniorityKeywords": [
+      "ux designer",
+      "product designer",
+      "ui/ux",
+      "ui designer",
+      "senior",
+      "mid-level",
+      "designer"
+    ],
+    "temperaturePresets": {
+      "strict": {
+        "value": 0.1,
+        "label": "Strict",
+        "description": "Near-perfect skill matches only"
+      },
+      "balanced": {
+        "value": 0.4,
+        "label": "Balanced",
+        "description": "Good balance of relevance and variety"
+      },
+      "exploratory": {
+        "value": 0.7,
+        "label": "Exploratory",
+        "description": "Partial matches welcome, more variety"
+      },
+      "loose": {
+        "value": 0.95,
+        "label": "Loose",
+        "description": "Show everything with any relevance"
+      }
+    },
+    "skillCeiling": {
+      "baseSkillCount": 8,
+      "temperatureSensitivity": 0.6,
+      "minSkillCount": 4,
+      "maxSkillCount": 12
+    },
+    "scoreWeights": {
+      "skills": 0.55,
+      "bonuses": 0.45
+    }
+  }
+}

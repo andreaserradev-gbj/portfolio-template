@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "title": "Morgan Taylor | Senior Software Engineer",
+    "description": "Ex-Meta engineer with 5+ years building systems at scale. Expertise in backend architecture, distributed systems, and technical leadership.",
+    "language": "en",
+    "themeColor": "#0668E1",
+    "url": "https://morgantaylor.dev",
+    "ogImage": "/og-image.jpg",
+    "keywords": "Senior Software Engineer, Ex-Meta, Instagram, Backend Engineer, Distributed Systems, Python, Go, Staff Engineer",
+    "author": "Morgan Taylor",
+    "robots": "index, follow",
+    "ogSiteName": "Morgan Taylor Portfolio",
+    "locale": "en_US",
+    "favicon": "/favicon.svg"
+  },
+  "structuredData": {
+    "enabled": true,
+    "employer": {
+      "name": "Open to Opportunities",
+      "type": "Organization"
+    },
+    "address": {
+      "locality": "San Francisco",
+      "country": "US"
+    },
+    "knowsAbout": [
+      "Python",
+      "Go",
+      "Distributed Systems",
+      "System Design",
+      "Kubernetes",
+      "GraphQL"
+    ]
+  },
+  "branding": {
+    "name": "MT",
+    "logo": null,
+    "showName": true
+  },
+  "navigation": {
+    "links": [
+      {
+        "href": "#hero",
+        "label": "About",
+        "external": false
+      },
+      {
+        "href": "#impact",
+        "label": "Impact",
+        "external": false
+      },
+      {
+        "href": "#experience",
+        "label": "Experience",
+        "external": false
+      },
+      {
+        "href": "#achievements",
+        "label": "Achievements",
+        "external": false
+      },
+      {
+        "href": "#skills",
+        "label": "Skills",
+        "external": false
+      },
+      {
+        "href": "#contact",
+        "label": "Contact",
+        "external": false
+      }
+    ],
+    "cta": {
+      "text": "Let's Talk",
+      "href": "#contact"
+    }
+  },
+  "social": [
+    {
+      "platform": "github",
+      "url": "https://github.com/morgantaylor",
+      "label": "GitHub"
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://linkedin.com/in/morgan-taylor",
+      "label": "LinkedIn"
+    },
+    {
+      "platform": "twitter",
+      "url": "https://twitter.com/morgantaylor_dev",
+      "label": "Twitter"
+    },
+    {
+      "platform": "email",
+      "value": "hello@morgantaylor.dev",
+      "label": "Email"
+    }
+  ],
+  "analytics": {
+    "vercel": true,
+    "googleAnalytics": null,
+    "plausible": null
+  },
+  "features": {
+    "darkMode": true,
+    "designSystemSwitcher": true,
+    "smoothScroll": true,
+    "reduceMotion": "respect-system"
+  }
+}

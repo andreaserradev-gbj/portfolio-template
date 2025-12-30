@@ -1,0 +1,358 @@
+{
+  "variables": {
+    "careerStartYear": 2019
+  },
+  "sections": [
+    "hero",
+    "metrics",
+    "experience",
+    "achievements",
+    "skills",
+    "contact"
+  ],
+  "hero": {
+    "name": "Avery Kim",
+    "title": "Demand Generation Manager",
+    "tagline": "{{yearsSince:careerStartYear}}+ years building B2B pipeline engines that scale. Turning marketing spend into predictable revenue growth.",
+    "cta": {
+      "primary": {
+        "text": "See Results",
+        "target": "#impact"
+      },
+      "secondary": {
+        "text": "Get in Touch",
+        "target": "#contact"
+      }
+    },
+    "statusBadge": {
+      "text": "Open to Demand Gen Leadership",
+      "active": true
+    },
+    "valuePills": [
+      {
+        "label": "{{yearsSince:careerStartYear}}yr",
+        "sublabel": "Demand Gen",
+        "highlight": true
+      },
+      { "label": "$30M", "sublabel": "Pipeline/Year", "highlight": false },
+      { "label": "3x", "sublabel": "ROI Campaigns", "highlight": false }
+    ],
+    "quickStats": [
+      {
+        "value": "30",
+        "suffix": "M",
+        "label": "Annual Pipeline"
+      },
+      {
+        "value": "3",
+        "suffix": "x",
+        "label": "Average Campaign ROI"
+      }
+    ],
+    "badge": {
+      "value": "$30M",
+      "title": "Pipeline",
+      "subtitle": "Annual Generation"
+    }
+  },
+  "metrics": [
+    {
+      "label": "Annual Pipeline",
+      "value": 30,
+      "suffix": "M",
+      "description": "Qualified pipeline generated per year",
+      "max": 50,
+      "achievementId": "abm"
+    },
+    {
+      "label": "Campaign ROI",
+      "value": 3,
+      "suffix": "x",
+      "description": "Average return on marketing spend",
+      "max": 5,
+      "achievementId": "paid"
+    },
+    {
+      "label": "MQLs Generated",
+      "value": 10,
+      "suffix": "K+",
+      "description": "Marketing qualified leads annually",
+      "max": 15,
+      "achievementId": "automation"
+    },
+    {
+      "label": "Channels Managed",
+      "value": 8,
+      "suffix": "",
+      "description": "Paid, organic, and ABM channels",
+      "max": 10,
+      "achievementId": "channels"
+    }
+  ],
+  "experience": [
+    {
+      "company": "DataPlatform (Series C)",
+      "role": "Senior Demand Generation Manager",
+      "period": "March 2021 - Present",
+      "location": "Chicago, IL",
+      "highlights": [
+        "Own $2M annual marketing budget generating $30M qualified pipeline",
+        "Built ABM program targeting 500 enterprise accounts with 200% pipeline lift",
+        "Scaled paid acquisition from $200K to $1M annual spend while maintaining 3x ROI",
+        "Implemented lead scoring model increasing MQL-to-SQL conversion by 45%",
+        "Lead team of 2 marketing coordinators and manage 4 agency relationships"
+      ],
+      "techStack": [
+        "Marketo",
+        "6sense",
+        "Salesforce",
+        "LinkedIn Ads",
+        "Google Ads",
+        "Tableau"
+      ]
+    },
+    {
+      "company": "MarTech Solutions (Series A)",
+      "role": "Demand Generation Specialist",
+      "period": "June 2019 - February 2021",
+      "location": "Boston, MA",
+      "highlights": [
+        "Managed $500K digital advertising budget across paid search and social",
+        "Developed email nurture programs generating 2,000+ MQLs per quarter",
+        "Created webinar program driving 30% of marketing-sourced pipeline",
+        "Built marketing analytics dashboards for executive reporting"
+      ],
+      "techStack": ["HubSpot", "Google Ads", "LinkedIn", "Drift", "Looker"]
+    }
+  ],
+  "achievements": [
+    {
+      "id": "abm",
+      "title": "Enterprise ABM Program",
+      "category": "strategy",
+      "summary": "Built account-based marketing program from ground up",
+      "impact": "200% pipeline lift from target accounts, $15M influenced revenue",
+      "details": [
+        "Implemented 6sense for intent data and account identification",
+        "Created tiered targeting strategy for 500 enterprise accounts",
+        "Developed personalized content tracks for 5 key industries",
+        "Coordinated with SDR team on orchestrated outreach sequences",
+        "Achieved 3x engagement rate compared to broad campaigns"
+      ],
+      "metrics": [
+        { "label": "Pipeline Lift", "value": "200%" },
+        { "label": "Target Accounts", "value": "500" }
+      ]
+    },
+    {
+      "id": "paid",
+      "title": "Paid Acquisition Scale",
+      "category": "growth",
+      "summary": "Scaled paid program 5x while improving efficiency",
+      "impact": "Grew from $200K to $1M spend with 3x ROI maintained",
+      "details": [
+        "Expanded from 2 to 8 paid channels (search, social, display, podcasts)",
+        "Implemented rigorous A/B testing framework for creative optimization",
+        "Built attribution model connecting spend to closed-won revenue",
+        "Negotiated media partnerships reducing CPL by 25%"
+      ],
+      "metrics": [
+        { "label": "Budget Scale", "value": "5x" },
+        { "label": "ROI Maintained", "value": "3x" }
+      ]
+    },
+    {
+      "id": "automation",
+      "title": "Lead Scoring Automation",
+      "category": "operations",
+      "summary": "Rebuilt lead scoring model with predictive signals",
+      "impact": "45% improvement in MQL-to-SQL conversion",
+      "details": [
+        "Analyzed 2 years of historical data to identify conversion predictors",
+        "Implemented behavioral and firmographic scoring in Marketo",
+        "Integrated 6sense intent signals into scoring model",
+        "Reduced sales follow-up on unqualified leads by 60%"
+      ],
+      "metrics": [
+        { "label": "MQL-to-SQL Lift", "value": "45%" },
+        { "label": "Unqualified Leads", "value": "-60%" }
+      ]
+    }
+  ],
+  "skillCategories": [
+    {
+      "name": "Demand Generation",
+      "skills": [
+        {
+          "name": "Paid Acquisition",
+          "context": "Scaled $1M+ annual spend across 8 channels",
+          "aliases": ["paid media", "paid advertising", "ppc", "sem"],
+          "weight": 9
+        },
+        {
+          "name": "ABM",
+          "context": "Built program with 200% pipeline lift",
+          "aliases": ["abm", "account-based marketing", "account based"],
+          "weight": 9
+        },
+        {
+          "name": "Email Marketing",
+          "context": "Nurture programs generating 2K+ MQLs/quarter",
+          "aliases": ["email", "email marketing", "nurture"],
+          "weight": 8
+        },
+        {
+          "name": "Events & Webinars",
+          "context": "Webinar program driving 30% of pipeline",
+          "aliases": ["events", "webinars", "virtual events"],
+          "weight": 7
+        }
+      ]
+    },
+    {
+      "name": "Marketing Technology",
+      "skills": [
+        {
+          "name": "Marketo",
+          "context": "Primary marketing automation platform",
+          "aliases": ["marketo", "marketing automation"],
+          "weight": 9
+        },
+        {
+          "name": "6sense",
+          "context": "ABM platform and intent data",
+          "aliases": ["6sense", "intent data", "bombora"],
+          "weight": 8
+        },
+        {
+          "name": "Salesforce",
+          "context": "CRM integration and reporting",
+          "aliases": ["salesforce", "sfdc", "crm"],
+          "weight": 8
+        },
+        {
+          "name": "Tableau",
+          "context": "Marketing analytics and dashboards",
+          "aliases": ["tableau", "analytics", "bi"],
+          "weight": 7
+        },
+        {
+          "name": "LinkedIn Ads",
+          "context": "B2B advertising platform",
+          "aliases": ["linkedin ads", "linkedin advertising"],
+          "weight": 7
+        }
+      ]
+    },
+    {
+      "name": "Analytics & Strategy",
+      "skills": [
+        {
+          "name": "Attribution",
+          "context": "Multi-touch attribution connecting spend to revenue",
+          "aliases": ["attribution", "marketing attribution"],
+          "weight": 8
+        },
+        {
+          "name": "Funnel Optimization",
+          "context": "MQL-to-SQL conversion improvements",
+          "aliases": ["funnel", "conversion optimization"],
+          "weight": 8
+        },
+        {
+          "name": "Budget Management",
+          "context": "$2M annual marketing budget ownership",
+          "aliases": ["budget", "budget management"],
+          "weight": 7
+        },
+        {
+          "name": "A/B Testing",
+          "context": "Rigorous testing framework for optimization",
+          "aliases": ["a/b testing", "experimentation"],
+          "weight": 7
+        }
+      ]
+    }
+  ],
+  "skillsSection": {
+    "eyebrow": "Marketing Expertise",
+    "headline": "Skills & Tools",
+    "description": "Full-stack demand generation marketer with deep expertise in B2B pipeline creation.",
+    "summary": [
+      { "title": "Pipeline", "subtitle": "$30M Annual" },
+      { "title": "ABM", "subtitle": "Enterprise Focus" },
+      { "title": "Data", "subtitle": "Driven Decisions" }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Get in Touch",
+    "headline": "Let's Connect",
+    "description": "Seeking Director of Demand Generation or VP Marketing roles at B2B companies.",
+    "ctaText": "Let's discuss how I can build your pipeline engine.",
+    "location": "Berlin, Germany (Open to Remote)",
+    "preferredMethod": "email",
+    "showSocial": true
+  },
+  "custom": [],
+  "jobBoardScoring": {
+    "defaultSkillWeight": 5,
+    "bonuses": {
+      "remotePosition": 15,
+      "regionFriendly": 10,
+      "seniorityMatch": 20,
+      "domainRelevance": 15
+    },
+    "relevantDomains": [
+      "marketing",
+      "demand generation",
+      "growth marketing",
+      "b2b",
+      "saas",
+      "martech",
+      "abm",
+      "pipeline"
+    ],
+    "seniorityKeywords": [
+      "senior",
+      "lead",
+      "director",
+      "head of",
+      "manager",
+      "demand generation",
+      "growth marketing",
+      "marketing ops"
+    ],
+    "temperaturePresets": {
+      "strict": {
+        "value": 0.1,
+        "label": "Strict",
+        "description": "Near-perfect skill matches only"
+      },
+      "balanced": {
+        "value": 0.4,
+        "label": "Balanced",
+        "description": "Good balance of relevance and variety"
+      },
+      "exploratory": {
+        "value": 0.7,
+        "label": "Exploratory",
+        "description": "Partial matches welcome, more variety"
+      },
+      "loose": {
+        "value": 0.95,
+        "label": "Loose",
+        "description": "Show everything with any relevance"
+      }
+    },
+    "skillCeiling": {
+      "baseSkillCount": 8,
+      "temperatureSensitivity": 0.6,
+      "minSkillCount": 4,
+      "maxSkillCount": 12
+    },
+    "scoreWeights": {
+      "skills": 0.6,
+      "bonuses": 0.4
+    }
+  }
+}

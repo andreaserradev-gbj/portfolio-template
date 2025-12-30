@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "title": "Riley Martinez | HR Professional",
+    "description": "SHRM-CP certified HR professional with experience in onboarding, employee relations, and HRIS administration.",
+    "language": "en",
+    "themeColor": "#7c3aed",
+    "url": "https://rileymartinez.com",
+    "ogImage": "/og-image.jpg",
+    "keywords": "HR Assistant, Human Resources, SHRM-CP, Onboarding, Employee Relations, HRIS, Workday, BambooHR",
+    "author": "Riley Martinez",
+    "robots": "index, follow",
+    "ogSiteName": "Riley Martinez Portfolio",
+    "locale": "en_US",
+    "favicon": "/favicon.svg"
+  },
+  "structuredData": {
+    "enabled": true,
+    "employer": {
+      "name": "Seeking Opportunities",
+      "type": "Organization"
+    },
+    "address": {
+      "locality": "Sydney",
+      "country": "AU"
+    },
+    "knowsAbout": [
+      "Human Resources",
+      "Employee Onboarding",
+      "HRIS Administration",
+      "Recruitment",
+      "Employee Relations"
+    ]
+  },
+  "branding": {
+    "name": "Riley Martinez",
+    "logo": null,
+    "showName": true
+  },
+  "navigation": {
+    "links": [
+      {
+        "href": "#hero",
+        "label": "About",
+        "external": false
+      },
+      {
+        "href": "#experience",
+        "label": "Experience",
+        "external": false
+      },
+      {
+        "href": "#skills",
+        "label": "Skills",
+        "external": false
+      },
+      {
+        "href": "#contact",
+        "label": "Contact",
+        "external": false
+      }
+    ]
+  },
+  "social": [
+    {
+      "platform": "linkedin",
+      "url": "https://linkedin.com/in/riley-martinez-hr",
+      "label": "LinkedIn"
+    },
+    {
+      "platform": "email",
+      "value": "riley.martinez.hr@gmail.com",
+      "label": "Email"
+    }
+  ],
+  "analytics": {
+    "vercel": true,
+    "googleAnalytics": null,
+    "plausible": null
+  },
+  "features": {
+    "darkMode": true,
+    "designSystemSwitcher": true,
+    "smoothScroll": true,
+    "reduceMotion": "respect-system"
+  }
+}

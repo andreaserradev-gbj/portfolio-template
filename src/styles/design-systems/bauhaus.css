@@ -1,0 +1,677 @@
+/* Bauhaus Design System - Constructivist Geometric Modernism */
+
+[data-design-system='bauhaus'] {
+  /* Typography - Geometric Sans-Serif */
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Bauhaus Primary Colors */
+  --color-bauhaus-red: #d02020;
+  --color-bauhaus-blue: #1040c0;
+  --color-bauhaus-yellow: #f0c020;
+  --color-bauhaus-black: #121212;
+  --color-bauhaus-white: #f0f0f0;
+
+  /* Color Palette - Off-white Canvas */
+  --color-slate-50: #f7f7f5;
+  --color-slate-100: #f0f0ee;
+  --color-slate-200: #e5e5e3;
+  --color-slate-300: #d4d4d2;
+  --color-slate-400: #a3a3a1;
+  --color-slate-500: #737371;
+  --color-slate-600: #525250;
+  --color-slate-700: #404040;
+  --color-slate-800: #262626;
+  --color-slate-900: #171717;
+  --color-slate-950: #0a0a0a;
+
+  /* Navy - Mapped to Stark Blacks for Bauhaus */
+  --color-navy-50: #f7f7f5;
+  --color-navy-100: #e5e5e3;
+  --color-navy-200: #d4d4d2;
+  --color-navy-300: #a3a3a1;
+  --color-navy-400: #737371;
+  --color-navy-500: #525250;
+  --color-navy-600: #404040;
+  --color-navy-700: #303030;
+  --color-navy-800: #1f1f1f;
+  --color-navy-900: #121212;
+  --color-navy-950: #0a0a0a;
+
+  /* Brass - Mapped to Bauhaus Red (primary accent) */
+  --color-brass-50: #fef2f2;
+  --color-brass-100: #fee2e2;
+  --color-brass-200: #fecaca;
+  --color-brass-300: #fca5a5;
+  --color-brass-400: #f87171;
+  --color-brass-500: #d02020;
+  --color-brass-600: #b91c1c;
+  --color-brass-700: #991b1b;
+  --color-brass-800: #7f1d1d;
+  --color-brass-900: #661414;
+  --color-brass-950: #450a0a;
+
+  /* Semantic Colors - Light Mode */
+  --color-background: #f0f0f0;
+  --color-foreground: #121212;
+  --color-muted: #e5e5e3;
+  --color-muted-foreground: #525250;
+  --color-card: #ffffff;
+  --color-card-foreground: #121212;
+  --color-border: #121212;
+  --color-primary: #121212;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #e5e5e3;
+  --color-secondary-foreground: #121212;
+  --color-accent: #d02020;
+  --color-accent-foreground: #ffffff;
+
+  /* Border Radius - Binary: 0 or full */
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-2xl: 0;
+  --radius-card: 0;
+  --radius-button: 0;
+  --radius-badge: 9999px;
+
+  /* Shadows - Hard Offset (No Blur) */
+  --shadow-sm: 2px 2px 0px 0px #121212;
+  --shadow-md: 4px 4px 0px 0px #121212;
+  --shadow-lg: 6px 6px 0px 0px #121212;
+  --shadow-xl: 8px 8px 0px 0px #121212;
+  --shadow-card: 6px 6px 0px 0px #121212;
+  --shadow-card-hover: 4px 4px 0px 0px #121212;
+  --shadow-button: 4px 4px 0px 0px #121212;
+  --shadow-button-hover: 2px 2px 0px 0px #121212;
+  --shadow-button-active: 0px 0px 0px 0px #121212;
+
+  /* Borders - Thick Black Lines */
+  --border-width: 2px;
+  --border-style: solid;
+
+  /* Decorative - Slight rotation for visual interest */
+  --rotation-card: 0deg;
+  --paper-texture-opacity: 0;
+
+  /* Flip Card Animation - Sharp, deliberate */
+  --flip-duration: 400ms;
+  --flip-easing: ease-out;
+}
+
+/* Bauhaus Dark Mode */
+[data-design-system='bauhaus'].dark {
+  /* Semantic Colors - Dark Mode */
+  --color-background: #121212;
+  --color-foreground: #f0f0f0;
+  --color-muted: #262626;
+  --color-muted-foreground: #a3a3a1;
+  --color-card: #1a1a1a;
+  --color-card-foreground: #f0f0f0;
+  --color-border: #f0f0f0;
+  --color-primary: #f0f0f0;
+  --color-primary-foreground: #121212;
+  --color-secondary: #262626;
+  --color-secondary-foreground: #f0f0f0;
+  --color-accent: #f87171;
+  --color-accent-foreground: #121212;
+
+  /* Shadows - Light offset for dark mode */
+  --shadow-sm: 2px 2px 0px 0px #525250;
+  --shadow-md: 4px 4px 0px 0px #525250;
+  --shadow-lg: 6px 6px 0px 0px #525250;
+  --shadow-xl: 8px 8px 0px 0px #525250;
+  --shadow-card: 6px 6px 0px 0px #404040;
+  --shadow-card-hover: 4px 4px 0px 0px #404040;
+  --shadow-button: 4px 4px 0px 0px #525250;
+  --shadow-button-hover: 2px 2px 0px 0px #525250;
+  --shadow-button-active: 0px 0px 0px 0px transparent;
+}
+
+/* Bauhaus Body - Dot Grid Pattern Background */
+[data-design-system='bauhaus'] {
+  background-color: var(--color-background);
+  background-image: radial-gradient(#d4d4d2 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+}
+
+[data-design-system='bauhaus'].dark {
+  background-image: radial-gradient(#404040 1.5px, transparent 1.5px);
+}
+
+/* Bauhaus Heading Styles - Bold Uppercase */
+[data-design-system='bauhaus'] h1,
+[data-design-system='bauhaus'] h2,
+[data-design-system='bauhaus'] h3 {
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+/* Bauhaus Card - Geometric with Corner Decoration */
+[data-design-system='bauhaus'] .card {
+  position: relative;
+  border: var(--border-width) solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 0.2s ease-out,
+    box-shadow 0.2s ease-out;
+}
+
+[data-design-system='bauhaus'] .card::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 16px;
+  height: 16px;
+  background: var(--color-bauhaus-red);
+  z-index: 10;
+}
+
+/* Rotate through primary colors */
+[data-design-system='bauhaus'] .card:nth-child(3n + 2)::before {
+  background: var(--color-bauhaus-blue);
+  border-radius: 9999px;
+}
+
+[data-design-system='bauhaus'] .card:nth-child(3n)::before {
+  background: var(--color-bauhaus-yellow);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/* Card Hover - Lift Up */
+[data-design-system='bauhaus'] .card:hover {
+  transform: translateY(-2px) translateX(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Bauhaus Button Component - Border and Press Effect */
+/* Only target actual Button components (have shadow-button class), not generic buttons */
+[data-design-system='bauhaus'] .shadow-button {
+  border: var(--border-width) solid var(--color-border);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+[data-design-system='bauhaus'] .shadow-button:hover {
+  transform: translate(-1px, -1px);
+}
+
+[data-design-system='bauhaus'] .shadow-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: none !important;
+}
+
+/* Fix dark mode button text color - white on red background */
+/* Target the Tailwind dark variant class (dark:bg-brass-500) */
+[data-design-system='bauhaus'].dark .dark\:bg-brass-500 {
+  color: #ffffff !important;
+}
+
+/* Also fix navy-950 text color on red backgrounds in dark mode */
+[data-design-system='bauhaus'].dark .dark\:text-navy-950 {
+  color: #ffffff !important;
+}
+
+/* Selection Color - Bauhaus Yellow */
+[data-design-system='bauhaus'] ::selection {
+  background-color: var(--color-bauhaus-yellow);
+  color: #121212;
+}
+
+[data-design-system='bauhaus'].dark ::selection {
+  background-color: var(--color-bauhaus-blue);
+  color: #f0f0f0;
+}
+
+/* Scrollbar - Bauhaus Styled */
+[data-design-system='bauhaus'] ::-webkit-scrollbar-thumb {
+  background: #121212;
+  border: 2px solid #f0f0f0;
+  border-radius: 0;
+}
+
+[data-design-system='bauhaus'] ::-webkit-scrollbar-track {
+  background: #e5e5e3;
+}
+
+[data-design-system='bauhaus'].dark ::-webkit-scrollbar-thumb {
+  background: #f0f0f0;
+  border-color: #121212;
+}
+
+[data-design-system='bauhaus'].dark ::-webkit-scrollbar-track {
+  background: #262626;
+}
+
+/* Bauhaus Avatar Glow - Geometric Border */
+[data-design-system='bauhaus'] .avatar-glow {
+  background: none;
+  border: 4px solid var(--color-border);
+  padding: 4px;
+  border-radius: 0;
+}
+
+/* Bauhaus Accent Underline - Bold Block */
+[data-design-system='bauhaus'] .accent-underline::after {
+  height: 0.4em;
+  background: var(--color-bauhaus-yellow);
+  border-radius: 0;
+}
+
+[data-design-system='bauhaus'].dark .accent-underline::after {
+  background: var(--color-bauhaus-blue);
+}
+
+/* ========================================
+   BAUHAUS UI ENHANCEMENTS
+   ======================================== */
+
+/* Yellow Pill Badge - For highlighting key text */
+[data-design-system='bauhaus'] .bauhaus-pill {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-bauhaus-yellow);
+  color: #121212;
+  padding: 0.4em 1.2em;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.875em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 2px solid #121212;
+}
+
+[data-design-system='bauhaus'].dark .bauhaus-pill {
+  background: var(--color-bauhaus-yellow);
+  color: #121212;
+  border-color: #121212;
+}
+
+/* Red Blockquote Accent Line */
+[data-design-system='bauhaus'] .bauhaus-quote,
+[data-design-system='bauhaus'] blockquote {
+  border-left: 4px solid var(--color-bauhaus-red);
+  padding-left: 1.5rem;
+  margin-left: 0;
+  font-style: normal;
+}
+
+[data-design-system='bauhaus'].dark .bauhaus-quote,
+[data-design-system='bauhaus'].dark blockquote {
+  border-left-color: var(--color-bauhaus-red);
+}
+
+/* Shape-Based Number Badges */
+.bauhaus-shape-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: #ffffff;
+  border: 2px solid #121212;
+}
+
+/* Circle badge (red) */
+[data-design-system='bauhaus'] .bauhaus-shape-badge--circle {
+  background: var(--color-bauhaus-red);
+  border-radius: 9999px;
+}
+
+/* Square badge (blue) */
+[data-design-system='bauhaus'] .bauhaus-shape-badge--square {
+  background: var(--color-bauhaus-blue);
+  border-radius: 0;
+}
+
+/* Diamond badge (yellow) */
+[data-design-system='bauhaus'] .bauhaus-shape-badge--diamond {
+  background: var(--color-bauhaus-yellow);
+  color: #121212;
+  border-radius: 0;
+  transform: rotate(45deg);
+}
+
+[data-design-system='bauhaus'] .bauhaus-shape-badge--diamond > * {
+  transform: rotate(-45deg);
+}
+
+/* Feature Icon Frame */
+[data-design-system='bauhaus'] .bauhaus-icon-frame {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: 2px solid var(--color-border);
+  background: transparent;
+}
+
+[data-design-system='bauhaus'] .bauhaus-icon-frame--red::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 12px;
+  height: 12px;
+  background: var(--color-bauhaus-red);
+  border-radius: 9999px;
+}
+
+[data-design-system='bauhaus'] .bauhaus-icon-frame--blue::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 12px;
+  height: 12px;
+  background: var(--color-bauhaus-blue);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+[data-design-system='bauhaus'] .bauhaus-icon-frame--yellow::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 12px;
+  height: 12px;
+  background: var(--color-bauhaus-yellow);
+}
+
+/* Color-Blocked Section Variants */
+[data-design-system='bauhaus'] .bauhaus-section-blue {
+  background: var(--color-bauhaus-blue) !important;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.1) 1.5px,
+    transparent 1.5px
+  ) !important;
+  background-size: 20px 20px !important;
+  color: #ffffff;
+}
+
+[data-design-system='bauhaus'] .bauhaus-section-blue h1,
+[data-design-system='bauhaus'] .bauhaus-section-blue h2,
+[data-design-system='bauhaus'] .bauhaus-section-blue h3,
+[data-design-system='bauhaus'] .bauhaus-section-blue p {
+  color: #ffffff;
+}
+
+[data-design-system='bauhaus'] .bauhaus-section-red {
+  background: var(--color-bauhaus-red) !important;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.1) 1.5px,
+    transparent 1.5px
+  ) !important;
+  background-size: 20px 20px !important;
+  color: #ffffff;
+}
+
+[data-design-system='bauhaus'] .bauhaus-section-red h1,
+[data-design-system='bauhaus'] .bauhaus-section-red h2,
+[data-design-system='bauhaus'] .bauhaus-section-red h3,
+[data-design-system='bauhaus'] .bauhaus-section-red p {
+  color: #ffffff;
+}
+
+[data-design-system='bauhaus'] .bauhaus-section-yellow {
+  background: var(--color-bauhaus-yellow) !important;
+  background-image: radial-gradient(
+    rgba(0, 0, 0, 0.08) 1.5px,
+    transparent 1.5px
+  ) !important;
+  background-size: 20px 20px !important;
+  color: #121212;
+}
+
+[data-design-system='bauhaus'] .bauhaus-section-yellow h1,
+[data-design-system='bauhaus'] .bauhaus-section-yellow h2,
+[data-design-system='bauhaus'] .bauhaus-section-yellow h3,
+[data-design-system='bauhaus'] .bauhaus-section-yellow p {
+  color: #121212;
+}
+
+/* Large Decorative Background Shapes */
+[data-design-system='bauhaus'] .bauhaus-deco-circle {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-design-system='bauhaus'] .bauhaus-deco-circle--red {
+  background: var(--color-bauhaus-red);
+  opacity: 0.15;
+}
+
+[data-design-system='bauhaus'] .bauhaus-deco-circle--blue {
+  background: var(--color-bauhaus-blue);
+  opacity: 0.15;
+}
+
+[data-design-system='bauhaus'] .bauhaus-deco-circle--yellow {
+  background: var(--color-bauhaus-yellow);
+  opacity: 0.2;
+}
+
+[data-design-system='bauhaus'] .bauhaus-deco-circle--outline {
+  background: transparent;
+  border: 3px solid var(--color-border);
+  opacity: 0.3;
+}
+
+[data-design-system='bauhaus'] .bauhaus-deco-triangle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+[data-design-system='bauhaus'] .bauhaus-deco-triangle--red {
+  background: var(--color-bauhaus-red);
+  opacity: 0.15;
+}
+
+[data-design-system='bauhaus'] .bauhaus-deco-triangle--outline {
+  background: transparent;
+  border: 3px solid var(--color-border);
+  opacity: 0.3;
+  clip-path: none;
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 173px solid var(--color-border);
+}
+
+[data-design-system='bauhaus'] .bauhaus-deco-square {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-design-system='bauhaus'] .bauhaus-deco-square--blue {
+  background: var(--color-bauhaus-blue);
+  opacity: 0.15;
+}
+
+[data-design-system='bauhaus'] .bauhaus-deco-square--outline {
+  background: transparent;
+  border: 3px solid var(--color-border);
+  opacity: 0.3;
+}
+
+/* Hero Section Decorative Shapes */
+[data-design-system='bauhaus'] #hero {
+  position: relative;
+  overflow: hidden;
+}
+
+[data-design-system='bauhaus'] #hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: var(--color-bauhaus-yellow);
+  border-radius: 9999px;
+  opacity: 0.12;
+  z-index: 0;
+}
+
+[data-design-system='bauhaus'] #hero::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: var(--color-bauhaus-red);
+  opacity: 0.1;
+  z-index: 0;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/* Impact Section Decorative Shapes */
+[data-design-system='bauhaus'] #impact {
+  position: relative;
+  overflow: hidden;
+}
+
+[data-design-system='bauhaus'] #impact::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -80px;
+  width: 160px;
+  height: 160px;
+  border: 3px solid var(--color-border);
+  border-radius: 9999px;
+  opacity: 0.2;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+[data-design-system='bauhaus'] #impact::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  right: 10%;
+  width: 120px;
+  height: 120px;
+  background: var(--color-bauhaus-blue);
+  opacity: 0.1;
+  z-index: 0;
+}
+
+/* Experience Section Decorative Shapes */
+[data-design-system='bauhaus'] #experience {
+  position: relative;
+  overflow: hidden;
+}
+
+[data-design-system='bauhaus'] #experience::before {
+  content: '';
+  position: absolute;
+  top: 100px;
+  right: -60px;
+  width: 180px;
+  height: 180px;
+  background: var(--color-bauhaus-yellow);
+  opacity: 0.1;
+  transform: rotate(45deg);
+  z-index: 0;
+}
+
+/* Skills Section Decorative Shapes */
+[data-design-system='bauhaus'] #skills {
+  position: relative;
+  overflow: hidden;
+}
+
+[data-design-system='bauhaus'] #skills::before {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 250px;
+  height: 250px;
+  background: var(--color-bauhaus-red);
+  border-radius: 9999px;
+  opacity: 0.08;
+  z-index: 0;
+}
+
+/* Contact Section Decorative Shapes */
+[data-design-system='bauhaus'] #contact {
+  position: relative;
+  overflow: hidden;
+}
+
+[data-design-system='bauhaus'] #contact::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 220px;
+  height: 220px;
+  background: var(--color-bauhaus-blue);
+  border-radius: 9999px;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+[data-design-system='bauhaus'] #contact::after {
+  content: '';
+  position: absolute;
+  bottom: 50px;
+  left: -40px;
+  width: 100px;
+  height: 100px;
+  background: var(--color-bauhaus-yellow);
+  opacity: 0.15;
+  z-index: 0;
+}
+
+/* Dark mode adjustments for decorative shapes */
+[data-design-system='bauhaus'].dark #hero::before {
+  opacity: 0.08;
+}
+
+[data-design-system='bauhaus'].dark #hero::after {
+  opacity: 0.06;
+}
+
+[data-design-system='bauhaus'].dark #impact::before {
+  border-color: #404040;
+  opacity: 0.3;
+}
+
+[data-design-system='bauhaus'].dark #impact::after {
+  opacity: 0.08;
+}
+
+[data-design-system='bauhaus'].dark #experience::before {
+  opacity: 0.06;
+}
+
+[data-design-system='bauhaus'].dark #skills::before {
+  opacity: 0.05;
+}
+
+[data-design-system='bauhaus'].dark #contact::before {
+  opacity: 0.06;
+}
+
+[data-design-system='bauhaus'].dark #contact::after {
+  opacity: 0.1;
+}

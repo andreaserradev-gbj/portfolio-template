@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "title": "Taylor Nguyen | UX Designer",
+    "description": "User-centered designer with 3+ years crafting intuitive digital experiences. Expert in mobile design, design systems, and user research.",
+    "language": "en",
+    "themeColor": "#ec4899",
+    "url": "https://taylornguyen.design",
+    "ogImage": "/og-image.jpg",
+    "keywords": "UX Designer, Product Designer, UI/UX, User Experience, Figma, Design Systems, Mobile Design, User Research",
+    "author": "Taylor Nguyen",
+    "robots": "index, follow",
+    "ogSiteName": "Taylor Nguyen Design Portfolio",
+    "locale": "en_US",
+    "favicon": "/favicon.svg"
+  },
+  "structuredData": {
+    "enabled": true,
+    "employer": {
+      "name": "Open to Opportunities",
+      "type": "Organization"
+    },
+    "address": {
+      "locality": "Toronto",
+      "country": "CA"
+    },
+    "knowsAbout": [
+      "UX Design",
+      "Product Design",
+      "User Research",
+      "Design Systems",
+      "Figma",
+      "Prototyping"
+    ]
+  },
+  "branding": {
+    "name": "Taylor Nguyen",
+    "logo": null,
+    "showName": true
+  },
+  "navigation": {
+    "links": [
+      {
+        "href": "#hero",
+        "label": "About",
+        "external": false
+      },
+      {
+        "href": "#impact",
+        "label": "Impact",
+        "external": false
+      },
+      {
+        "href": "#experience",
+        "label": "Experience",
+        "external": false
+      },
+      {
+        "href": "#achievements",
+        "label": "Work",
+        "external": false
+      },
+      {
+        "href": "#skills",
+        "label": "Skills",
+        "external": false
+      },
+      {
+        "href": "#contact",
+        "label": "Contact",
+        "external": false
+      }
+    ],
+    "cta": {
+      "text": "View Portfolio",
+      "href": "#achievements"
+    }
+  },
+  "social": [
+    {
+      "platform": "dribbble",
+      "url": "https://dribbble.com/taylornguyen",
+      "label": "Dribbble"
+    },
+    {
+      "platform": "behance",
+      "url": "https://behance.net/taylornguyen",
+      "label": "Behance"
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://linkedin.com/in/taylor-nguyen-ux",
+      "label": "LinkedIn"
+    },
+    {
+      "platform": "email",
+      "value": "taylor.nguyen.design@gmail.com",
+      "label": "Email"
+    }
+  ],
+  "analytics": {
+    "vercel": true,
+    "googleAnalytics": null,
+    "plausible": null
+  },
+  "features": {
+    "darkMode": true,
+    "designSystemSwitcher": true,
+    "smoothScroll": true,
+    "reduceMotion": "respect-system"
+  }
+}

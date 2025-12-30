@@ -1,0 +1,332 @@
+{
+  "variables": {
+    "graduationYear": 2024
+  },
+  "sections": ["hero", "experience", "achievements", "skills", "contact"],
+  "hero": {
+    "name": "Jordan Rivera",
+    "title": "Software Engineer",
+    "tagline": "Wharton MBA + CS graduate passionate about building impactful software. Combining technical skills with business acumen to solve real-world problems.",
+    "cta": {
+      "primary": {
+        "text": "View Projects",
+        "target": "#achievements"
+      },
+      "secondary": {
+        "text": "Contact Me",
+        "target": "#contact"
+      }
+    },
+    "statusBadge": {
+      "text": "Open to Entry-Level Opportunities",
+      "active": true
+    },
+    "valuePills": [
+      { "label": "CS + MBA", "sublabel": "Dual Degree", "highlight": true },
+      { "label": "Wharton", "sublabel": "Class of '24", "highlight": false },
+      { "label": "3", "sublabel": "Internships", "highlight": false }
+    ],
+    "quickStats": [
+      {
+        "value": "3.8",
+        "suffix": "",
+        "label": "GPA"
+      },
+      {
+        "value": "12",
+        "suffix": "+",
+        "label": "Projects Completed"
+      }
+    ],
+    "badge": {
+      "value": "Penn",
+      "title": "University",
+      "subtitle": "CS + Wharton MBA"
+    }
+  },
+  "experience": [
+    {
+      "company": "Stripe",
+      "role": "Software Engineering Intern",
+      "period": "May 2023 - August 2023",
+      "location": "San Francisco, CA",
+      "highlights": [
+        "Built internal dashboard reducing payment dispute resolution time by 35%",
+        "Implemented React components for merchant analytics, used by 500+ internal users",
+        "Collaborated with senior engineers on API design for new billing features",
+        "Participated in on-call rotation, resolving 3 production incidents"
+      ],
+      "techStack": ["TypeScript", "React", "Ruby", "PostgreSQL", "GraphQL"]
+    },
+    {
+      "company": "Bloomberg",
+      "role": "Software Engineering Intern",
+      "period": "May 2022 - August 2022",
+      "location": "New York, NY",
+      "highlights": [
+        "Developed Python scripts automating data pipeline monitoring, saving 10 hours/week",
+        "Created visualization tools for financial data analysis using Bloomberg Terminal SDK",
+        "Optimized SQL queries reducing dashboard load time by 40%",
+        "Presented technical demos to team of 15 engineers"
+      ],
+      "techStack": ["Python", "C++", "SQL", "Bloomberg API", "Jupyter"]
+    },
+    {
+      "company": "University of Pennsylvania",
+      "role": "Teaching Assistant - CIS 120",
+      "period": "September 2021 - May 2023",
+      "location": "Philadelphia, PA",
+      "highlights": [
+        "Led weekly recitations for 30+ students in introductory programming course",
+        "Held 5+ office hours weekly, helping students debug Java and OCaml code",
+        "Graded assignments and provided constructive feedback on code quality",
+        "Mentored 10 students through capstone project development"
+      ],
+      "techStack": ["Java", "OCaml", "Teaching", "Mentorship"]
+    }
+  ],
+  "achievements": [
+    {
+      "id": "capstone",
+      "title": "AI Study Planner - Capstone Project",
+      "category": "project",
+      "summary": "ML-powered study scheduling app built for Wharton capstone",
+      "impact": "Adopted by 200+ students, improved study efficiency by 25%",
+      "details": [
+        "Built full-stack application using React Native and Python FastAPI",
+        "Implemented ML model predicting optimal study times based on performance data",
+        "Integrated with Google Calendar and Canvas LMS APIs",
+        "Deployed on AWS using Lambda and DynamoDB for cost-effective scaling"
+      ],
+      "metrics": [
+        { "label": "Active Users", "value": "200+" },
+        { "label": "Study Efficiency", "value": "+25%" }
+      ]
+    },
+    {
+      "id": "hackathon",
+      "title": "PennApps XXV - First Place",
+      "category": "award",
+      "summary": "Won top prize at Penn's flagship hackathon with accessibility tool",
+      "impact": "Built browser extension helping visually impaired users navigate web",
+      "details": [
+        "Developed Chrome extension using computer vision for image descriptions",
+        "Implemented text-to-speech with customizable voice and speed settings",
+        "Built in 36 hours with team of 4 students",
+        "Selected from 150+ competing teams"
+      ],
+      "metrics": [
+        { "label": "Teams Competing", "value": "150+" },
+        { "label": "Build Time", "value": "36hrs" }
+      ]
+    },
+    {
+      "id": "opensource",
+      "title": "Open Source Contribution - React Query",
+      "category": "contribution",
+      "summary": "Contributed documentation improvements to popular React library",
+      "impact": "Merged PRs improving developer experience for 2M+ weekly downloads",
+      "details": [
+        "Fixed documentation inconsistencies across 15+ pages",
+        "Added TypeScript examples for common use cases",
+        "Collaborated with maintainers through code review process",
+        "Learned open source contribution workflow and best practices"
+      ],
+      "metrics": [
+        { "label": "PRs Merged", "value": "3" },
+        { "label": "Weekly Downloads", "value": "2M+" }
+      ]
+    }
+  ],
+  "skillCategories": [
+    {
+      "name": "Languages",
+      "skills": [
+        {
+          "name": "Python",
+          "context": "ML projects, automation scripts, data analysis",
+          "aliases": ["python", "py", "python3"],
+          "weight": 7
+        },
+        {
+          "name": "JavaScript",
+          "context": "Full-stack web development at Stripe internship",
+          "aliases": ["js", "javascript", "ecmascript"],
+          "weight": 7
+        },
+        {
+          "name": "TypeScript",
+          "context": "React applications with type safety",
+          "aliases": ["ts", "typescript"],
+          "weight": 6
+        },
+        {
+          "name": "Java",
+          "context": "Teaching assistant for CIS 120, algorithms coursework",
+          "aliases": ["java", "jvm"],
+          "weight": 6
+        },
+        {
+          "name": "SQL",
+          "context": "Database queries at Bloomberg, course projects",
+          "aliases": ["sql", "postgresql", "mysql"],
+          "weight": 5
+        }
+      ]
+    },
+    {
+      "name": "Frameworks & Tools",
+      "skills": [
+        {
+          "name": "React",
+          "context": "Stripe internship, personal projects",
+          "aliases": ["react", "reactjs", "react.js"],
+          "weight": 7
+        },
+        {
+          "name": "Node.js",
+          "context": "Backend development for capstone project",
+          "aliases": ["node", "nodejs", "node.js"],
+          "weight": 6
+        },
+        {
+          "name": "Flask",
+          "context": "Python web applications and APIs",
+          "aliases": ["flask", "python flask"],
+          "weight": 5
+        },
+        {
+          "name": "Git",
+          "context": "Version control across all projects and internships",
+          "aliases": ["git", "github", "version control"],
+          "weight": 6
+        },
+        {
+          "name": "AWS",
+          "context": "Lambda, S3, DynamoDB for capstone deployment",
+          "aliases": ["aws", "amazon web services", "cloud"],
+          "weight": 5
+        },
+        {
+          "name": "Docker",
+          "context": "Containerization for development environments",
+          "aliases": ["docker", "containers"],
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "name": "Leadership & Business",
+      "skills": [
+        {
+          "name": "Team Leadership",
+          "context": "Led hackathon teams and group projects at Wharton",
+          "weight": 6
+        },
+        {
+          "name": "Technical Presentation",
+          "context": "Presented to engineering teams at Bloomberg and Stripe",
+          "weight": 5
+        },
+        {
+          "name": "Business Analysis",
+          "context": "MBA coursework in strategy, finance, and operations",
+          "weight": 5
+        },
+        {
+          "name": "Agile/Scrum",
+          "context": "Participated in sprints during internships",
+          "aliases": ["agile", "scrum"],
+          "weight": 4
+        }
+      ]
+    }
+  ],
+  "skillsSection": {
+    "eyebrow": "Technical Skills",
+    "headline": "Skills & Technologies",
+    "description": "Strong foundation in computer science fundamentals with practical experience from internships at top tech companies.",
+    "summary": [
+      { "title": "Full-Stack", "subtitle": "Web Development" },
+      { "title": "Python", "subtitle": "Data & ML" },
+      { "title": "Business", "subtitle": "MBA Foundation" }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Get in Touch",
+    "headline": "Let's Connect",
+    "description": "I'm actively seeking entry-level software engineering roles. Open to relocating for the right opportunity.",
+    "ctaText": "Interested in my background? I'd love to chat about opportunities.",
+    "location": "Philadelphia, PA (Open to Relocation)",
+    "preferredMethod": "email",
+    "showSocial": true
+  },
+  "custom": [],
+  "jobBoardScoring": {
+    "defaultSkillWeight": 4,
+    "bonuses": {
+      "remotePosition": 15,
+      "regionFriendly": 10,
+      "seniorityMatch": 25,
+      "domainRelevance": 15
+    },
+    "relevantDomains": [
+      "tech",
+      "software",
+      "startup",
+      "saas",
+      "fintech",
+      "edtech",
+      "healthtech",
+      "web",
+      "mobile",
+      "cloud"
+    ],
+    "seniorityKeywords": [
+      "junior",
+      "entry",
+      "entry-level",
+      "new grad",
+      "graduate",
+      "associate",
+      "early career",
+      "intern",
+      "l3",
+      "sde i",
+      "swe i",
+      "software engineer i"
+    ],
+    "temperaturePresets": {
+      "strict": {
+        "value": 0.1,
+        "label": "Strict",
+        "description": "Near-perfect skill matches only"
+      },
+      "balanced": {
+        "value": 0.4,
+        "label": "Balanced",
+        "description": "Good balance of relevance and variety"
+      },
+      "exploratory": {
+        "value": 0.7,
+        "label": "Exploratory",
+        "description": "Partial matches welcome, more variety"
+      },
+      "loose": {
+        "value": 0.95,
+        "label": "Loose",
+        "description": "Show everything with any relevance"
+      }
+    },
+    "skillCeiling": {
+      "baseSkillCount": 8,
+      "temperatureSensitivity": 0.6,
+      "minSkillCount": 4,
+      "maxSkillCount": 12
+    },
+    "scoreWeights": {
+      "skills": 0.55,
+      "bonuses": 0.45
+    }
+  }
+}

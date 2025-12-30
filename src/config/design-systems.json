@@ -1,0 +1,529 @@
+{
+  "defaultSystem": "corporate",
+  "defaults": {
+    "spacing": {
+      "unit": "0.25rem",
+      "scale": [0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24, 32, 40, 48, 64]
+    },
+    "typography": {
+      "scale": {
+        "xs": "0.75rem",
+        "sm": "0.875rem",
+        "base": "1rem",
+        "lg": "1.125rem",
+        "xl": "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "1.875rem",
+        "4xl": "2.25rem",
+        "5xl": "3rem"
+      },
+      "lineHeight": {
+        "tight": 1.25,
+        "normal": 1.5,
+        "relaxed": 1.75
+      }
+    },
+    "animation": {
+      "duration": {
+        "fast": "150ms",
+        "normal": "300ms",
+        "slow": "500ms"
+      },
+      "easing": {
+        "default": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "in": "cubic-bezier(0.4, 0, 1, 1)",
+        "out": "cubic-bezier(0, 0, 0.2, 1)",
+        "bounce": "cubic-bezier(0.175, 0.885, 0.32, 1.275)"
+      }
+    },
+    "layout": {
+      "maxWidth": "1200px",
+      "contentWidth": "768px",
+      "sectionPadding": "4rem"
+    }
+  },
+  "systems": [
+    {
+      "id": "corporate",
+      "name": "Corporate Professional",
+      "description": "Professional Navy & Brass aesthetic with refined shadows and modern typography",
+      "supportsDarkMode": true,
+      "fonts": {
+        "display": {
+          "family": "Space Grotesk",
+          "fallback": "system-ui, sans-serif",
+          "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        },
+        "body": {
+          "family": "DM Sans",
+          "fallback": "system-ui, sans-serif",
+          "googleFontsUrl": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+        },
+        "mono": {
+          "family": "JetBrains Mono",
+          "fallback": "monospace",
+          "googleFontsUrl": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
+        }
+      },
+      "tokens": {
+        "light": {
+          "colors": {
+            "background": "#f8fafc",
+            "foreground": "#0a1929",
+            "muted": "#f1f5f9",
+            "muted-foreground": "#64748b",
+            "card": "#ffffff",
+            "card-foreground": "#102a43",
+            "border": "#e2e8f0",
+            "primary": "#102a43",
+            "primary-foreground": "#ffffff",
+            "secondary": "#f1f5f9",
+            "secondary-foreground": "#102a43",
+            "accent": "#c49545",
+            "accent-foreground": "#ffffff"
+          },
+          "shadows": {
+            "sm": "0 1px 2px 0 rgb(0 0 0 / 0.03)",
+            "md": "0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05)",
+            "lg": "0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05)",
+            "xl": "0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05)",
+            "card": "0 1px 3px 0 rgb(0 0 0 / 0.04), 0 1px 2px -1px rgb(0 0 0 / 0.04)",
+            "card-hover": "0 10px 40px -10px rgb(0 0 0 / 0.08)",
+            "button": "0 1px 2px 0 rgb(0 0 0 / 0.03)"
+          },
+          "radius": {
+            "sm": "0.25rem",
+            "md": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "2xl": "1.5rem",
+            "card": "0.75rem",
+            "button": "0.5rem",
+            "badge": "9999px"
+          },
+          "border": {
+            "width": "1px",
+            "style": "solid"
+          },
+          "decorative": {
+            "rotation-card": "0deg",
+            "paper-texture-opacity": "0.015",
+            "flip-duration": "400ms",
+            "flip-easing": "ease-in-out"
+          }
+        },
+        "dark": {
+          "colors": {
+            "background": "#0c1a2a",
+            "foreground": "#f1f5f9",
+            "muted": "#102a43",
+            "muted-foreground": "#94a3b8",
+            "card": "#102a43",
+            "card-foreground": "#f1f5f9",
+            "border": "#334e68",
+            "primary": "#d4a855",
+            "primary-foreground": "#0a1929",
+            "secondary": "#243b53",
+            "secondary-foreground": "#f1f5f9",
+            "accent": "#d4a855",
+            "accent-foreground": "#0a1929"
+          },
+          "shadows": {
+            "sm": "0 1px 2px 0 rgb(0 0 0 / 0.3)",
+            "md": "0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3)",
+            "lg": "0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.3)",
+            "xl": "0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.3)",
+            "card": "0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.2)",
+            "card-hover": "0 10px 40px -10px rgb(0 0 0 / 0.5), 0 0 20px -5px rgba(196, 149, 69, 0.1)",
+            "button": "0 1px 2px 0 rgb(0 0 0 / 0.3)"
+          },
+          "radius": {
+            "sm": "0.25rem",
+            "md": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "2xl": "1.5rem",
+            "card": "0.75rem",
+            "button": "0.5rem",
+            "badge": "9999px"
+          },
+          "border": {
+            "width": "1px",
+            "style": "solid"
+          },
+          "decorative": {
+            "rotation-card": "0deg",
+            "paper-texture-opacity": "0.03",
+            "flip-duration": "400ms",
+            "flip-easing": "ease-in-out"
+          }
+        }
+      }
+    },
+    {
+      "id": "hand-drawn",
+      "name": "Hand-Drawn Sketch",
+      "description": "Authentic sketch/paper aesthetic with handwritten fonts and wobbly borders",
+      "supportsDarkMode": true,
+      "fonts": {
+        "display": {
+          "family": "Kalam",
+          "fallback": "cursive",
+          "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap"
+        },
+        "body": {
+          "family": "Patrick Hand",
+          "fallback": "cursive",
+          "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"
+        },
+        "mono": {
+          "family": "Patrick Hand",
+          "fallback": "cursive",
+          "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"
+        }
+      },
+      "tokens": {
+        "light": {
+          "colors": {
+            "background": "#fdfbf7",
+            "foreground": "#2d2d2d",
+            "muted": "#e5e0d8",
+            "muted-foreground": "#7a7268",
+            "card": "#ffffff",
+            "card-foreground": "#2d2d2d",
+            "border": "#a8a095",
+            "primary": "#2d2d2d",
+            "primary-foreground": "#ffffff",
+            "secondary": "#e5e0d8",
+            "secondary-foreground": "#2d2d2d",
+            "accent": "#ff4d4d",
+            "accent-foreground": "#ffffff"
+          },
+          "shadows": {
+            "sm": "2px 2px 0px 0px #a8a095",
+            "md": "3px 3px 0px 0px #a8a095",
+            "lg": "4px 4px 0px 0px #a8a095",
+            "xl": "6px 6px 0px 0px #a8a095",
+            "card": "4px 4px 0px 0px #a8a095",
+            "card-hover": "1px 1px 0px 0px #a8a095",
+            "button": "3px 3px 0px 0px #a8a095"
+          },
+          "radius": {
+            "sm": "2px 8px 2px 8px / 8px 2px 8px 2px",
+            "md": "8px 15px 8px 15px / 15px 8px 15px 8px",
+            "lg": "15px 30px 15px 30px / 30px 15px 30px 15px",
+            "xl": "30px 50px 30px 50px / 50px 30px 50px 30px",
+            "2xl": "40px 60px 40px 60px / 60px 40px 60px 40px",
+            "card": "255px 15px 225px 15px / 15px 225px 15px 255px",
+            "button": "30px 2px 30px 2px / 2px 30px 2px 30px",
+            "badge": "45px 5px 45px 5px / 5px 45px 5px 45px"
+          },
+          "border": {
+            "width": "2px",
+            "style": "solid"
+          },
+          "decorative": {
+            "rotation-card": "0deg",
+            "paper-texture-opacity": "0",
+            "flip-duration": "300ms",
+            "flip-easing": "ease-out"
+          }
+        },
+        "dark": {
+          "colors": {
+            "background": "#0a1525",
+            "foreground": "#f1f5f9",
+            "muted": "#1a2d44",
+            "muted-foreground": "#94a3b8",
+            "card": "#142236",
+            "card-foreground": "#f1f5f9",
+            "border": "#486581",
+            "primary": "#f1f5f9",
+            "primary-foreground": "#0c1a2a",
+            "secondary": "#1e293b",
+            "secondary-foreground": "#f1f5f9",
+            "accent": "#ff6b6b",
+            "accent-foreground": "#0c1a2a"
+          },
+          "shadows": {
+            "sm": "2px 2px 0px 0px #486581",
+            "md": "3px 3px 0px 0px #486581",
+            "lg": "4px 4px 0px 0px #486581",
+            "xl": "6px 6px 0px 0px #486581",
+            "card": "4px 4px 0px 0px #486581",
+            "card-hover": "1px 1px 0px 0px #486581",
+            "button": "3px 3px 0px 0px #486581"
+          },
+          "radius": {
+            "sm": "2px 8px 2px 8px / 8px 2px 8px 2px",
+            "md": "8px 15px 8px 15px / 15px 8px 15px 8px",
+            "lg": "15px 30px 15px 30px / 30px 15px 30px 15px",
+            "xl": "30px 50px 30px 50px / 50px 30px 50px 30px",
+            "2xl": "40px 60px 40px 60px / 60px 40px 60px 40px",
+            "card": "255px 15px 225px 15px / 15px 225px 15px 255px",
+            "button": "30px 2px 30px 2px / 2px 30px 2px 30px",
+            "badge": "45px 5px 45px 5px / 5px 45px 5px 45px"
+          },
+          "border": {
+            "width": "2px",
+            "style": "solid"
+          },
+          "decorative": {
+            "rotation-card": "0deg",
+            "paper-texture-opacity": "0",
+            "flip-duration": "300ms",
+            "flip-easing": "ease-out"
+          }
+        }
+      }
+    },
+    {
+      "id": "automotive",
+      "name": "Automotive Industrial",
+      "description": "Neumorphic industrial aesthetic inspired by Dieter Rams and control panels",
+      "supportsDarkMode": true,
+      "fonts": {
+        "display": {
+          "family": "Inter",
+          "fallback": "system-ui, sans-serif",
+          "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        },
+        "body": {
+          "family": "Inter",
+          "fallback": "system-ui, sans-serif",
+          "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        },
+        "mono": {
+          "family": "JetBrains Mono",
+          "fallback": "monospace",
+          "googleFontsUrl": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
+        }
+      },
+      "tokens": {
+        "light": {
+          "colors": {
+            "background": "#e0e5ec",
+            "foreground": "#121010",
+            "muted": "#d1d9e6",
+            "muted-foreground": "#636e72",
+            "card": "#e0e5ec",
+            "card-foreground": "#121010",
+            "border": "#babecc",
+            "primary": "#121010",
+            "primary-foreground": "#e0e5ec",
+            "secondary": "#d1d9e6",
+            "secondary-foreground": "#121010",
+            "accent": "#ff4757",
+            "accent-foreground": "#ffffff"
+          },
+          "shadows": {
+            "sm": "2px 2px 4px #babecc, -2px -2px 4px #ffffff",
+            "md": "4px 4px 8px #babecc, -4px -4px 8px #ffffff",
+            "lg": "6px 6px 12px #babecc, -6px -6px 12px #ffffff",
+            "xl": "8px 8px 16px #babecc, -8px -8px 16px #ffffff",
+            "card": "6px 6px 12px #babecc, -6px -6px 12px #ffffff",
+            "card-hover": "8px 8px 16px #babecc, -8px -8px 16px #ffffff",
+            "button": "4px 4px 8px #babecc, -4px -4px 8px #ffffff"
+          },
+          "radius": {
+            "sm": "0.375rem",
+            "md": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "2xl": "1.5rem",
+            "card": "1rem",
+            "button": "0.75rem",
+            "badge": "9999px"
+          },
+          "border": {
+            "width": "1px",
+            "style": "solid"
+          },
+          "decorative": {
+            "rotation-card": "0deg",
+            "paper-texture-opacity": "0",
+            "flip-duration": "350ms",
+            "flip-easing": "cubic-bezier(0.175, 0.885, 0.32, 1.275)"
+          }
+        },
+        "dark": {
+          "colors": {
+            "background": "#121010",
+            "foreground": "#f1f5f9",
+            "muted": "#1e1e1e",
+            "muted-foreground": "#94a3b8",
+            "card": "#1e1e1e",
+            "card-foreground": "#f1f5f9",
+            "border": "#2c2c2c",
+            "primary": "#f1f5f9",
+            "primary-foreground": "#121010",
+            "secondary": "#2c2c2c",
+            "secondary-foreground": "#f1f5f9",
+            "accent": "#ff6b81",
+            "accent-foreground": "#121010"
+          },
+          "shadows": {
+            "sm": "2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.05)",
+            "md": "4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.05)",
+            "lg": "6px 6px 12px rgba(0, 0, 0, 0.5), -6px -6px 12px rgba(255, 255, 255, 0.05)",
+            "xl": "8px 8px 16px rgba(0, 0, 0, 0.5), -8px -8px 16px rgba(255, 255, 255, 0.05)",
+            "card": "6px 6px 12px rgba(0, 0, 0, 0.5), -6px -6px 12px rgba(255, 255, 255, 0.05)",
+            "card-hover": "8px 8px 16px rgba(0, 0, 0, 0.5), -8px -8px 16px rgba(255, 255, 255, 0.08)",
+            "button": "4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.05)"
+          },
+          "radius": {
+            "sm": "0.375rem",
+            "md": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "2xl": "1.5rem",
+            "card": "1rem",
+            "button": "0.75rem",
+            "badge": "9999px"
+          },
+          "border": {
+            "width": "1px",
+            "style": "solid"
+          },
+          "decorative": {
+            "rotation-card": "0deg",
+            "paper-texture-opacity": "0",
+            "flip-duration": "350ms",
+            "flip-easing": "cubic-bezier(0.175, 0.885, 0.32, 1.275)"
+          }
+        }
+      }
+    },
+    {
+      "id": "bauhaus",
+      "name": "Bauhaus Constructivist",
+      "description": "Geometric modernism with primary colors, sharp corners, and bold typography",
+      "supportsDarkMode": true,
+      "fonts": {
+        "display": {
+          "family": "Outfit",
+          "fallback": "system-ui, sans-serif",
+          "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap"
+        },
+        "body": {
+          "family": "Outfit",
+          "fallback": "system-ui, sans-serif",
+          "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
+        },
+        "mono": {
+          "family": "JetBrains Mono",
+          "fallback": "monospace",
+          "googleFontsUrl": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
+        }
+      },
+      "tokens": {
+        "light": {
+          "colors": {
+            "background": "#f0f0f0",
+            "foreground": "#121212",
+            "muted": "#e5e5e3",
+            "muted-foreground": "#525250",
+            "card": "#ffffff",
+            "card-foreground": "#121212",
+            "border": "#121212",
+            "primary": "#121212",
+            "primary-foreground": "#ffffff",
+            "secondary": "#e5e5e3",
+            "secondary-foreground": "#121212",
+            "accent": "#d02020",
+            "accent-foreground": "#ffffff",
+            "palette": {
+              "bauhaus-red": "#d02020",
+              "bauhaus-blue": "#1040c0",
+              "bauhaus-yellow": "#f0c020",
+              "bauhaus-black": "#121212",
+              "bauhaus-white": "#f0f0f0"
+            }
+          },
+          "shadows": {
+            "sm": "2px 2px 0px 0px #121212",
+            "md": "4px 4px 0px 0px #121212",
+            "lg": "6px 6px 0px 0px #121212",
+            "xl": "8px 8px 0px 0px #121212",
+            "card": "6px 6px 0px 0px #121212",
+            "card-hover": "4px 4px 0px 0px #121212",
+            "button": "4px 4px 0px 0px #121212"
+          },
+          "radius": {
+            "sm": "0",
+            "md": "0",
+            "lg": "0",
+            "xl": "0",
+            "2xl": "0",
+            "card": "0",
+            "button": "0",
+            "badge": "9999px"
+          },
+          "border": {
+            "width": "2px",
+            "style": "solid"
+          },
+          "decorative": {
+            "rotation-card": "0deg",
+            "paper-texture-opacity": "0",
+            "flip-duration": "400ms",
+            "flip-easing": "ease-out"
+          }
+        },
+        "dark": {
+          "colors": {
+            "background": "#121212",
+            "foreground": "#f0f0f0",
+            "muted": "#262626",
+            "muted-foreground": "#a3a3a1",
+            "card": "#1a1a1a",
+            "card-foreground": "#f0f0f0",
+            "border": "#f0f0f0",
+            "primary": "#f0f0f0",
+            "primary-foreground": "#121212",
+            "secondary": "#262626",
+            "secondary-foreground": "#f0f0f0",
+            "accent": "#f87171",
+            "accent-foreground": "#121212",
+            "palette": {
+              "bauhaus-red": "#d02020",
+              "bauhaus-blue": "#1040c0",
+              "bauhaus-yellow": "#f0c020",
+              "bauhaus-black": "#121212",
+              "bauhaus-white": "#f0f0f0"
+            }
+          },
+          "shadows": {
+            "sm": "2px 2px 0px 0px #525250",
+            "md": "4px 4px 0px 0px #525250",
+            "lg": "6px 6px 0px 0px #525250",
+            "xl": "8px 8px 0px 0px #525250",
+            "card": "6px 6px 0px 0px #404040",
+            "card-hover": "4px 4px 0px 0px #404040",
+            "button": "4px 4px 0px 0px #525250"
+          },
+          "radius": {
+            "sm": "0",
+            "md": "0",
+            "lg": "0",
+            "xl": "0",
+            "2xl": "0",
+            "card": "0",
+            "button": "0",
+            "badge": "9999px"
+          },
+          "border": {
+            "width": "2px",
+            "style": "solid"
+          },
+          "decorative": {
+            "rotation-card": "0deg",
+            "paper-texture-opacity": "0",
+            "flip-duration": "400ms",
+            "flip-easing": "ease-out"
+          }
+        }
+      }
+    }
+  ]
+}

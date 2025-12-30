@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Quinn Rodriguez | Product Marketing Manager",
+    "description": "B2B SaaS product marketer with 4+ years driving GTM success. Expert in product launches, competitive positioning, and sales enablement.",
+    "language": "en",
+    "themeColor": "#dc2626",
+    "url": "https://quinnrodriguez.com",
+    "ogImage": "/og-image.jpg",
+    "keywords": "Product Marketing Manager, PMM, B2B SaaS, Go-To-Market, GTM, Product Launch, Competitive Intelligence, Sales Enablement",
+    "author": "Quinn Rodriguez",
+    "robots": "index, follow",
+    "ogSiteName": "Quinn Rodriguez Portfolio",
+    "locale": "en_US",
+    "favicon": "/favicon.svg"
+  },
+  "structuredData": {
+    "enabled": true,
+    "employer": {
+      "name": "Open to Opportunities",
+      "type": "Organization"
+    },
+    "address": {
+      "locality": "Tokyo",
+      "country": "JP"
+    },
+    "knowsAbout": [
+      "Product Marketing",
+      "Go-To-Market Strategy",
+      "Competitive Analysis",
+      "Sales Enablement",
+      "Product Positioning"
+    ]
+  },
+  "branding": {
+    "name": "Quinn Rodriguez",
+    "logo": null,
+    "showName": true
+  },
+  "navigation": {
+    "links": [
+      {
+        "href": "#hero",
+        "label": "About",
+        "external": false
+      },
+      {
+        "href": "#impact",
+        "label": "Results",
+        "external": false
+      },
+      {
+        "href": "#experience",
+        "label": "Experience",
+        "external": false
+      },
+      {
+        "href": "#achievements",
+        "label": "Launches",
+        "external": false
+      },
+      {
+        "href": "#skills",
+        "label": "Skills",
+        "external": false
+      },
+      {
+        "href": "#contact",
+        "label": "Contact",
+        "external": false
+      }
+    ],
+    "cta": {
+      "text": "Let's Chat",
+      "href": "#contact"
+    }
+  },
+  "social": [
+    {
+      "platform": "linkedin",
+      "url": "https://linkedin.com/in/quinn-rodriguez-pmm",
+      "label": "LinkedIn"
+    },
+    {
+      "platform": "twitter",
+      "url": "https://twitter.com/quinnrodriguez",
+      "label": "Twitter"
+    },
+    {
+      "platform": "email",
+      "value": "quinn.rodriguez.pmm@gmail.com",
+      "label": "Email"
+    }
+  ],
+  "analytics": {
+    "vercel": true,
+    "googleAnalytics": null,
+    "plausible": null
+  },
+  "features": {
+    "darkMode": true,
+    "designSystemSwitcher": true,
+    "smoothScroll": true,
+    "reduceMotion": "respect-system"
+  }
+}

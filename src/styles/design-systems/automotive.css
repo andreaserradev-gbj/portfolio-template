@@ -1,0 +1,404 @@
+/* Automotive Industrial Design System - Neumorphic Machinery Aesthetic
+ * Inspired by Dieter Rams, Teenage Engineering, and industrial control panels
+ * Features: Neumorphic shadows, corner screws, LED indicators, mechanical press physics
+ */
+
+/* ==========================================================================
+   LIGHT MODE - Chassis & Panel Colors
+   ========================================================================== */
+
+[data-design-system='automotive'] {
+  /* Typography - Clean Industrial */
+  --font-display: 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Chassis Colors (Base Layer) */
+  --color-slate-50: #f0f3f7;
+  --color-slate-100: #e0e5ec;
+  --color-slate-200: #d1d9e6;
+  --color-slate-300: #babecc;
+  --color-slate-400: #9ca3af;
+  --color-slate-500: #636e72;
+  --color-slate-600: #4b5563;
+  --color-slate-700: #374151;
+  --color-slate-800: #1f2937;
+  --color-slate-900: #121010;
+  --color-slate-950: #0a0a0a;
+
+  /* Navy palette - References slate for design system consistency */
+  --color-navy-50: var(--color-slate-50);
+  --color-navy-100: var(--color-slate-100);
+  --color-navy-200: var(--color-slate-200);
+  --color-navy-300: var(--color-slate-300);
+  --color-navy-400: var(--color-slate-400);
+  --color-navy-500: var(--color-slate-500);
+  --color-navy-600: var(--color-slate-600);
+  --color-navy-700: var(--color-slate-700);
+  --color-navy-800: var(--color-slate-800);
+  --color-navy-900: var(--color-slate-900);
+  --color-navy-950: var(--color-slate-950);
+
+  /* Accent Color - Safety Red (uses brass variable names for compatibility) */
+  --color-brass-50: #fff5f5;
+  --color-brass-100: #ffe3e3;
+  --color-brass-200: #ffc9c9;
+  --color-brass-300: #ffa8a8;
+  --color-brass-400: #ff8787;
+  --color-brass-500: #ff4757;
+  --color-brass-600: #fa2d3f;
+  --color-brass-700: #e8192b;
+  --color-brass-800: #c41425;
+  --color-brass-900: #9c1220;
+  --color-brass-950: #6b0d15;
+
+  /* Semantic Colors - Industrial Palette */
+  --color-background: #e0e5ec;
+  --color-foreground: #121010;
+  --color-muted: #d1d9e6;
+  --color-muted-foreground: #636e72;
+  --color-card: #e0e5ec;
+  --color-card-foreground: #121010;
+  --color-border: #babecc;
+  --color-primary: #121010;
+  --color-primary-foreground: #e0e5ec;
+  --color-secondary: #d1d9e6;
+  --color-secondary-foreground: #121010;
+  --color-accent: #ff4757;
+  --color-accent-foreground: #ffffff;
+
+  /* Border Radius - Industrial Precision */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-card: 1rem;
+  --radius-button: 0.75rem;
+  --radius-badge: 9999px;
+
+  /* Neumorphic Shadows - Dual Light Source (Top-Left @ 45deg) */
+  --shadow-sm: 2px 2px 4px #babecc, -2px -2px 4px #ffffff;
+  --shadow-md: 4px 4px 8px #babecc, -4px -4px 8px #ffffff;
+  --shadow-lg: 6px 6px 12px #babecc, -6px -6px 12px #ffffff;
+  --shadow-xl: 8px 8px 16px #babecc, -8px -8px 16px #ffffff;
+  --shadow-card: 6px 6px 12px #babecc, -6px -6px 12px #ffffff;
+  --shadow-card-hover: 8px 8px 16px #babecc, -8px -8px 16px #ffffff;
+  --shadow-button: 4px 4px 8px #babecc, -4px -4px 8px #ffffff;
+  --shadow-pressed: inset 4px 4px 8px #babecc, inset -4px -4px 8px #ffffff;
+  --shadow-recessed: inset 3px 3px 6px #babecc, inset -3px -3px 6px #ffffff;
+  --shadow-glow: 0 0 10px 2px rgba(255, 71, 87, 0.6);
+
+  /* Borders */
+  --border-width: 1px;
+  --border-style: solid;
+
+  /* Decorative */
+  --rotation-card: 0deg;
+  --paper-texture-opacity: 0;
+
+  /* Flip Card Animation - Mechanical bounce */
+  --flip-duration: 350ms;
+  --flip-easing: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ==========================================================================
+   DARK MODE - Deep Chassis Colors
+   ========================================================================== */
+
+[data-design-system='automotive'].dark {
+  /* Slate palette - Keep light values for text readability in dark mode */
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-slate-950: #020617;
+
+  /* Navy palette - Same as corporate for consistency */
+  --color-navy-50: #f0f4f8;
+  --color-navy-100: #d9e2ec;
+  --color-navy-200: #bcccdc;
+  --color-navy-300: #9fb3c8;
+  --color-navy-400: #829ab1;
+  --color-navy-500: #627d98;
+  --color-navy-600: #486581;
+  --color-navy-700: #334e68;
+  --color-navy-800: #243b53;
+  --color-navy-900: #102a43;
+  --color-navy-950: #0a1929;
+
+  /* Brass - Brighter red for dark mode visibility */
+  --color-brass-400: #ff8a8a;
+  --color-brass-500: #ff6b81;
+
+  /* Semantic Colors - Dark Industrial (Improved contrast) */
+  --color-background: #121010;
+  --color-foreground: #f1f5f9;
+  --color-muted: #1e1e1e;
+  --color-muted-foreground: #94a3b8;
+  --color-card: #1e1e1e;
+  --color-card-foreground: #f1f5f9;
+  --color-border: #2c2c2c;
+  --color-primary: #f1f5f9;
+  --color-primary-foreground: #121010;
+  --color-secondary: #2c2c2c;
+  --color-secondary-foreground: #f1f5f9;
+  --color-accent: #ff6b81;
+  --color-accent-foreground: #121010;
+
+  /* Neumorphic Shadows - Dark Mode (Subtler highlights) */
+  --shadow-sm:
+    2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.05);
+  --shadow-md:
+    4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.05);
+  --shadow-lg:
+    6px 6px 12px rgba(0, 0, 0, 0.5), -6px -6px 12px rgba(255, 255, 255, 0.05);
+  --shadow-xl:
+    8px 8px 16px rgba(0, 0, 0, 0.5), -8px -8px 16px rgba(255, 255, 255, 0.05);
+  --shadow-card:
+    6px 6px 12px rgba(0, 0, 0, 0.5), -6px -6px 12px rgba(255, 255, 255, 0.05);
+  --shadow-card-hover:
+    8px 8px 16px rgba(0, 0, 0, 0.5), -8px -8px 16px rgba(255, 255, 255, 0.08);
+  --shadow-button:
+    4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.05);
+  --shadow-pressed:
+    inset 4px 4px 8px rgba(0, 0, 0, 0.5),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.05);
+  --shadow-recessed:
+    inset 3px 3px 6px rgba(0, 0, 0, 0.5),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.05);
+  --shadow-glow: 0 0 12px 3px rgba(255, 107, 129, 0.5);
+}
+
+/* ==========================================================================
+   DECORATIVE ELEMENTS - Industrial Details
+   ========================================================================== */
+
+/* Background Texture - Subtle Noise Overlay */
+[data-design-system='automotive'] {
+  background-color: var(--color-background);
+}
+
+[data-design-system='automotive'] body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  z-index: 9999;
+  mix-blend-mode: overlay;
+}
+
+[data-design-system='automotive'].dark body::before {
+  opacity: 0.06;
+}
+
+/* ==========================================================================
+   CORNER SCREWS - Mechanical Fasteners on Cards
+   ========================================================================== */
+
+[data-design-system='automotive'] .card {
+  position: relative;
+}
+
+/* Shared screw styles - 12px metallic fasteners */
+[data-design-system='automotive'] .card::before,
+[data-design-system='automotive'] .card::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at 35% 35%,
+      rgba(255, 255, 255, 0.6),
+      transparent 50%
+    ),
+    radial-gradient(circle at 50% 50%, #9ca3af 0%, #6b7280 50%, #4b5563 100%);
+  box-shadow:
+    inset 1px 1px 2px rgba(0, 0, 0, 0.4),
+    inset -1px -1px 1px rgba(255, 255, 255, 0.2),
+    1px 1px 2px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+/* Position: Top-Left */
+[data-design-system='automotive'] .card::before {
+  left: 10px;
+}
+
+/* Position: Top-Right */
+[data-design-system='automotive'] .card::after {
+  right: 10px;
+}
+
+/* Dark mode screws - lighter metallic appearance */
+[data-design-system='automotive'].dark .card::before,
+[data-design-system='automotive'].dark .card::after {
+  background:
+    radial-gradient(
+      circle at 35% 35%,
+      rgba(255, 255, 255, 0.3),
+      transparent 50%
+    ),
+    radial-gradient(circle at 50% 50%, #6b7280 0%, #4b5563 50%, #374151 100%);
+  box-shadow:
+    inset 1px 1px 2px rgba(0, 0, 0, 0.6),
+    inset -1px -1px 1px rgba(255, 255, 255, 0.1),
+    1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   CARD STATES - Neumorphic Interactions
+   ========================================================================== */
+
+[data-design-system='automotive'] .card {
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.2s ease;
+}
+
+[data-design-system='automotive'] .card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* ==========================================================================
+   BUTTON PHYSICS - Mechanical Press Feedback
+   ========================================================================== */
+
+[data-design-system='automotive'] button,
+[data-design-system='automotive'] [role='button'] {
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease;
+}
+
+[data-design-system='automotive'] button:active,
+[data-design-system='automotive'] [role='button']:active {
+  transform: translateY(2px) !important;
+  box-shadow: var(--shadow-pressed) !important;
+}
+
+/* ==========================================================================
+   LED INDICATOR UTILITIES - Status Lights
+   ========================================================================== */
+
+[data-design-system='automotive'] .led-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: var(--shadow-glow);
+  animation: led-pulse 2s ease-in-out infinite;
+}
+
+[data-design-system='automotive'] .led-indicator-sm {
+  width: 6px;
+  height: 6px;
+}
+
+[data-design-system='automotive'] .led-indicator-lg {
+  width: 12px;
+  height: 12px;
+}
+
+/* LED Color Variants */
+[data-design-system='automotive'] .led-indicator-red {
+  background: #ff4757;
+  box-shadow: 0 0 10px 2px rgba(255, 71, 87, 0.6);
+}
+
+[data-design-system='automotive'] .led-indicator-green {
+  background: #26de81;
+  box-shadow: 0 0 10px 2px rgba(38, 222, 129, 0.6);
+}
+
+[data-design-system='automotive'] .led-indicator-yellow {
+  background: #fed330;
+  box-shadow: 0 0 10px 2px rgba(254, 211, 48, 0.6);
+}
+
+[data-design-system='automotive'] .led-indicator-blue {
+  background: #3498db;
+  box-shadow: 0 0 10px 2px rgba(52, 152, 219, 0.6);
+}
+
+@keyframes led-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* ==========================================================================
+   INPUT STATES - Recessed Data Slots
+   ========================================================================== */
+
+[data-design-system='automotive'] input,
+[data-design-system='automotive'] textarea,
+[data-design-system='automotive'] select {
+  box-shadow: var(--shadow-recessed);
+  transition: box-shadow 0.15s ease;
+}
+
+/* ==========================================================================
+   THEME UTILITIES - Selection, Scrollbar
+   ========================================================================== */
+
+[data-design-system='automotive'] ::selection {
+  background-color: rgba(255, 71, 87, 0.25);
+  color: var(--color-foreground);
+}
+
+[data-design-system='automotive'].dark ::selection {
+  background-color: rgba(255, 107, 129, 0.3);
+}
+
+/* Scrollbar - Industrial Chrome */
+[data-design-system='automotive'] ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+[data-design-system='automotive'] ::-webkit-scrollbar-track {
+  background: var(--color-muted);
+  border-radius: 5px;
+}
+
+[data-design-system='automotive'] ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #9ca3af 0%, #6b7280 100%);
+  border-radius: 5px;
+  border: 2px solid var(--color-muted);
+}
+
+[data-design-system='automotive'] ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #6b7280 0%, #4b5563 100%);
+}
+
+[data-design-system='automotive'].dark ::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+[data-design-system='automotive'].dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4b5563 0%, #374151 100%);
+  border-color: #1e1e1e;
+}
+
+[data-design-system='automotive'].dark ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #6b7280 0%, #4b5563 100%);
+}

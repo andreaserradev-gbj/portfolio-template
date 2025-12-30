@@ -1,0 +1,258 @@
+/* Hand-Drawn Design System - Authentic Imperfection */
+
+[data-design-system='hand-drawn'] {
+  /* Typography - Handwritten feel */
+  --font-display: 'Kalam', cursive;
+  --font-body: 'Patrick Hand', cursive;
+  --font-mono: 'Patrick Hand', cursive;
+
+  /* Font size scaling for readability (handwritten fonts appear smaller) */
+  --font-size-scale: 1.15; /* Adjustable: try 1.1 to 1.15 */
+
+  /* Color Palette - Warm Paper & Pencil */
+  --color-slate-50: #fdfbf7;
+  --color-slate-100: #f5f0e8;
+  --color-slate-200: #e5e0d8;
+  --color-slate-300: #d4cfc5;
+  --color-slate-400: #a8a095;
+  --color-slate-500: #7a7268;
+  --color-slate-600: #5c564e;
+  --color-slate-700: #454038;
+  --color-slate-800: #2d2d2d;
+  --color-slate-900: #2d2d2d;
+  --color-slate-950: #1a1a1a;
+
+  /* Navy mapped to pencil grays for hand-drawn */
+  --color-navy-50: #fdfbf7;
+  --color-navy-100: #f5f0e8;
+  --color-navy-200: #e5e0d8;
+  --color-navy-300: #d4cfc5;
+  --color-navy-400: #a8a095;
+  --color-navy-500: #7a7268;
+  --color-navy-600: #5c564e;
+  --color-navy-700: #454038;
+  --color-navy-800: #3a3a3a;
+  --color-navy-900: #2d2d2d;
+  --color-navy-950: #1a1a1a;
+
+  /* Brass mapped to correction marker red + post-it yellow */
+  --color-brass-50: #fff9e6;
+  --color-brass-100: #fff3cc;
+  --color-brass-200: #ffe699;
+  --color-brass-300: #ffd966;
+  --color-brass-400: #ff8a80;
+  --color-brass-500: #ff4d4d;
+  --color-brass-600: #e63939;
+  --color-brass-700: #cc2929;
+  --color-brass-800: #991f1f;
+  --color-brass-900: #661414;
+  --color-brass-950: #330a0a;
+
+  /* Additional hand-drawn accent colors */
+  --color-blue-pen: #2d5da1;
+  --color-post-it: #fff9c4;
+  --color-tape: rgba(255, 230, 150, 0.7);
+
+  /* Semantic Colors - Paper & Pencil */
+  --color-background: #fdfbf7;
+  --color-foreground: #2d2d2d;
+  --color-muted: #e5e0d8;
+  --color-muted-foreground: #7a7268;
+  --color-card: #ffffff;
+  --color-card-foreground: #2d2d2d;
+  --color-border: #a8a095;
+  --color-primary: #2d2d2d;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #e5e0d8;
+  --color-secondary-foreground: #2d2d2d;
+  --color-accent: #ff4d4d;
+  --color-accent-foreground: #ffffff;
+
+  /* Border Radius - Wobbly/Organic shapes */
+  --radius-sm: 2px 8px 2px 8px / 8px 2px 8px 2px;
+  --radius-md: 8px 15px 8px 15px / 15px 8px 15px 8px;
+  --radius-lg: 15px 30px 15px 30px / 30px 15px 30px 15px;
+  --radius-xl: 30px 50px 30px 50px / 50px 30px 50px 30px;
+  --radius-2xl: 40px 60px 40px 60px / 60px 40px 60px 40px;
+  --radius-card: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  --radius-card-alt: 15px 255px 15px 225px / 225px 15px 255px 15px;
+  --radius-button: 30px 2px 30px 2px / 2px 30px 2px 30px;
+  --radius-badge: 45px 5px 45px 5px / 5px 45px 5px 45px;
+
+  /* Shadows */
+  --shadow-sm: 2px 2px 0px 0px #a8a095;
+  --shadow-md: 3px 3px 0px 0px #a8a095;
+  --shadow-lg: 4px 4px 0px 0px #a8a095;
+  --shadow-xl: 6px 6px 0px 0px #a8a095;
+  --shadow-card: 4px 4px 0px 0px #a8a095;
+  --shadow-card-hover: 1px 1px 0px 0px #a8a095;
+  --shadow-button: 3px 3px 0px 0px #a8a095;
+  --shadow-button-hover: 1px 1px 0px 0px #a8a095;
+  --shadow-button-active: 0px 0px 0px 0px #a8a095;
+
+  /* Borders - Thicker, hand-drawn feel */
+  --border-width: 2px;
+  --border-style: solid;
+
+  /* Decorative properties */
+  --rotation-card: 0deg;
+  --paper-texture-opacity: 0;
+
+  /* Flip Card Animation - Playful, quick */
+  --flip-duration: 300ms;
+  --flip-easing: ease-out;
+}
+
+/* Hand-Drawn Dark Mode - Navy Chalk Aesthetic */
+[data-design-system='hand-drawn'].dark {
+  /* Navy-toned chalk colors (light numbers = light colors for text) */
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-slate-950: #020617;
+
+  /* Navy palette for dark mode */
+  --color-navy-50: #f0f4f8;
+  --color-navy-100: #d9e2ec;
+  --color-navy-200: #bcccdc;
+  --color-navy-300: #9fb3c8;
+  --color-navy-400: #829ab1;
+  --color-navy-500: #627d98;
+  --color-navy-600: #486581;
+  --color-navy-700: #334e68;
+  --color-navy-800: #243b53;
+  --color-navy-900: #102a43;
+  --color-navy-950: #0a1929;
+
+  /* Accent colors - red marker */
+  --color-brass-400: #ff8a80;
+  --color-brass-500: #ff6b6b;
+
+  /* Semantic Colors - Navy Chalk (improved contrast) */
+  --color-background: #0a1525;
+  --color-foreground: #f1f5f9;
+  --color-muted: #1a2d44;
+  --color-muted-foreground: #94a3b8;
+  --color-card: #142236;
+  --color-card-foreground: #f1f5f9;
+  --color-border: #486581;
+  --color-primary: #f1f5f9;
+  --color-primary-foreground: #0c1a2a;
+  --color-secondary: #1e293b;
+  --color-secondary-foreground: #f1f5f9;
+  --color-accent: #ff6b6b;
+  --color-accent-foreground: #0c1a2a;
+
+  /* Shadows */
+  --shadow-sm: 2px 2px 0px 0px #486581;
+  --shadow-md: 3px 3px 0px 0px #486581;
+  --shadow-lg: 4px 4px 0px 0px #486581;
+  --shadow-xl: 6px 6px 0px 0px #486581;
+  --shadow-card: 4px 4px 0px 0px #486581;
+  --shadow-card-hover: 1px 1px 0px 0px #486581;
+  --shadow-button: 3px 3px 0px 0px #486581;
+  --shadow-button-hover: 1px 1px 0px 0px #486581;
+  --shadow-button-active: 0px 0px 0px 0px #486581;
+}
+
+/* Hand-drawn specific styles */
+[data-design-system='hand-drawn'] {
+  /* Paper texture background with solid color for overscroll */
+  background-color: var(--color-background);
+  background-image: radial-gradient(#e5e0d8 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Hand-drawn card decorative variations */
+[data-design-system='hand-drawn'] .card:nth-child(3n + 1) {
+  --radius-card: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  --rotation-card: -0.5deg;
+}
+
+[data-design-system='hand-drawn'] .card:nth-child(3n + 2) {
+  --radius-card: 15px 255px 15px 225px / 225px 15px 255px 15px;
+  --rotation-card: 0.5deg;
+}
+
+[data-design-system='hand-drawn'] .card:nth-child(3n) {
+  --radius-card: 225px 15px 255px 15px / 15px 255px 15px 225px;
+  --rotation-card: -0.3deg;
+}
+
+/* Button hover/active states for hand-drawn */
+[data-design-system='hand-drawn'] button:hover,
+[data-design-system='hand-drawn'] [role='button']:hover {
+  transform: translate(1px, 1px);
+}
+
+[data-design-system='hand-drawn'] button:active,
+[data-design-system='hand-drawn'] [role='button']:active {
+  transform: translate(3px, 3px);
+  box-shadow: var(--shadow-button-active) !important;
+}
+
+/* Selection color for hand-drawn */
+[data-design-system='hand-drawn'] ::selection {
+  background-color: #fff9c4;
+  color: #2d2d2d;
+}
+
+/* Scrollbar for hand-drawn */
+[data-design-system='hand-drawn'] ::-webkit-scrollbar-thumb {
+  background: #2d2d2d;
+  border: 2px solid #fdfbf7;
+}
+
+[data-design-system='hand-drawn'] ::-webkit-scrollbar-track {
+  background: #e5e0d8;
+}
+
+/* Hand-drawn Dark Mode - Navy decorative styles */
+[data-design-system='hand-drawn'].dark {
+  /* Navy background with texture for overscroll */
+  background-color: var(--color-background);
+  background-image: radial-gradient(#1a2d44 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+[data-design-system='hand-drawn'].dark ::selection {
+  background-color: #334e68;
+  color: #f1f5f9;
+}
+
+[data-design-system='hand-drawn'].dark ::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border: 2px solid #0c1a2a;
+}
+
+[data-design-system='hand-drawn'].dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+/* Hand-drawn card states */
+[data-design-system='hand-drawn'] .card {
+  box-shadow: 2px 2px 0px 0px #a8a095 !important;
+  transform: translateY(2px) translateX(2px);
+}
+
+[data-design-system='hand-drawn'] .card:hover {
+  transform: translateY(0) translateX(0);
+  box-shadow: 4px 4px 0px 0px #7a7268 !important;
+}
+
+[data-design-system='hand-drawn'].dark .card {
+  box-shadow: 2px 2px 0px 0px #334e68 !important;
+  transform: translateY(2px) translateX(2px);
+}
+
+[data-design-system='hand-drawn'].dark .card:hover {
+  transform: translateY(0) translateX(0);
+  box-shadow: 4px 4px 0px 0px #486581 !important;
+}

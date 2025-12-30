@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Avery Kim | Demand Generation Manager",
+    "description": "Data-driven B2B marketer with 5+ years building scalable pipeline engines. Expert in ABM, paid acquisition, and marketing automation.",
+    "language": "en",
+    "themeColor": "#2563eb",
+    "url": "https://averykim.marketing",
+    "ogImage": "/og-image.jpg",
+    "keywords": "Demand Generation, Growth Marketing, B2B Marketing, ABM, Paid Acquisition, Marketing Ops, Pipeline Generation, Marketo",
+    "author": "Avery Kim",
+    "robots": "index, follow",
+    "ogSiteName": "Avery Kim Marketing Portfolio",
+    "locale": "en_US",
+    "favicon": "/favicon.svg"
+  },
+  "structuredData": {
+    "enabled": true,
+    "employer": {
+      "name": "Open to Opportunities",
+      "type": "Organization"
+    },
+    "address": {
+      "locality": "Berlin",
+      "country": "DE"
+    },
+    "knowsAbout": [
+      "Demand Generation",
+      "Account-Based Marketing",
+      "Marketing Automation",
+      "Paid Advertising",
+      "Pipeline Generation"
+    ]
+  },
+  "branding": {
+    "name": "Avery Kim",
+    "logo": null,
+    "showName": true
+  },
+  "navigation": {
+    "links": [
+      {
+        "href": "#hero",
+        "label": "About",
+        "external": false
+      },
+      {
+        "href": "#impact",
+        "label": "Results",
+        "external": false
+      },
+      {
+        "href": "#experience",
+        "label": "Experience",
+        "external": false
+      },
+      {
+        "href": "#achievements",
+        "label": "Campaigns",
+        "external": false
+      },
+      {
+        "href": "#skills",
+        "label": "Skills",
+        "external": false
+      },
+      {
+        "href": "#contact",
+        "label": "Contact",
+        "external": false
+      }
+    ],
+    "cta": {
+      "text": "Talk Pipeline",
+      "href": "#contact"
+    }
+  },
+  "social": [
+    {
+      "platform": "linkedin",
+      "url": "https://linkedin.com/in/avery-kim-demand-gen",
+      "label": "LinkedIn"
+    },
+    {
+      "platform": "twitter",
+      "url": "https://twitter.com/averykimmarketing",
+      "label": "Twitter"
+    },
+    {
+      "platform": "email",
+      "value": "avery.kim.marketing@gmail.com",
+      "label": "Email"
+    }
+  ],
+  "analytics": {
+    "vercel": true,
+    "googleAnalytics": null,
+    "plausible": null
+  },
+  "features": {
+    "darkMode": true,
+    "designSystemSwitcher": true,
+    "smoothScroll": true,
+    "reduceMotion": "respect-system"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Jordan Rivera | Software Engineer",
+    "description": "Wharton MBA + CS graduate with internship experience at Stripe and Bloomberg. Seeking entry-level software engineering opportunities.",
+    "language": "en",
+    "themeColor": "#1a365d",
+    "url": "https://jordanrivera.dev",
+    "ogImage": "/og-image.jpg",
+    "keywords": "Software Engineer, New Grad, Wharton MBA, Computer Science, Python, React, Entry Level, Penn",
+    "author": "Jordan Rivera",
+    "robots": "index, follow",
+    "ogSiteName": "Jordan Rivera Portfolio",
+    "locale": "en_US",
+    "favicon": "/favicon.svg"
+  },
+  "structuredData": {
+    "enabled": true,
+    "employer": {
+      "name": "Seeking Opportunities",
+      "type": "Organization"
+    },
+    "address": {
+      "locality": "Philadelphia",
+      "country": "US"
+    },
+    "knowsAbout": [
+      "Python",
+      "JavaScript",
+      "React",
+      "Node.js",
+      "Machine Learning",
+      "Data Analysis"
+    ]
+  },
+  "branding": {
+    "name": "Jordan Rivera",
+    "logo": null,
+    "showName": true
+  },
+  "navigation": {
+    "links": [
+      {
+        "href": "#hero",
+        "label": "About",
+        "external": false
+      },
+      {
+        "href": "#experience",
+        "label": "Experience",
+        "external": false
+      },
+      {
+        "href": "#achievements",
+        "label": "Projects",
+        "external": false
+      },
+      {
+        "href": "#skills",
+        "label": "Skills",
+        "external": false
+      },
+      {
+        "href": "#contact",
+        "label": "Contact",
+        "external": false
+      }
+    ]
+  },
+  "social": [
+    {
+      "platform": "github",
+      "url": "https://github.com/jordanrivera",
+      "label": "GitHub"
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://linkedin.com/in/jordan-rivera",
+      "label": "LinkedIn"
+    },
+    {
+      "platform": "email",
+      "value": "jordan.rivera@wharton.upenn.edu",
+      "label": "Email"
+    }
+  ],
+  "analytics": {
+    "vercel": true,
+    "googleAnalytics": null,
+    "plausible": null
+  },
+  "features": {
+    "darkMode": true,
+    "designSystemSwitcher": true,
+    "smoothScroll": true,
+    "reduceMotion": "respect-system"
+  }
+}

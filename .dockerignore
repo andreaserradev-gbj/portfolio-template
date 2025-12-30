@@ -1,0 +1,40 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+dist-ssr
+
+# Git
+.git
+.gitignore
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.envrc
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Editor directories
+.vscode
+.idea
+.DS_Store
+*.sw?
+
+# Testing
+coverage
+.playwright-mcp
+
+# Documentation
+README.md
+CLAUDE.md
+
+# Docker files (not needed in build context)
+Dockerfile
+docker-compose.yml
+.dockerignore

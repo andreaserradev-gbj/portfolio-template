@@ -1,0 +1,372 @@
+{
+  "variables": {
+    "careerStartYear": 2016,
+    "leadershipStartYear": 2021
+  },
+  "sections": [
+    "hero",
+    "metrics",
+    "experience",
+    "achievements",
+    "skills",
+    "contact"
+  ],
+  "hero": {
+    "name": "Blake Chen",
+    "title": "UX Design Lead",
+    "tagline": "{{yearsSince:careerStartYear}}+ years crafting exceptional product experiences. Design leader building high-performing teams and enterprise-scale design systems.",
+    "cta": {
+      "primary": {
+        "text": "See Impact",
+        "target": "#impact"
+      },
+      "secondary": {
+        "text": "Get in Touch",
+        "target": "#contact"
+      }
+    },
+    "statusBadge": {
+      "text": "Open to Design Leadership",
+      "active": true
+    },
+    "valuePills": [
+      {
+        "label": "{{yearsSince:careerStartYear}}yr",
+        "sublabel": "UX Design",
+        "highlight": true
+      },
+      { "label": "Team of 6", "sublabel": "Designers", "highlight": false },
+      { "label": "Fortune 500", "sublabel": "Clients", "highlight": false }
+    ],
+    "quickStats": [
+      {
+        "value": "{{yearsSince:careerStartYear}}",
+        "suffix": "+",
+        "label": "Years Experience"
+      },
+      {
+        "value": "{{yearsSince:leadershipStartYear}}",
+        "suffix": "+",
+        "label": "Years Leading Teams"
+      }
+    ],
+    "badge": {
+      "value": "6",
+      "title": "Designers",
+      "subtitle": "Team Lead"
+    }
+  },
+  "metrics": [
+    {
+      "label": "Team Size",
+      "value": 6,
+      "suffix": "",
+      "description": "Direct reports across product and brand design",
+      "max": 10,
+      "achievementId": "team"
+    },
+    {
+      "label": "NPS Improvement",
+      "value": 50,
+      "suffix": " pts",
+      "description": "Customer satisfaction score increase",
+      "max": 70,
+      "achievementId": "nps"
+    },
+    {
+      "label": "Enterprise Clients",
+      "value": 20,
+      "suffix": "+",
+      "description": "Fortune 500 companies served",
+      "max": 30,
+      "achievementId": "enterprise"
+    },
+    {
+      "label": "Design System Adoption",
+      "value": 95,
+      "suffix": "%",
+      "description": "Product team adoption of design system",
+      "max": 100,
+      "achievementId": "system"
+    }
+  ],
+  "experience": [
+    {
+      "company": "EnterpriseCloud",
+      "role": "UX Design Lead",
+      "period": "March 2021 - Present",
+      "location": "New York, NY",
+      "highlights": [
+        "Lead team of 6 designers across product, brand, and research functions",
+        "Grew team from 3 to 6 designers while maintaining quality bar",
+        "Established enterprise design system achieving 95% product adoption",
+        "Increased customer NPS from 32 to 82 through systematic UX improvements",
+        "Partner with C-suite on product strategy and design vision"
+      ],
+      "techStack": ["Figma", "Storybook", "UserTesting", "FullStory", "Jira"]
+    },
+    {
+      "company": "TechGiant Corp",
+      "role": "Senior UX Designer",
+      "period": "January 2018 - February 2021",
+      "location": "San Francisco, CA",
+      "highlights": [
+        "Led design for enterprise B2B platform serving 5M+ users",
+        "Mentored 3 junior designers through structured growth plans",
+        "Established user research practice conducting 100+ interviews",
+        "Redesigned core workflows reducing task completion time by 40%"
+      ],
+      "techStack": ["Sketch", "Abstract", "Principle", "Lookback"]
+    },
+    {
+      "company": "Creative Studio Agency",
+      "role": "UX Designer",
+      "period": "June 2016 - December 2017",
+      "location": "Los Angeles, CA",
+      "highlights": [
+        "Designed digital experiences for 15+ Fortune 500 clients",
+        "Led end-to-end design process from research to handoff",
+        "Won 2 industry awards for client work"
+      ],
+      "techStack": ["Sketch", "InVision", "Photoshop", "Illustrator"]
+    }
+  ],
+  "achievements": [
+    {
+      "id": "team",
+      "title": "Design Team Growth",
+      "category": "leadership",
+      "summary": "Doubled design team while maintaining quality and culture",
+      "impact": "Scaled from 3 to 6 designers with 100% retention",
+      "details": [
+        "Defined design ladder with clear career progression paths",
+        "Established hiring process with portfolio reviews and design exercises",
+        "Created onboarding program reducing ramp time from 2 months to 3 weeks",
+        "Implemented weekly design critiques and skill-sharing sessions",
+        "Achieved 100% team retention over 3-year tenure"
+      ],
+      "metrics": [
+        { "label": "Team Growth", "value": "2x" },
+        { "label": "Retention Rate", "value": "100%" }
+      ]
+    },
+    {
+      "id": "system",
+      "title": "Enterprise Design System",
+      "category": "systems",
+      "summary": "Built enterprise-grade design system adopted across all products",
+      "impact": "95% adoption rate, 50% reduction in design-to-dev time",
+      "details": [
+        "Created 200+ components with comprehensive documentation",
+        "Established governance model with contribution guidelines",
+        "Built Figma libraries synced with React component library",
+        "Trained 40+ engineers and designers on system usage",
+        "Ensured WCAG 2.1 AA compliance across all components"
+      ],
+      "metrics": [
+        { "label": "Adoption Rate", "value": "95%" },
+        { "label": "Components", "value": "200+" }
+      ]
+    },
+    {
+      "id": "nps",
+      "title": "Customer Experience Transformation",
+      "category": "impact",
+      "summary": "Systematic UX improvements driving 50-point NPS increase",
+      "impact": "NPS improved from 32 to 82 over 2 years",
+      "details": [
+        "Conducted journey mapping across 12 key customer workflows",
+        "Prioritized improvements using RICE framework with product team",
+        "Redesigned 5 critical user flows based on research insights",
+        "Established continuous feedback loop with monthly user interviews",
+        "Created executive dashboard tracking UX metrics"
+      ],
+      "metrics": [
+        { "label": "NPS Improvement", "value": "50 points" },
+        { "label": "User Flows Redesigned", "value": "5" }
+      ]
+    }
+  ],
+  "skillCategories": [
+    {
+      "name": "Leadership",
+      "skills": [
+        {
+          "name": "Team Management",
+          "context": "Led team of 6 designers with 100% retention",
+          "aliases": [
+            "people management",
+            "team leadership",
+            "design management"
+          ],
+          "weight": 9
+        },
+        {
+          "name": "Hiring & Recruiting",
+          "context": "Built hiring process and doubled team size",
+          "aliases": ["hiring", "recruiting", "talent"],
+          "weight": 8
+        },
+        {
+          "name": "Mentorship",
+          "context": "Structured career development for reports",
+          "aliases": ["mentoring", "coaching"],
+          "weight": 8
+        },
+        {
+          "name": "Design Ops",
+          "context": "Established design processes and governance",
+          "aliases": ["design ops", "design operations"],
+          "weight": 8
+        },
+        {
+          "name": "Executive Communication",
+          "context": "Regular partnership with C-suite on strategy",
+          "aliases": ["stakeholder management", "executive partnership"],
+          "weight": 8
+        }
+      ]
+    },
+    {
+      "name": "Strategy",
+      "skills": [
+        {
+          "name": "Design Strategy",
+          "context": "Product vision and design direction setting",
+          "aliases": ["design strategy", "ux strategy"],
+          "weight": 9
+        },
+        {
+          "name": "Service Design",
+          "context": "End-to-end customer journey optimization",
+          "aliases": ["service design", "experience design"],
+          "weight": 7
+        },
+        {
+          "name": "Design Thinking",
+          "context": "Workshops and problem-framing facilitation",
+          "aliases": ["design thinking"],
+          "weight": 8
+        },
+        {
+          "name": "Research Operations",
+          "context": "Scaled research practice with continuous insights",
+          "aliases": ["research ops", "ux research"],
+          "weight": 7
+        }
+      ]
+    },
+    {
+      "name": "Enterprise Design",
+      "skills": [
+        {
+          "name": "Design Systems",
+          "context": "200+ component system with 95% adoption",
+          "aliases": ["design systems", "component library"],
+          "weight": 9
+        },
+        {
+          "name": "Accessibility",
+          "context": "WCAG 2.1 AA compliance governance",
+          "aliases": ["accessibility", "a11y", "wcag"],
+          "weight": 8
+        },
+        {
+          "name": "B2B/Enterprise UX",
+          "context": "Complex workflows for Fortune 500 clients",
+          "aliases": ["b2b", "enterprise ux", "enterprise"],
+          "weight": 8
+        },
+        {
+          "name": "Cross-Platform Design",
+          "context": "Web, mobile, and desktop consistency",
+          "aliases": ["cross-platform", "multi-platform"],
+          "weight": 7
+        }
+      ]
+    }
+  ],
+  "skillsSection": {
+    "eyebrow": "Design Leadership",
+    "headline": "Skills & Expertise",
+    "description": "Design leader with deep expertise in team building, enterprise systems, and strategic design.",
+    "summary": [
+      { "title": "Team", "subtitle": "Builder" },
+      { "title": "Systems", "subtitle": "Architect" },
+      { "title": "Strategy", "subtitle": "Partner" }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Get in Touch",
+    "headline": "Let's Connect",
+    "description": "Seeking Head of Design or VP Design roles at companies committed to design excellence.",
+    "ctaText": "Let's discuss how I can help build your design organization.",
+    "location": "Singapore (Open to Remote)",
+    "preferredMethod": "linkedin",
+    "showSocial": true
+  },
+  "custom": [],
+  "jobBoardScoring": {
+    "defaultSkillWeight": 5,
+    "bonuses": {
+      "remotePosition": 15,
+      "regionFriendly": 10,
+      "seniorityMatch": 20,
+      "domainRelevance": 15
+    },
+    "relevantDomains": [
+      "design",
+      "ux",
+      "ui",
+      "product design",
+      "design leadership",
+      "design systems",
+      "design ops",
+      "user experience"
+    ],
+    "seniorityKeywords": [
+      "lead",
+      "head of",
+      "director",
+      "vp",
+      "principal",
+      "staff",
+      "design manager",
+      "design lead",
+      "head of design",
+      "design director"
+    ],
+    "temperaturePresets": {
+      "strict": {
+        "value": 0.1,
+        "label": "Strict",
+        "description": "Near-perfect skill matches only"
+      },
+      "balanced": {
+        "value": 0.4,
+        "label": "Balanced",
+        "description": "Good balance of relevance and variety"
+      },
+      "exploratory": {
+        "value": 0.7,
+        "label": "Exploratory",
+        "description": "Partial matches welcome, more variety"
+      },
+      "loose": {
+        "value": 0.95,
+        "label": "Loose",
+        "description": "Show everything with any relevance"
+      }
+    },
+    "skillCeiling": {
+      "baseSkillCount": 8,
+      "temperatureSensitivity": 0.6,
+      "minSkillCount": 4,
+      "maxSkillCount": 12
+    },
+    "scoreWeights": {
+      "skills": 0.65,
+      "bonuses": 0.35
+    }
+  }
+}

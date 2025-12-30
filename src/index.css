@@ -1,0 +1,566 @@
+@import 'tailwindcss';
+
+/* Import generated design tokens from JSON configuration */
+@import './config/generated/design-tokens.css';
+
+/* Import design system decorative CSS (backgrounds, scrollbars, card effects, etc.) */
+@import './styles/design-systems/corporate.css';
+@import './styles/design-systems/hand-drawn.css';
+@import './styles/design-systems/automotive.css';
+@import './styles/design-systems/bauhaus.css';
+
+/* Enable class-based dark mode for Tailwind CSS v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Base Theme - Shared spacing and default tokens */
+@theme {
+  /* Typography - Defaults (overridden by design systems) */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Color Palettes - Required for Tailwind utility classes */
+  /* Slate (Neutrals) */
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-slate-950: #020617;
+
+  /* Navy - Primary Brand */
+  --color-navy-50: #f0f4f8;
+  --color-navy-100: #d9e2ec;
+  --color-navy-200: #bcccdc;
+  --color-navy-300: #9fb3c8;
+  --color-navy-400: #829ab1;
+  --color-navy-500: #627d98;
+  --color-navy-600: #486581;
+  --color-navy-700: #334e68;
+  --color-navy-800: #243b53;
+  --color-navy-900: #102a43;
+  --color-navy-950: #0a1929;
+
+  /* Brass - Warm Accent */
+  --color-brass-50: #fdf8f3;
+  --color-brass-100: #f9edd8;
+  --color-brass-200: #f3d9b0;
+  --color-brass-300: #ecc27e;
+  --color-brass-400: #d4a855;
+  --color-brass-500: #c49545;
+  --color-brass-600: #a87a38;
+  --color-brass-700: #8c6230;
+  --color-brass-800: #734f2a;
+  --color-brass-900: #5f4126;
+  --color-brass-950: #362113;
+
+  /* Spacing Scale - Shared across all design systems */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-26: 6.5rem;
+  --spacing-30: 7.5rem;
+
+  /* Default Border Radius - Overridden by design systems */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-card: 0.75rem;
+  --radius-button: 0.5rem;
+  --radius-badge: 9999px;
+
+  /* Default Shadows - Overridden by design systems */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+  --shadow-md:
+    0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg:
+    0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+  --shadow-xl:
+    0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+  --shadow-card:
+    0 1px 3px 0 rgb(0 0 0 / 0.04), 0 1px 2px -1px rgb(0 0 0 / 0.04);
+  --shadow-card-hover: 0 10px 40px -10px rgb(0 0 0 / 0.08);
+  --shadow-button: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+
+  /* Semantic Colors - Overridden by design systems */
+  --color-background: var(--color-slate-50);
+  --color-foreground: var(--color-navy-950);
+  --color-muted: var(--color-slate-100);
+  --color-muted-foreground: var(--color-slate-500);
+  --color-card: #ffffff;
+  --color-card-foreground: var(--color-navy-900);
+  --color-border: var(--color-slate-200);
+  --color-primary: var(--color-navy-900);
+  --color-primary-foreground: #ffffff;
+  --color-secondary: var(--color-slate-100);
+  --color-secondary-foreground: var(--color-navy-900);
+  --color-accent: var(--color-brass-500);
+  --color-accent-foreground: #ffffff;
+  --color-popover: var(--color-card);
+  --color-popover-foreground: var(--color-card-foreground);
+  --color-input: var(--color-border);
+  --color-ring: var(--color-accent);
+
+  /* Default border */
+  --border-width: 1px;
+}
+
+/* Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    /* Background color for overscroll areas */
+    background-color: var(--color-background);
+    /* Larger base font size for better readability */
+    font-size: 115%;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  /* Subtle paper texture overlay - corporate only */
+  [data-design-system='corporate'] body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: var(--paper-texture-opacity, 0.015);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    z-index: 9999;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--color-card-foreground);
+    transition: color 0.3s ease;
+  }
+
+  /* Hand-drawn specific heading adjustments */
+  [data-design-system='hand-drawn'] h1,
+  [data-design-system='hand-drawn'] h2,
+  [data-design-system='hand-drawn'] h3,
+  [data-design-system='hand-drawn'] h4,
+  [data-design-system='hand-drawn'] h5,
+  [data-design-system='hand-drawn'] h6 {
+    letter-spacing: 0;
+    font-weight: 700;
+  }
+
+  ::selection {
+    background-color: var(--color-brass-300, #ecc27e);
+    color: var(--color-navy-950, #0a1929);
+  }
+
+  /* Focus styles */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-muted);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-muted-foreground);
+  }
+}
+
+/* Component Layer */
+@layer components {
+  .container-narrow {
+    @apply mx-auto max-w-4xl px-6 lg:px-8;
+  }
+
+  .container-wide {
+    @apply mx-auto max-w-7xl px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Editorial headline styling */
+  .headline-editorial {
+    @apply text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight;
+    font-family: var(--font-display);
+  }
+
+  .subheadline-editorial {
+    @apply text-xl md:text-2xl font-normal text-muted-foreground;
+    font-family: var(--font-body);
+  }
+
+  /* Accent underline */
+  .accent-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .accent-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0.1em;
+    left: 0;
+    right: 0;
+    height: 0.35em;
+    background: var(--color-brass-200, #f3d9b0);
+    z-index: -1;
+    transition: height 0.2s ease;
+  }
+
+  .accent-underline:hover::after {
+    height: 0.5em;
+  }
+
+  /* Hand-drawn accent underline - wavy */
+  [data-design-system='hand-drawn'] .accent-underline::after {
+    height: 0.2em;
+    background: var(--color-accent);
+    border-radius: 50% 20% 50% 20%;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  /* Staggered animation utilities */
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+  .stagger-4 {
+    animation-delay: 0.4s;
+  }
+  .stagger-5 {
+    animation-delay: 0.5s;
+  }
+  .stagger-6 {
+    animation-delay: 0.6s;
+  }
+}
+
+/* Design System Aware Utilities */
+@layer utilities {
+  /* Border Radius utilities that use CSS variables */
+  .rounded-card {
+    border-radius: var(--radius-card);
+  }
+
+  .rounded-button {
+    border-radius: var(--radius-button);
+  }
+
+  .rounded-badge {
+    border-radius: var(--radius-badge);
+  }
+
+  /* Shadow utilities that use CSS variables */
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-card-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .shadow-button {
+    box-shadow: var(--shadow-button);
+  }
+
+  /* Border width utility */
+  .border-ds {
+    border-width: var(--border-width);
+  }
+
+  /* Avatar glow - static gradient border */
+  .avatar-glow {
+    position: relative;
+    padding: 4px;
+    border-radius: 1rem;
+    background: linear-gradient(
+      135deg,
+      var(--color-brass-400, #d4a855),
+      var(--color-navy-300, #9fb3c8),
+      var(--color-brass-400, #d4a855)
+    );
+  }
+
+  .avatar-glow > * {
+    background: var(--color-background);
+  }
+
+  /* Hand-drawn avatar glow - simpler dashed border */
+  [data-design-system='hand-drawn'] .avatar-glow {
+    background: none;
+    border: 3px dashed var(--color-border);
+    padding: 8px;
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-left 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.5s ease-out forwards;
+    opacity: 0;
+  }
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  @apply absolute -top-12 left-1/2 -translate-x-1/2 z-50 px-4 py-2 bg-navy-900 text-white rounded-md font-medium transition-all focus:top-4;
+}
+
+/* Design system transition - smooth switching */
+html {
+  transition: background-color 0.3s ease;
+}
+
+/* Disable border-radius transition for hand-drawn (wobbly borders don't animate well) */
+[data-design-system='hand-drawn'] * {
+  transition-property:
+    color, background-color, border-color, box-shadow, transform, opacity;
+}
+
+/* Theme Chooser FAB Pulse Animation */
+@keyframes fab-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow:
+      var(--shadow-button),
+      0 0 0 0 color-mix(in srgb, var(--color-accent) 40%, transparent);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow:
+      var(--shadow-button),
+      0 0 0 12px transparent;
+  }
+}
+
+.fab-pulse {
+  animation: fab-pulse 1.5s ease-in-out 3;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .fab-pulse {
+    animation: none;
+  }
+}
+
+/* Theme Chooser Panel Animations */
+@keyframes panel-slide-in {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes panel-slide-out {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes backdrop-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes backdrop-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.panel-slide-in {
+  animation: panel-slide-in 0.3s ease-out forwards;
+}
+
+.panel-slide-out {
+  animation: panel-slide-out 0.2s ease-in forwards;
+}
+
+.backdrop-fade-in {
+  animation: backdrop-fade-in 0.2s ease-out forwards;
+}
+
+.backdrop-fade-out {
+  animation: backdrop-fade-out 0.15s ease-in forwards;
+}
+
+/* Flip Card Animations */
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform var(--flip-duration, 400ms)
+    var(--flip-easing, ease-in-out);
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Respect reduced motion preference for flip cards */
+@media (prefers-reduced-motion: reduce) {
+  .flip-card-inner {
+    transition: none;
+  }
+}

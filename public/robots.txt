@@ -1,0 +1,6 @@
+# robots.txt for your portfolio
+User-agent: *
+Allow: /
+
+# Sitemap location (update with your domain)
+Sitemap: https://yourdomain.com/sitemap.xml

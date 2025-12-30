@@ -1,0 +1,411 @@
+{
+  "variables": {
+    "careerStartYear": 2019,
+    "metaStartYear": 2021
+  },
+  "sections": [
+    "hero",
+    "metrics",
+    "experience",
+    "achievements",
+    "skills",
+    "contact"
+  ],
+  "hero": {
+    "name": "Morgan Taylor",
+    "title": "Senior Software Engineer",
+    "tagline": "{{yearsSince:careerStartYear}}+ years building systems at scale. Ex-Meta engineer with deep expertise in distributed systems and backend architecture.",
+    "cta": {
+      "primary": {
+        "text": "See My Impact",
+        "target": "#impact"
+      },
+      "secondary": {
+        "text": "Get in Touch",
+        "target": "#contact"
+      }
+    },
+    "statusBadge": {
+      "text": "Open to Senior/Staff Opportunities",
+      "active": true
+    },
+    "valuePills": [
+      { "label": "Ex-Meta", "sublabel": "Instagram", "highlight": true },
+      {
+        "label": "{{yearsSince:careerStartYear}}yr",
+        "sublabel": "Experience",
+        "highlight": false
+      },
+      { "label": "2B+", "sublabel": "Users Impacted", "highlight": false }
+    ],
+    "quickStats": [
+      {
+        "value": "{{yearsSince:careerStartYear}}",
+        "suffix": "+",
+        "label": "Years Experience"
+      },
+      {
+        "value": "{{yearsSince:metaStartYear}}",
+        "suffix": "",
+        "label": "Years at Meta"
+      }
+    ],
+    "badge": {
+      "value": "3+",
+      "title": "Years at Meta",
+      "subtitle": "SWE II to SWE III"
+    }
+  },
+  "metrics": [
+    {
+      "label": "Users Impacted",
+      "value": 2,
+      "suffix": "B+",
+      "description": "Instagram backend services serving global user base",
+      "max": 3,
+      "achievementId": "stories"
+    },
+    {
+      "label": "Latency Reduction",
+      "value": 40,
+      "suffix": "%",
+      "description": "Feed ranking API performance optimization",
+      "max": 100,
+      "achievementId": "performance"
+    },
+    {
+      "label": "Services Maintained",
+      "value": 15,
+      "suffix": "+",
+      "description": "Production microservices in Instagram backend",
+      "max": 20,
+      "achievementId": "architecture"
+    },
+    {
+      "label": "Engineers Mentored",
+      "value": 4,
+      "suffix": "",
+      "description": "Junior and mid-level engineers coached",
+      "max": 10,
+      "achievementId": "mentorship"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Meta",
+      "role": "Software Engineer III (E5)",
+      "period": "March 2021 - Present",
+      "location": "Menlo Park, CA",
+      "highlights": [
+        "Led Stories API migration from legacy PHP to Python/GraphQL, reducing p99 latency by 40%",
+        "Architected real-time notification system handling 1M+ events per second",
+        "Designed and implemented caching layer reducing database load by 60%",
+        "Mentored 4 engineers through onboarding, code reviews, and career development",
+        "On-call for Instagram Feed backend, resolving critical incidents affecting millions of users"
+      ],
+      "clients": ["Instagram", "Facebook", "WhatsApp"],
+      "techStack": [
+        "Python",
+        "Hack/PHP",
+        "GraphQL",
+        "TAO",
+        "Presto",
+        "Kubernetes"
+      ]
+    },
+    {
+      "company": "Datadog",
+      "role": "Software Engineer",
+      "period": "June 2019 - February 2021",
+      "location": "New York, NY",
+      "highlights": [
+        "Built monitoring integrations for AWS, GCP, and Azure cloud services",
+        "Developed Go-based agent plugins processing 100K+ metrics per second",
+        "Contributed to open-source integrations used by 10,000+ organizations",
+        "Improved test coverage from 60% to 90% across monitoring platform codebase"
+      ],
+      "techStack": ["Go", "Python", "AWS", "Terraform", "Docker"]
+    }
+  ],
+  "achievements": [
+    {
+      "id": "stories",
+      "title": "Stories API Migration",
+      "category": "architecture",
+      "summary": "Led complete rewrite of Instagram Stories backend from PHP to Python/GraphQL",
+      "impact": "40% latency reduction serving 500M+ daily active users",
+      "details": [
+        "Designed migration strategy with zero-downtime cutover plan",
+        "Implemented feature flags for gradual rollout across 10% user segments",
+        "Built comprehensive monitoring dashboards for real-time migration tracking",
+        "Coordinated with 3 teams across Stories, Feed, and Infrastructure",
+        "Completed 6-month project 2 weeks ahead of schedule"
+      ],
+      "metrics": [
+        { "label": "Latency Reduction", "value": "40%" },
+        { "label": "Users Impacted", "value": "500M+" },
+        { "label": "Teams Coordinated", "value": "3" }
+      ]
+    },
+    {
+      "id": "performance",
+      "title": "Feed Ranking Optimization",
+      "category": "performance",
+      "summary": "Optimized feed ranking API achieving significant performance gains",
+      "impact": "Reduced p99 latency from 200ms to 120ms across all regions",
+      "details": [
+        "Profiled and identified bottlenecks in ranking model inference",
+        "Implemented batch processing for ML model predictions",
+        "Designed intelligent caching strategy reducing redundant computations",
+        "Collaborated with ML team to optimize model serving architecture"
+      ],
+      "metrics": [
+        { "label": "P99 Latency", "value": "120ms" },
+        { "label": "Improvement", "value": "40%" }
+      ]
+    },
+    {
+      "id": "mentorship",
+      "title": "Engineering Mentorship Program",
+      "category": "leadership",
+      "summary": "Established structured mentorship program for Instagram backend team",
+      "impact": "Reduced new hire ramp-up time from 3 months to 6 weeks",
+      "details": [
+        "Created onboarding documentation covering system architecture",
+        "Developed hands-on exercises for common backend workflows",
+        "Held weekly 1:1s with mentees to track progress and provide guidance",
+        "Two mentees promoted to E5 within 18 months"
+      ],
+      "metrics": [
+        { "label": "Engineers Mentored", "value": "4" },
+        { "label": "Ramp-up Reduction", "value": "50%" },
+        { "label": "Promotions", "value": "2" }
+      ]
+    }
+  ],
+  "skillCategories": [
+    {
+      "name": "Languages",
+      "skills": [
+        {
+          "name": "Python",
+          "context": "Primary language at Meta for backend services and automation",
+          "aliases": ["python", "py", "python3"],
+          "weight": 9
+        },
+        {
+          "name": "Go",
+          "context": "High-performance services at Datadog, CLI tools",
+          "aliases": ["go", "golang"],
+          "weight": 8
+        },
+        {
+          "name": "Hack/PHP",
+          "context": "Meta's type-safe PHP variant for legacy services",
+          "aliases": ["hack", "php", "hhvm"],
+          "weight": 7
+        },
+        {
+          "name": "TypeScript",
+          "context": "Internal tools and admin dashboards",
+          "aliases": ["ts", "typescript"],
+          "weight": 6
+        },
+        {
+          "name": "SQL",
+          "context": "Complex queries for analytics and data pipelines",
+          "aliases": ["sql", "presto", "mysql"],
+          "weight": 7
+        }
+      ]
+    },
+    {
+      "name": "Infrastructure & Tools",
+      "skills": [
+        {
+          "name": "Kubernetes",
+          "context": "Container orchestration for microservices deployment",
+          "aliases": ["kubernetes", "k8s", "containers"],
+          "weight": 8
+        },
+        {
+          "name": "GraphQL",
+          "context": "API design at Meta, Stories and Feed services",
+          "aliases": ["graphql", "gql"],
+          "weight": 8
+        },
+        {
+          "name": "gRPC",
+          "context": "Inter-service communication for low-latency APIs",
+          "aliases": ["grpc", "protobuf"],
+          "weight": 7
+        },
+        {
+          "name": "Terraform",
+          "context": "Infrastructure as code at Datadog",
+          "aliases": ["terraform", "iac"],
+          "weight": 6
+        },
+        {
+          "name": "Docker",
+          "context": "Containerization for consistent development and deployment",
+          "aliases": ["docker", "containers"],
+          "weight": 7
+        }
+      ]
+    },
+    {
+      "name": "Meta Stack",
+      "skills": [
+        {
+          "name": "TAO",
+          "context": "Meta's distributed graph database for social data",
+          "weight": 7
+        },
+        {
+          "name": "Presto",
+          "context": "Distributed SQL queries for analytics at petabyte scale",
+          "aliases": ["presto", "prestodb"],
+          "weight": 7
+        },
+        {
+          "name": "Tupperware",
+          "context": "Meta's container orchestration platform",
+          "weight": 6
+        },
+        {
+          "name": "Scuba",
+          "context": "Real-time analytics and monitoring at Meta",
+          "weight": 6
+        }
+      ]
+    },
+    {
+      "name": "Leadership",
+      "skills": [
+        {
+          "name": "System Design",
+          "context": "Designed scalable systems serving billions of users",
+          "aliases": ["system design", "architecture"],
+          "weight": 9
+        },
+        {
+          "name": "Technical Mentorship",
+          "context": "Mentored 4 engineers, 2 promoted to senior level",
+          "weight": 8
+        },
+        {
+          "name": "Incident Response",
+          "context": "On-call for production systems, SEV handling",
+          "aliases": ["on-call", "incident response", "sre"],
+          "weight": 7
+        },
+        {
+          "name": "Code Review",
+          "context": "Thorough reviews maintaining code quality standards",
+          "weight": 7
+        }
+      ]
+    }
+  ],
+  "skillsSection": {
+    "eyebrow": "Technical Expertise",
+    "headline": "Skills & Technologies",
+    "description": "Deep expertise in distributed systems, backend architecture, and engineering leadership at scale.",
+    "summary": [
+      { "title": "Backend", "subtitle": "Distributed Systems" },
+      { "title": "Scale", "subtitle": "Billions of Users" },
+      { "title": "Leadership", "subtitle": "Mentorship & Growth" }
+    ]
+  },
+  "clients": {
+    "title": "Companies",
+    "display": "list",
+    "items": [
+      { "name": "Meta", "highlight": true },
+      { "name": "Instagram", "highlight": false },
+      { "name": "Datadog", "highlight": false },
+      { "name": "WhatsApp", "highlight": false }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Get in Touch",
+    "headline": "Let's Connect",
+    "description": "Open to Senior and Staff Engineer roles at companies solving interesting problems at scale.",
+    "ctaText": "Looking for my next challenge. Let's discuss how I can contribute to your team.",
+    "location": "San Francisco, CA (Open to Remote)",
+    "preferredMethod": "email",
+    "showSocial": true
+  },
+  "custom": [],
+  "jobBoardScoring": {
+    "defaultSkillWeight": 5,
+    "bonuses": {
+      "remotePosition": 15,
+      "regionFriendly": 10,
+      "seniorityMatch": 20,
+      "domainRelevance": 15
+    },
+    "relevantDomains": [
+      "tech",
+      "big tech",
+      "faang",
+      "software",
+      "platform",
+      "infrastructure",
+      "saas",
+      "b2b",
+      "social media",
+      "fintech",
+      "startup",
+      "scale-up"
+    ],
+    "seniorityKeywords": [
+      "senior",
+      "staff",
+      "lead",
+      "principal",
+      "e5",
+      "e6",
+      "l5",
+      "l6",
+      "swe ii",
+      "swe iii",
+      "software engineer ii",
+      "software engineer iii",
+      "tech lead"
+    ],
+    "temperaturePresets": {
+      "strict": {
+        "value": 0.1,
+        "label": "Strict",
+        "description": "Near-perfect skill matches only"
+      },
+      "balanced": {
+        "value": 0.4,
+        "label": "Balanced",
+        "description": "Good balance of relevance and variety"
+      },
+      "exploratory": {
+        "value": 0.7,
+        "label": "Exploratory",
+        "description": "Partial matches welcome, more variety"
+      },
+      "loose": {
+        "value": 0.95,
+        "label": "Loose",
+        "description": "Show everything with any relevance"
+      }
+    },
+    "skillCeiling": {
+      "baseSkillCount": 8,
+      "temperatureSensitivity": 0.6,
+      "minSkillCount": 4,
+      "maxSkillCount": 12
+    },
+    "scoreWeights": {
+      "skills": 0.65,
+      "bonuses": 0.35
+    }
+  }
+}

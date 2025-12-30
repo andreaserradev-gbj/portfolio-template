@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "title": "Casey Thompson | HR Manager",
+    "description": "Strategic HR leader with 7+ years building engaged workforces. SHRM-SCP certified with expertise in talent management, DEI initiatives, and HRIS implementation.",
+    "language": "en",
+    "themeColor": "#059669",
+    "url": "https://caseythompson.hr",
+    "ogImage": "/og-image.jpg",
+    "keywords": "HR Manager, Human Resources Director, SHRM-SCP, People Operations, Talent Management, DEI, Employee Engagement",
+    "author": "Casey Thompson",
+    "robots": "index, follow",
+    "ogSiteName": "Casey Thompson HR Portfolio",
+    "locale": "en_US",
+    "favicon": "/favicon.svg"
+  },
+  "structuredData": {
+    "enabled": true,
+    "employer": {
+      "name": "Open to Opportunities",
+      "type": "Organization"
+    },
+    "address": {
+      "locality": "London",
+      "country": "GB"
+    },
+    "knowsAbout": [
+      "Human Resources Management",
+      "Talent Acquisition",
+      "Employee Engagement",
+      "DEI Programs",
+      "Performance Management",
+      "HRIS Implementation"
+    ]
+  },
+  "branding": {
+    "name": "Casey Thompson",
+    "logo": null,
+    "showName": true
+  },
+  "navigation": {
+    "links": [
+      {
+        "href": "#hero",
+        "label": "About",
+        "external": false
+      },
+      {
+        "href": "#impact",
+        "label": "Impact",
+        "external": false
+      },
+      {
+        "href": "#experience",
+        "label": "Experience",
+        "external": false
+      },
+      {
+        "href": "#achievements",
+        "label": "Achievements",
+        "external": false
+      },
+      {
+        "href": "#skills",
+        "label": "Skills",
+        "external": false
+      },
+      {
+        "href": "#contact",
+        "label": "Contact",
+        "external": false
+      }
+    ],
+    "cta": {
+      "text": "Connect",
+      "href": "#contact"
+    }
+  },
+  "social": [
+    {
+      "platform": "linkedin",
+      "url": "https://linkedin.com/in/casey-thompson-hr",
+      "label": "LinkedIn"
+    },
+    {
+      "platform": "twitter",
+      "url": "https://twitter.com/caseythompsonhr",
+      "label": "Twitter"
+    },
+    {
+      "platform": "email",
+      "value": "casey.thompson.hr@gmail.com",
+      "label": "Email"
+    }
+  ],
+  "analytics": {
+    "vercel": true,
+    "googleAnalytics": null,
+    "plausible": null
+  },
+  "features": {
+    "darkMode": true,
+    "designSystemSwitcher": true,
+    "smoothScroll": true,
+    "reduceMotion": "respect-system"
+  }
+}
