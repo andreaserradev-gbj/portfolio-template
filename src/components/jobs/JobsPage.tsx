@@ -215,6 +215,55 @@ export function JobsPage() {
             {hasActiveFilters && ' (filtered)'}
           </p>
         )}
+
+        {/* Attribution footer */}
+        <footer className="text-center text-xs text-muted-foreground mt-8 pb-4 border-t border-border pt-4">
+          Job data provided by{' '}
+          <a
+            href="https://news.ycombinator.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-foreground"
+          >
+            Hacker News
+          </a>
+          ,{' '}
+          <a
+            href="https://remoteok.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-foreground"
+          >
+            RemoteOK
+          </a>
+          ,{' '}
+          <a
+            href="https://jobicy.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-foreground"
+          >
+            Jobicy
+          </a>
+          ,{' '}
+          <a
+            href="https://www.arbeitnow.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-foreground"
+          >
+            Arbeitnow
+          </a>
+          , and{' '}
+          <a
+            href="https://remotive.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-foreground"
+          >
+            Remotive
+          </a>
+        </footer>
       </main>
     </div>
   )
