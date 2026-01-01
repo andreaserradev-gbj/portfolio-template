@@ -41,7 +41,8 @@ function getSectionBackground(
   if (FIXED_BACKGROUND_SECTIONS.has(sectionId)) {
     return '' // These sections have their own backgrounds
   }
-  // Alternate: odd = card, even = slate
+  // Zero-based index: 0,2,4... = slate (first, third, fifth section)
+  //                   1,3,5... = card (second, fourth, sixth section)
   return alternatingIndex % 2 === 1 ? 'section-bg-card' : 'section-bg-slate'
 }
 
@@ -61,11 +62,13 @@ function PortfolioView() {
         {sections.map((sectionId) => {
           const Component = sectionComponents[sectionId]
           if (!Component) {
-            console.error(`[Config] Unknown section: "${sectionId}"`)
+            // Fail fast: configuration errors should not be silently ignored
+            const availableSections = Object.keys(sectionComponents).join(', ')
+            const errorMessage = `[Config] Unknown section: "${sectionId}". Available sections: ${availableSections}`
+            console.error(errorMessage)
+
+            // In development, show inline error for easier debugging
             if (import.meta.env.DEV) {
-              console.error(
-                `Available sections: ${Object.keys(sectionComponents).join(', ')}`
-              )
               return (
                 <div
                   key={sectionId}
@@ -74,12 +77,14 @@ function PortfolioView() {
                   <strong>Config Error:</strong> Unknown section "{sectionId}"
                   <br />
                   <span className="text-sm">
-                    Available: {Object.keys(sectionComponents).join(', ')}
+                    Available: {availableSections}
                   </span>
                 </div>
               )
             }
-            return null
+
+            // In production, throw to trigger ErrorBoundary rather than silently failing
+            throw new Error(errorMessage)
           }
 
           // Get background class and increment counter for alternating sections
