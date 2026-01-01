@@ -4,6 +4,7 @@ import { LeadershipHighlights } from '@/components/LeadershipHighlights'
 import { Experience } from '@/components/Experience'
 import { Competencies } from '@/components/Competencies'
 import { Skills } from '@/components/Skills'
+import { Projects } from '@/components/Projects'
 import { Contact } from '@/components/Contact'
 import { SectionNav } from '@/components/SectionNav'
 import { ThemeChooserFAB } from '@/components/ThemeChooserFAB'
@@ -22,10 +23,33 @@ const sectionComponents: Record<string, React.FC> = {
   experience: Experience,
   achievements: Competencies,
   skills: Skills,
+  projects: Projects,
   contact: Contact,
 }
 
+// Sections that don't participate in background alternation (have their own unique backgrounds)
+const FIXED_BACKGROUND_SECTIONS = new Set(['hero'])
+
+/**
+ * Get alternating background class for a section based on its visual position.
+ * Only counts sections that participate in alternation (excludes hero, etc.)
+ */
+function getSectionBackground(
+  sectionId: string,
+  alternatingIndex: number
+): string {
+  if (FIXED_BACKGROUND_SECTIONS.has(sectionId)) {
+    return '' // These sections have their own backgrounds
+  }
+  // Zero-based index: 0,2,4... = slate (first, third, fifth section)
+  //                   1,3,5... = card (second, fourth, sixth section)
+  return alternatingIndex % 2 === 1 ? 'section-bg-card' : 'section-bg-slate'
+}
+
 function PortfolioView() {
+  // Track alternating index (only for sections that participate)
+  let alternatingIndex = 0
+
   return (
     <>
       <a href="#hero" className="skip-link">
@@ -38,15 +62,42 @@ function PortfolioView() {
         {sections.map((sectionId) => {
           const Component = sectionComponents[sectionId]
           if (!Component) {
+            // Fail fast: configuration errors should not be silently ignored
+            const availableSections = Object.keys(sectionComponents).join(', ')
+            const errorMessage = `[Config] Unknown section: "${sectionId}". Available sections: ${availableSections}`
+            console.error(errorMessage)
+
+            // In development, show inline error for easier debugging
             if (import.meta.env.DEV) {
-              console.error(
-                `Unknown section "${sectionId}" in content.json sections array. ` +
-                  `Available sections: ${Object.keys(sectionComponents).join(', ')}`
+              return (
+                <div
+                  key={sectionId}
+                  className="bg-red-100 dark:bg-red-900/30 p-6 text-red-800 dark:text-red-200 border border-red-300 dark:border-red-700 m-4 rounded-lg"
+                >
+                  <strong>Config Error:</strong> Unknown section "{sectionId}"
+                  <br />
+                  <span className="text-sm">
+                    Available: {availableSections}
+                  </span>
+                </div>
               )
             }
-            return null
+
+            // In production, throw to trigger ErrorBoundary rather than silently failing
+            throw new Error(errorMessage)
           }
-          return <Component key={sectionId} />
+
+          // Get background class and increment counter for alternating sections
+          const bgClass = getSectionBackground(sectionId, alternatingIndex)
+          if (!FIXED_BACKGROUND_SECTIONS.has(sectionId)) {
+            alternatingIndex++
+          }
+
+          return (
+            <div key={sectionId} className={bgClass}>
+              <Component />
+            </div>
+          )
         })}
       </main>
     </>

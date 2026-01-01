@@ -60,6 +60,20 @@ Skill categories with badges and context popovers.
 - Context popovers with details
 - Optional summary bar
 
+### Projects
+
+Open source projects and contributions.
+
+**Config source:** `content.json` → `projects` + `projectsSection`
+
+**Features:**
+
+- Responsive grid layout (3 columns on large screens)
+- Featured project badges
+- Technology tags with secondary badge variant
+- Smart link display: GitHub icon for GitHub URLs, generic link for others
+- Scroll-triggered fade-in animations via IntersectionObserver
+
 ### Competencies (Achievements)
 
 Achievement cards in a grid layout.

@@ -247,6 +247,23 @@ describe('validateContentConfig', () => {
     const result = validateContentConfig(configWithSections)
     expect(result.sections).toEqual(['hero', 'experience', 'skills', 'contact'])
   })
+
+  it('validates sections array with projects', () => {
+    const configWithProjects = {
+      ...minimalValidConfig,
+      sections: ['hero', 'experience', 'projects', 'skills', 'contact'],
+    }
+    const result = validateContentConfig(configWithProjects)
+    expect(result.sections).toContain('projects')
+  })
+
+  it('rejects invalid section IDs', () => {
+    const configWithInvalidSection = {
+      ...minimalValidConfig,
+      sections: ['hero', 'invalid-section', 'contact'],
+    }
+    expectValidationError(() => validateContentConfig(configWithInvalidSection))
+  })
 })
 
 // ============================================================================
@@ -375,5 +392,246 @@ describe('validateDesignSystemsConfig', () => {
       systems: [],
     }
     expectValidationError(() => validateDesignSystemsConfig(invalidConfig))
+  })
+})
+
+// ============================================================================
+// PROJECTS VALIDATION TESTS
+// ============================================================================
+
+describe('validateContentConfig - projects', () => {
+  const minimalValidConfig = {
+    variables: {},
+    hero: {
+      name: 'Test User',
+      title: 'Developer',
+      tagline: 'Building things',
+    },
+  }
+
+  const minimalProject = {
+    id: 'test-project',
+    title: 'Test Project',
+    description: 'A test project description',
+    url: 'https://github.com/test/repo',
+  }
+
+  it('validates minimal project with required fields', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [minimalProject],
+    }
+    const result = validateContentConfig(config)
+    expect(result.projects).toHaveLength(1)
+    expect(result.projects?.[0].id).toBe('test-project')
+    expect(result.projects?.[0].title).toBe('Test Project')
+    expect(result.projects?.[0].url).toBe('https://github.com/test/repo')
+  })
+
+  it('applies default featured=false', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [minimalProject],
+    }
+    const result = validateContentConfig(config)
+    expect(result.projects?.[0].featured).toBe(false)
+  })
+
+  it('validates project with featured=true', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [{ ...minimalProject, featured: true }],
+    }
+    const result = validateContentConfig(config)
+    expect(result.projects?.[0].featured).toBe(true)
+  })
+
+  it('validates optional tags array', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [
+        { ...minimalProject, tags: ['TypeScript', 'React', 'Node.js'] },
+      ],
+    }
+    const result = validateContentConfig(config)
+    expect(result.projects?.[0].tags).toEqual([
+      'TypeScript',
+      'React',
+      'Node.js',
+    ])
+  })
+
+  it('validates empty tags array', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [{ ...minimalProject, tags: [] }],
+    }
+    const result = validateContentConfig(config)
+    expect(result.projects?.[0].tags).toEqual([])
+  })
+
+  it('validates multiple projects', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [
+        minimalProject,
+        {
+          id: 'second-project',
+          title: 'Second Project',
+          description: 'Another project',
+          url: 'https://github.com/test/second',
+          featured: true,
+        },
+      ],
+    }
+    const result = validateContentConfig(config)
+    expect(result.projects).toHaveLength(2)
+    expect(result.projects?.[1].featured).toBe(true)
+  })
+
+  it('validates empty projects array', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [],
+    }
+    const result = validateContentConfig(config)
+    expect(result.projects).toEqual([])
+  })
+
+  it('rejects duplicate project IDs', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [
+        minimalProject,
+        { ...minimalProject, title: 'Different Title' }, // same id
+      ],
+    }
+    expectValidationError(() => validateContentConfig(config))
+  })
+
+  it('logs helpful error for duplicate project IDs', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [
+        { ...minimalProject, id: 'duplicate-id' },
+        { ...minimalProject, id: 'duplicate-id' },
+      ],
+    }
+    const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {})
+    try {
+      expect(() => validateContentConfig(config)).toThrow()
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining('Duplicate project id: "duplicate-id"')
+      )
+    } finally {
+      consoleSpy.mockRestore()
+    }
+  })
+
+  it('rejects invalid url', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [{ ...minimalProject, url: 'not-a-url' }],
+    }
+    expectValidationError(() => validateContentConfig(config))
+  })
+
+  it('rejects empty id', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [{ ...minimalProject, id: '' }],
+    }
+    expectValidationError(() => validateContentConfig(config))
+  })
+
+  it('rejects empty title', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [{ ...minimalProject, title: '' }],
+    }
+    expectValidationError(() => validateContentConfig(config))
+  })
+
+  it('rejects empty description', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [{ ...minimalProject, description: '' }],
+    }
+    expectValidationError(() => validateContentConfig(config))
+  })
+
+  it('rejects missing required fields', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [{ id: 'test' }], // missing title, description, url
+    }
+    expectValidationError(() => validateContentConfig(config))
+  })
+})
+
+describe('validateContentConfig - projectsSection', () => {
+  const minimalValidConfig = {
+    variables: {},
+    hero: {
+      name: 'Test User',
+      title: 'Developer',
+      tagline: 'Building things',
+    },
+  }
+
+  it('applies default eyebrow="Open Source"', () => {
+    const config = {
+      ...minimalValidConfig,
+      projectsSection: {},
+    }
+    const result = validateContentConfig(config)
+    expect(result.projectsSection?.eyebrow).toBe('Open Source')
+  })
+
+  it('applies default headline="Projects"', () => {
+    const config = {
+      ...minimalValidConfig,
+      projectsSection: {},
+    }
+    const result = validateContentConfig(config)
+    expect(result.projectsSection?.headline).toBe('Projects')
+  })
+
+  it('allows custom eyebrow and headline', () => {
+    const config = {
+      ...minimalValidConfig,
+      projectsSection: {
+        eyebrow: 'My Work',
+        headline: 'Side Projects',
+      },
+    }
+    const result = validateContentConfig(config)
+    expect(result.projectsSection?.eyebrow).toBe('My Work')
+    expect(result.projectsSection?.headline).toBe('Side Projects')
+  })
+
+  it('allows optional description', () => {
+    const config = {
+      ...minimalValidConfig,
+      projectsSection: {
+        description: 'Here are some of my open source contributions.',
+      },
+    }
+    const result = validateContentConfig(config)
+    expect(result.projectsSection?.description).toBe(
+      'Here are some of my open source contributions.'
+    )
+  })
+
+  it('validates projectsSection without description', () => {
+    const config = {
+      ...minimalValidConfig,
+      projectsSection: {
+        eyebrow: 'Open Source',
+        headline: 'Projects',
+      },
+    }
+    const result = validateContentConfig(config)
+    expect(result.projectsSection?.description).toBeUndefined()
   })
 })

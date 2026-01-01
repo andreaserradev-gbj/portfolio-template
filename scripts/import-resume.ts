@@ -99,7 +99,9 @@ Example: If earliest job started in 2010, set:
 }
 
 ### sections (required)
+Include only sections that have content. Base sections:
 ["hero", "metrics", "experience", "achievements", "skills", "contact"]
+Only add "projects" to this array if the resume mentions open source projects or side projects.
 
 ### hero (required)
 {
@@ -167,6 +169,25 @@ Categories to use:
 - "Development Tools"
 - "Leadership" (soft skills)
 
+### projects (array, optional - OMIT entirely if no projects found)
+Extract open source projects or side projects ONLY if explicitly mentioned in resume.
+If no projects are found, do NOT include this field (don't use empty array).
+{
+  "id": "<kebab-case-id>",
+  "title": "<project-name>",
+  "description": "<1-2 sentence description>",
+  "url": "<project-url>",
+  "tags": ["<technology1>", "<technology2>"],
+  "featured": <true for most significant projects, false otherwise>
+}
+
+### projectsSection (optional - include ONLY if projects array has items)
+{
+  "eyebrow": "Open Source",
+  "headline": "Projects",
+  "description": "<optional description of open source contributions>"
+}
+
 ### metrics (array, 3-4 entries)
 Key quantifiable achievements:
 {
@@ -230,7 +251,7 @@ Valid platforms: linkedin, github, twitter, mastodon, youtube, dribbble, behance
   }
 }
 
-### navigation (use these defaults)
+### navigation (use these defaults, adjust based on sections)
 {
   "links": [
     { "href": "#hero", "label": "Home", "external": false },
@@ -242,6 +263,7 @@ Valid platforms: linkedin, github, twitter, mastodon, youtube, dribbble, behance
   ],
   "cta": { "text": "Get in Touch", "href": "#contact" }
 }
+Note: Only add { "href": "#projects", "label": "Projects", "external": false } if projects exist in the content.
 
 ### branding (use these defaults)
 {
@@ -626,6 +648,34 @@ function validateResults(result: ExtractionResult): void {
     console.error(error instanceof Error ? error.message : error)
     process.exit(4)
   }
+
+  // Cross-validation: ensure navigation links match available content
+  const projectsNavLink = result.site.navigation.links.some(
+    (link) => link.href === '#projects'
+  )
+  const hasProjects = (result.content.projects ?? []).length > 0
+
+  if (projectsNavLink && !hasProjects) {
+    console.error(
+      `${ANSI.red}ERROR: Navigation has #projects link but no projects in content${ANSI.reset}`
+    )
+    console.error(
+      '  Either add projects to content or remove the navigation link'
+    )
+    process.exit(4)
+  }
+
+  if (hasProjects && !projectsNavLink) {
+    console.error(
+      `${ANSI.red}ERROR: Projects exist in content but navigation has no #projects link${ANSI.reset}`
+    )
+    console.error(
+      '  Either add a #projects navigation link or remove projects from content'
+    )
+    process.exit(4)
+  }
+
+  console.log('    cross-validation: valid')
 }
 
 function writeExampleConfigs(

@@ -6,6 +6,7 @@ import {
   resolveMetrics,
   normalizeSkillCategories,
   getCurrentYear,
+  validateNavProjectsConsistency,
 } from '../loader'
 
 // ============================================================================
@@ -310,5 +311,90 @@ describe('normalizeSkillCategories', () => {
     const categories = [{ name: 'Test', icon: 'settings', skills: ['One'] }]
     const result = normalizeSkillCategories(categories, variables)
     expect(result[0].icon).toBe('settings')
+  })
+})
+
+// ============================================================================
+// CROSS-VALIDATION TESTS
+// ============================================================================
+
+describe('validateNavProjectsConsistency', () => {
+  it('passes when navigation has no projects link', () => {
+    const navLinks = [
+      { href: '#hero' },
+      { href: '#experience' },
+      { href: '#contact' },
+    ]
+    const projects: unknown[] = []
+
+    expect(() =>
+      validateNavProjectsConsistency(navLinks, projects)
+    ).not.toThrow()
+  })
+
+  it('passes when navigation has projects link and projects exist', () => {
+    const navLinks = [
+      { href: '#hero' },
+      { href: '#projects' },
+      { href: '#contact' },
+    ]
+    const projects = [{ id: 'project-1', title: 'My Project' }]
+
+    expect(() =>
+      validateNavProjectsConsistency(navLinks, projects)
+    ).not.toThrow()
+  })
+
+  it('throws when navigation has projects link but no projects', () => {
+    const navLinks = [
+      { href: '#hero' },
+      { href: '#projects' },
+      { href: '#contact' },
+    ]
+    const projects: unknown[] = []
+
+    expect(() => validateNavProjectsConsistency(navLinks, projects)).toThrow(
+      'Configuration error: Navigation has #projects link but no projects defined'
+    )
+  })
+
+  it('throws with helpful error message', () => {
+    const navLinks = [{ href: '#projects' }]
+    const projects: unknown[] = []
+
+    expect(() => validateNavProjectsConsistency(navLinks, projects)).toThrow(
+      'Either add projects to content.json or remove the Projects link from site.json'
+    )
+  })
+
+  it('passes with empty navigation links', () => {
+    const navLinks: Array<{ href: string }> = []
+    const projects: unknown[] = []
+
+    expect(() =>
+      validateNavProjectsConsistency(navLinks, projects)
+    ).not.toThrow()
+  })
+
+  it('throws when projects exist but navigation has no projects link', () => {
+    const navLinks = [
+      { href: '#hero' },
+      { href: '#experience' },
+      { href: '#contact' },
+    ]
+    const projects = [{ id: 'project-1', title: 'My Project' }]
+
+    expect(() => validateNavProjectsConsistency(navLinks, projects)).toThrow(
+      'Configuration error: Projects are defined in content.json but navigation has no #projects link'
+    )
+  })
+
+  it('throws with helpful error message for orphaned projects', () => {
+    const navLinks = [{ href: '#hero' }]
+    const projects = [{ id: 'project-1' }]
+
+    expect(() => validateNavProjectsConsistency(navLinks, projects)).toThrow(
+      'Either add a Projects link to site.json navigation or remove projects from content.json'
+    )
   })
 })

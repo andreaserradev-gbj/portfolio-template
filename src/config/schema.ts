@@ -372,6 +372,27 @@ export const FooterSchema = z.object({
 })
 
 /**
+ * Schema for a single project entry.
+ */
+export const ProjectSchema = z.object({
+  id: z.string().min(1),
+  title: z.string().min(1),
+  description: z.string().min(1),
+  url: z.string().url(),
+  tags: z.array(z.string().min(1)).optional(),
+  featured: z.boolean().default(false),
+})
+
+/**
+ * Schema for Projects section configuration.
+ */
+export const ProjectsSectionSchema = z.object({
+  eyebrow: z.string().min(1).default('Open Source'),
+  headline: z.string().min(1).default('Projects'),
+  description: z.string().min(1).optional(),
+})
+
+/**
  * Schema for custom sections.
  */
 export const CustomSectionSchema = z.object({
@@ -417,6 +438,7 @@ export const SectionIdSchema = z.enum([
   'experience',
   'achievements',
   'skills',
+  'projects',
   'clients',
   'contact',
 ])
@@ -565,6 +587,24 @@ export const ContentConfigSchema = z.object({
   // Simplified skills format (alternative to skillCategories)
   skills: SimplifiedSkillsSectionSchema.optional(),
   skillsSection: SkillsSectionSchema.optional(),
+  projects: z
+    .array(ProjectSchema)
+    .optional()
+    .superRefine((projects, ctx) => {
+      if (!projects) return
+      const ids = new Set<string>()
+      for (let i = 0; i < projects.length; i++) {
+        if (ids.has(projects[i].id)) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: `Duplicate project id: "${projects[i].id}"`,
+            path: [i, 'id'],
+          })
+        }
+        ids.add(projects[i].id)
+      }
+    }),
+  projectsSection: ProjectsSectionSchema.optional(),
   clients: ClientsSectionSchema.optional(),
   contact: ContactSchema.optional(),
   footer: FooterSchema.optional(),
@@ -847,6 +887,8 @@ export type SkillsSection = z.infer<typeof SkillsSectionSchema>
 export type SkillsSummaryItem = z.infer<typeof SkillsSummaryItemSchema>
 export type AchievementsSection = z.infer<typeof AchievementsSectionSchema>
 export type Footer = z.infer<typeof FooterSchema>
+export type Project = z.infer<typeof ProjectSchema>
+export type ProjectsSection = z.infer<typeof ProjectsSectionSchema>
 export type Client = z.infer<typeof ClientSchema>
 export type ClientsSection = z.infer<typeof ClientsSectionSchema>
 export type CustomSection = z.infer<typeof CustomSectionSchema>

@@ -32,6 +32,8 @@ import {
   type AchievementsSection,
   type Footer,
   type JobBoardScoringConfig,
+  type Project,
+  type ProjectsSection,
 } from './schema'
 
 // ============================================================================
@@ -346,6 +348,51 @@ function getSkillCategories(): NormalizedSkillCategory[] {
 
 export const skillCategories: NormalizedSkillCategory[] = getSkillCategories()
 
+// Projects
+export const projects: Project[] = rawContentConfig.projects ?? []
+
+// Projects section configuration
+export const projectsSection: ProjectsSection = {
+  eyebrow: rawContentConfig.projectsSection?.eyebrow ?? 'Open Source',
+  headline: rawContentConfig.projectsSection?.headline ?? 'Projects',
+  description: rawContentConfig.projectsSection?.description,
+}
+
+// ============================================================================
+// CROSS-VALIDATION
+// ============================================================================
+
+/**
+ * Validates that navigation links are consistent with available content.
+ * Throws an error if:
+ * - Navigation has #projects link but no projects are defined
+ * - Projects are defined but navigation has no #projects link
+ */
+export function validateNavProjectsConsistency(
+  navLinks: Array<{ href: string }>,
+  projectsArray: unknown[]
+): void {
+  const hasProjectsNavLink = navLinks.some((link) => link.href === '#projects')
+  const hasProjects = projectsArray.length > 0
+
+  if (hasProjectsNavLink && !hasProjects) {
+    throw new Error(
+      'Configuration error: Navigation has #projects link but no projects defined in content.json. ' +
+        'Either add projects to content.json or remove the Projects link from site.json navigation.'
+    )
+  }
+
+  if (hasProjects && !hasProjectsNavLink) {
+    throw new Error(
+      'Configuration error: Projects are defined in content.json but navigation has no #projects link. ' +
+        'Either add a Projects link to site.json navigation or remove projects from content.json.'
+    )
+  }
+}
+
+// Run cross-validation at load time
+validateNavProjectsConsistency(siteConfig.navigation.links, projects)
+
 // Job board scoring configuration with defaults
 export const jobBoardScoring: JobBoardScoringConfig =
   rawContentConfig.jobBoardScoring ?? {
@@ -515,7 +562,12 @@ export const customSections = rawContentConfig.custom
 
 export type { Experience, Achievement, NavLink, SiteConfig, ContentConfig }
 
-export type { MetricBackContent, JobBoardScoringConfig } from './schema'
+export type {
+  MetricBackContent,
+  JobBoardScoringConfig,
+  Project,
+  ProjectsSection,
+} from './schema'
 
 // Aliased exports for backward compatibility
 export type { NormalizedSkillCategory as SkillCategory }
@@ -540,6 +592,8 @@ const resolvedConfig = {
   skillsDescription,
   skillsSummary,
   skillDetails,
+  projects,
+  projectsSection,
   contact,
   navLinks,
   clients,
