@@ -34,13 +34,11 @@ export function Projects() {
     return () => observer.disconnect()
   }, [])
 
-  // Return null if no projects to display
   if (projects.length === 0) return null
 
   return (
     <section id="projects" className="section-padding">
       <div className="container-wide">
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <p className="text-sm font-semibold text-brass-600 dark:text-brass-400 uppercase tracking-wider mb-3">
             {projectsSection.eyebrow}
@@ -55,7 +53,6 @@ export function Projects() {
           )}
         </div>
 
-        {/* Projects Grid */}
         <div
           ref={sectionRef}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto"
@@ -83,7 +80,6 @@ export function Projects() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                {/* Tags */}
                 {project.tags && project.tags.length > 0 && (
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag) => (
@@ -94,7 +90,6 @@ export function Projects() {
                   </div>
                 )}
 
-                {/* GitHub Link */}
                 <Button variant="outline" size="sm" asChild className="w-full">
                   <a
                     href={project.githubUrl}

@@ -348,6 +348,18 @@ The Projects section displays open source work and side projects:
 
 To enable the Projects section, add `"projects"` to the `sections` array in content.json.
 
+**Important:** When adding the Projects section, you must also add a navigation link in `site.json`:
+
+```json
+{
+  "navigation": {
+    "links": [{ "href": "#projects", "label": "Projects", "external": false }]
+  }
+}
+```
+
+The build will fail if navigation and projects configuration are inconsistent (e.g., navigation has `#projects` link but no projects defined, or projects exist but no navigation link).
+
 ## Example Portfolios
 
 The `examples/` folder contains different portfolio configurations for various roles:

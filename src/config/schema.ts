@@ -379,7 +379,7 @@ export const ProjectSchema = z.object({
   title: z.string().min(1),
   description: z.string().min(1),
   githubUrl: z.string().url(),
-  tags: z.array(z.string()).optional(),
+  tags: z.array(z.string().min(1)).optional(),
   featured: z.boolean().default(false),
 })
 
@@ -387,9 +387,9 @@ export const ProjectSchema = z.object({
  * Schema for Projects section configuration.
  */
 export const ProjectsSectionSchema = z.object({
-  eyebrow: z.string().default('Open Source'),
-  headline: z.string().default('Projects'),
-  description: z.string().optional(),
+  eyebrow: z.string().min(1).default('Open Source'),
+  headline: z.string().min(1).default('Projects'),
+  description: z.string().min(1).optional(),
 })
 
 /**

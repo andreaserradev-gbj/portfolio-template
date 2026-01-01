@@ -256,6 +256,14 @@ describe('validateContentConfig', () => {
     const result = validateContentConfig(configWithProjects)
     expect(result.sections).toContain('projects')
   })
+
+  it('rejects invalid section IDs', () => {
+    const configWithInvalidSection = {
+      ...minimalValidConfig,
+      sections: ['hero', 'invalid-section', 'contact'],
+    }
+    expectValidationError(() => validateContentConfig(configWithInvalidSection))
+  })
 })
 
 // ============================================================================

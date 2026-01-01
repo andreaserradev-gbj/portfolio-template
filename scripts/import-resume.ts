@@ -665,6 +665,16 @@ function validateResults(result: ExtractionResult): void {
     process.exit(4)
   }
 
+  if (hasProjects && !projectsNavLink) {
+    console.error(
+      `${ANSI.red}ERROR: Projects exist in content but navigation has no #projects link${ANSI.reset}`
+    )
+    console.error(
+      '  Either add a #projects navigation link or remove projects from content'
+    )
+    process.exit(4)
+  }
+
   console.log('    cross-validation: valid')
 }
 

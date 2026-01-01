@@ -66,6 +66,18 @@ function PortfolioView() {
               console.error(
                 `Available sections: ${Object.keys(sectionComponents).join(', ')}`
               )
+              return (
+                <div
+                  key={sectionId}
+                  className="bg-red-100 dark:bg-red-900/30 p-6 text-red-800 dark:text-red-200 border border-red-300 dark:border-red-700 m-4 rounded-lg"
+                >
+                  <strong>Config Error:</strong> Unknown section "{sectionId}"
+                  <br />
+                  <span className="text-sm">
+                    Available: {Object.keys(sectionComponents).join(', ')}
+                  </span>
+                </div>
+              )
             }
             return null
           }
