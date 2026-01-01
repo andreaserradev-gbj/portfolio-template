@@ -61,10 +61,10 @@ function PortfolioView() {
         {sections.map((sectionId) => {
           const Component = sectionComponents[sectionId]
           if (!Component) {
+            console.error(`[Config] Unknown section: "${sectionId}"`)
             if (import.meta.env.DEV) {
               console.error(
-                `Unknown section "${sectionId}" in content.json sections array. ` +
-                  `Available sections: ${Object.keys(sectionComponents).join(', ')}`
+                `Available sections: ${Object.keys(sectionComponents).join(', ')}`
               )
             }
             return null

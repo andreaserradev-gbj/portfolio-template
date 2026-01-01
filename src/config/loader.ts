@@ -364,17 +364,28 @@ export const projectsSection: ProjectsSection = {
 
 /**
  * Validates that navigation links are consistent with available content.
- * Throws an error if navigation references sections that don't exist.
+ * Throws an error if:
+ * - Navigation has #projects link but no projects are defined
+ * - Projects are defined but navigation has no #projects link
  */
 export function validateNavProjectsConsistency(
   navLinks: Array<{ href: string }>,
   projectsArray: unknown[]
 ): void {
   const hasProjectsNavLink = navLinks.some((link) => link.href === '#projects')
-  if (hasProjectsNavLink && projectsArray.length === 0) {
+  const hasProjects = projectsArray.length > 0
+
+  if (hasProjectsNavLink && !hasProjects) {
     throw new Error(
       'Configuration error: Navigation has #projects link but no projects defined in content.json. ' +
         'Either add projects to content.json or remove the Projects link from site.json navigation.'
+    )
+  }
+
+  if (hasProjects && !hasProjectsNavLink) {
+    throw new Error(
+      'Configuration error: Projects are defined in content.json but navigation has no #projects link. ' +
+        'Either add a Projects link to site.json navigation or remove projects from content.json.'
     )
   }
 }

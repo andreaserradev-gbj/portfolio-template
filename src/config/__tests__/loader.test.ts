@@ -375,4 +375,26 @@ describe('validateNavProjectsConsistency', () => {
       validateNavProjectsConsistency(navLinks, projects)
     ).not.toThrow()
   })
+
+  it('throws when projects exist but navigation has no projects link', () => {
+    const navLinks = [
+      { href: '#hero' },
+      { href: '#experience' },
+      { href: '#contact' },
+    ]
+    const projects = [{ id: 'project-1', title: 'My Project' }]
+
+    expect(() => validateNavProjectsConsistency(navLinks, projects)).toThrow(
+      'Configuration error: Projects are defined in content.json but navigation has no #projects link'
+    )
+  })
+
+  it('throws with helpful error message for orphaned projects', () => {
+    const navLinks = [{ href: '#hero' }]
+    const projects = [{ id: 'project-1' }]
+
+    expect(() => validateNavProjectsConsistency(navLinks, projects)).toThrow(
+      'Either add a Projects link to site.json navigation or remove projects from content.json'
+    )
+  })
 })

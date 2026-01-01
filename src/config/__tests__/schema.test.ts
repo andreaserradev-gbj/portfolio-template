@@ -247,6 +247,15 @@ describe('validateContentConfig', () => {
     const result = validateContentConfig(configWithSections)
     expect(result.sections).toEqual(['hero', 'experience', 'skills', 'contact'])
   })
+
+  it('validates sections array with projects', () => {
+    const configWithProjects = {
+      ...minimalValidConfig,
+      sections: ['hero', 'experience', 'projects', 'skills', 'contact'],
+    }
+    const result = validateContentConfig(configWithProjects)
+    expect(result.sections).toContain('projects')
+  })
 })
 
 // ============================================================================
@@ -470,6 +479,45 @@ describe('validateContentConfig - projects', () => {
     const result = validateContentConfig(config)
     expect(result.projects).toHaveLength(2)
     expect(result.projects?.[1].featured).toBe(true)
+  })
+
+  it('validates empty projects array', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [],
+    }
+    const result = validateContentConfig(config)
+    expect(result.projects).toEqual([])
+  })
+
+  it('rejects duplicate project IDs', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [
+        minimalProject,
+        { ...minimalProject, title: 'Different Title' }, // same id
+      ],
+    }
+    expectValidationError(() => validateContentConfig(config))
+  })
+
+  it('logs helpful error for duplicate project IDs', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [
+        { ...minimalProject, id: 'duplicate-id' },
+        { ...minimalProject, id: 'duplicate-id' },
+      ],
+    }
+    const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {})
+    try {
+      expect(() => validateContentConfig(config)).toThrow()
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining('Duplicate project id: "duplicate-id"')
+      )
+    } finally {
+      consoleSpy.mockRestore()
+    }
   })
 
   it('rejects invalid githubUrl', () => {

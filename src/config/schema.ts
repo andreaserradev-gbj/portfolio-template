@@ -587,7 +587,23 @@ export const ContentConfigSchema = z.object({
   // Simplified skills format (alternative to skillCategories)
   skills: SimplifiedSkillsSectionSchema.optional(),
   skillsSection: SkillsSectionSchema.optional(),
-  projects: z.array(ProjectSchema).optional(),
+  projects: z
+    .array(ProjectSchema)
+    .optional()
+    .superRefine((projects, ctx) => {
+      if (!projects) return
+      const ids = new Set<string>()
+      for (let i = 0; i < projects.length; i++) {
+        if (ids.has(projects[i].id)) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: `Duplicate project id: "${projects[i].id}"`,
+            path: [i, 'id'],
+          })
+        }
+        ids.add(projects[i].id)
+      }
+    }),
   projectsSection: ProjectsSectionSchema.optional(),
   clients: ClientsSectionSchema.optional(),
   contact: ContactSchema.optional(),
