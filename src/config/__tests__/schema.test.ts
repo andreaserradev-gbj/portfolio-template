@@ -377,3 +377,205 @@ describe('validateDesignSystemsConfig', () => {
     expectValidationError(() => validateDesignSystemsConfig(invalidConfig))
   })
 })
+
+// ============================================================================
+// PROJECTS VALIDATION TESTS
+// ============================================================================
+
+describe('validateContentConfig - projects', () => {
+  const minimalValidConfig = {
+    variables: {},
+    hero: {
+      name: 'Test User',
+      title: 'Developer',
+      tagline: 'Building things',
+    },
+  }
+
+  const minimalProject = {
+    id: 'test-project',
+    title: 'Test Project',
+    description: 'A test project description',
+    githubUrl: 'https://github.com/test/repo',
+  }
+
+  it('validates minimal project with required fields', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [minimalProject],
+    }
+    const result = validateContentConfig(config)
+    expect(result.projects).toHaveLength(1)
+    expect(result.projects?.[0].id).toBe('test-project')
+    expect(result.projects?.[0].title).toBe('Test Project')
+    expect(result.projects?.[0].githubUrl).toBe('https://github.com/test/repo')
+  })
+
+  it('applies default featured=false', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [minimalProject],
+    }
+    const result = validateContentConfig(config)
+    expect(result.projects?.[0].featured).toBe(false)
+  })
+
+  it('validates project with featured=true', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [{ ...minimalProject, featured: true }],
+    }
+    const result = validateContentConfig(config)
+    expect(result.projects?.[0].featured).toBe(true)
+  })
+
+  it('validates optional tags array', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [
+        { ...minimalProject, tags: ['TypeScript', 'React', 'Node.js'] },
+      ],
+    }
+    const result = validateContentConfig(config)
+    expect(result.projects?.[0].tags).toEqual([
+      'TypeScript',
+      'React',
+      'Node.js',
+    ])
+  })
+
+  it('validates empty tags array', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [{ ...minimalProject, tags: [] }],
+    }
+    const result = validateContentConfig(config)
+    expect(result.projects?.[0].tags).toEqual([])
+  })
+
+  it('validates multiple projects', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [
+        minimalProject,
+        {
+          id: 'second-project',
+          title: 'Second Project',
+          description: 'Another project',
+          githubUrl: 'https://github.com/test/second',
+          featured: true,
+        },
+      ],
+    }
+    const result = validateContentConfig(config)
+    expect(result.projects).toHaveLength(2)
+    expect(result.projects?.[1].featured).toBe(true)
+  })
+
+  it('rejects invalid githubUrl', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [{ ...minimalProject, githubUrl: 'not-a-url' }],
+    }
+    expectValidationError(() => validateContentConfig(config))
+  })
+
+  it('rejects empty id', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [{ ...minimalProject, id: '' }],
+    }
+    expectValidationError(() => validateContentConfig(config))
+  })
+
+  it('rejects empty title', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [{ ...minimalProject, title: '' }],
+    }
+    expectValidationError(() => validateContentConfig(config))
+  })
+
+  it('rejects empty description', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [{ ...minimalProject, description: '' }],
+    }
+    expectValidationError(() => validateContentConfig(config))
+  })
+
+  it('rejects missing required fields', () => {
+    const config = {
+      ...minimalValidConfig,
+      projects: [{ id: 'test' }], // missing title, description, githubUrl
+    }
+    expectValidationError(() => validateContentConfig(config))
+  })
+})
+
+describe('validateContentConfig - projectsSection', () => {
+  const minimalValidConfig = {
+    variables: {},
+    hero: {
+      name: 'Test User',
+      title: 'Developer',
+      tagline: 'Building things',
+    },
+  }
+
+  it('applies default eyebrow="Open Source"', () => {
+    const config = {
+      ...minimalValidConfig,
+      projectsSection: {},
+    }
+    const result = validateContentConfig(config)
+    expect(result.projectsSection?.eyebrow).toBe('Open Source')
+  })
+
+  it('applies default headline="Projects"', () => {
+    const config = {
+      ...minimalValidConfig,
+      projectsSection: {},
+    }
+    const result = validateContentConfig(config)
+    expect(result.projectsSection?.headline).toBe('Projects')
+  })
+
+  it('allows custom eyebrow and headline', () => {
+    const config = {
+      ...minimalValidConfig,
+      projectsSection: {
+        eyebrow: 'My Work',
+        headline: 'Side Projects',
+      },
+    }
+    const result = validateContentConfig(config)
+    expect(result.projectsSection?.eyebrow).toBe('My Work')
+    expect(result.projectsSection?.headline).toBe('Side Projects')
+  })
+
+  it('allows optional description', () => {
+    const config = {
+      ...minimalValidConfig,
+      projectsSection: {
+        description: 'Here are some of my open source contributions.',
+      },
+    }
+    const result = validateContentConfig(config)
+    expect(result.projectsSection?.description).toBe(
+      'Here are some of my open source contributions.'
+    )
+  })
+
+  it('validates projectsSection without description', () => {
+    const config = {
+      ...minimalValidConfig,
+      projectsSection: {
+        eyebrow: 'Open Source',
+        headline: 'Projects',
+      },
+    }
+    const result = validateContentConfig(config)
+    expect(result.projectsSection?.description).toBeUndefined()
+  })
+})

@@ -77,7 +77,7 @@ All portfolio content with dynamic template variables.
     "careerStartYear": 1996,
     "partnershipStartYear": 2013
   },
-  "sections": ["hero", "metrics", "experience", "achievements", "skills", "clients", "contact"],
+  "sections": ["hero", "metrics", "experience", "achievements", "skills", "projects", "clients", "contact"],
   "hero": {
     "name": "Your Name",
     "title": "Your Title",
@@ -306,6 +306,47 @@ The Skills section supports optional configuration via `skillsSection`:
 ```
 
 The `summary` array is optional. If provided, it displays a highlight bar at the bottom of the Skills section with up to 3 items. If omitted, the summary bar is hidden.
+
+## Projects Section Configuration
+
+The Projects section displays open source work and side projects:
+
+```json
+{
+  "projects": [
+    {
+      "id": "project-id",
+      "title": "Project Name",
+      "description": "A brief description of the project and its purpose.",
+      "githubUrl": "https://github.com/username/repo",
+      "tags": ["TypeScript", "React", "Node.js"],
+      "featured": true
+    }
+  ],
+  "projectsSection": {
+    "eyebrow": "Open Source",
+    "headline": "Projects",
+    "description": "Side projects and open source contributions."
+  }
+}
+```
+
+**Project fields:**
+
+- `id` (required) - Unique identifier for the project
+- `title` (required) - Project name
+- `description` (required) - Brief project description
+- `githubUrl` (required) - GitHub repository URL
+- `tags` (optional) - Array of technology tags
+- `featured` (optional) - Set to `true` to display a featured badge (default: `false`)
+
+**Section fields:**
+
+- `eyebrow` - Section label above headline (default: "Open Source")
+- `headline` - Section title (default: "Projects")
+- `description` - Optional section description
+
+To enable the Projects section, add `"projects"` to the `sections` array in content.json.
 
 ## Example Portfolios
 

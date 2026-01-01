@@ -99,7 +99,7 @@ Example: If earliest job started in 2010, set:
 }
 
 ### sections (required)
-["hero", "metrics", "experience", "achievements", "skills", "contact"]
+["hero", "metrics", "experience", "achievements", "skills", "projects", "contact"]
 
 ### hero (required)
 {
@@ -166,6 +166,24 @@ Categories to use:
 - "APIs & Integration"
 - "Development Tools"
 - "Leadership" (soft skills)
+
+### projects (array, optional)
+Extract open source projects or side projects if mentioned:
+{
+  "id": "<kebab-case-id>",
+  "title": "<project-name>",
+  "description": "<1-2 sentence description>",
+  "githubUrl": "<github-repository-url>",
+  "tags": ["<technology1>", "<technology2>"],
+  "featured": <true for most significant projects, false otherwise>
+}
+
+### projectsSection (optional, include if projects exist)
+{
+  "eyebrow": "Open Source",
+  "headline": "Projects",
+  "description": "<optional description of open source contributions>"
+}
 
 ### metrics (array, 3-4 entries)
 Key quantifiable achievements:
@@ -238,6 +256,7 @@ Valid platforms: linkedin, github, twitter, mastodon, youtube, dribbble, behance
     { "href": "#experience", "label": "Experience", "external": false },
     { "href": "#achievements", "label": "Achievements", "external": false },
     { "href": "#skills", "label": "Skills", "external": false },
+    { "href": "#projects", "label": "Projects", "external": false },
     { "href": "#contact", "label": "Contact", "external": false }
   ],
   "cta": { "text": "Get in Touch", "href": "#contact" }
