@@ -358,6 +358,30 @@ export const projectsSection: ProjectsSection = {
   description: rawContentConfig.projectsSection?.description,
 }
 
+// ============================================================================
+// CROSS-VALIDATION
+// ============================================================================
+
+/**
+ * Validates that navigation links are consistent with available content.
+ * Throws an error if navigation references sections that don't exist.
+ */
+export function validateNavProjectsConsistency(
+  navLinks: Array<{ href: string }>,
+  projectsArray: unknown[]
+): void {
+  const hasProjectsNavLink = navLinks.some((link) => link.href === '#projects')
+  if (hasProjectsNavLink && projectsArray.length === 0) {
+    throw new Error(
+      'Configuration error: Navigation has #projects link but no projects defined in content.json. ' +
+        'Either add projects to content.json or remove the Projects link from site.json navigation.'
+    )
+  }
+}
+
+// Run cross-validation at load time
+validateNavProjectsConsistency(siteConfig.navigation.links, projects)
+
 // Job board scoring configuration with defaults
 export const jobBoardScoring: JobBoardScoringConfig =
   rawContentConfig.jobBoardScoring ?? {
