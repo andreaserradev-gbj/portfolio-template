@@ -71,8 +71,8 @@ Open source projects and contributions.
 - Responsive grid layout (3 columns on large screens)
 - Featured project badges
 - Technology tags with secondary badge variant
-- GitHub repository links with icon
-- Lazy loading with IntersectionObserver
+- Smart link display: GitHub icon for GitHub URLs, generic link for others
+- Scroll-triggered fade-in animations via IntersectionObserver
 
 ### Competencies (Achievements)
 
