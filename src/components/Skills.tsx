@@ -62,10 +62,7 @@ export function Skills() {
   if (skillCategories.length === 0) return null
 
   return (
-    <section
-      id="skills"
-      className="section-padding bg-slate-50 dark:bg-navy-950"
-    >
+    <section id="skills" className="section-padding">
       <div className="container-wide">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

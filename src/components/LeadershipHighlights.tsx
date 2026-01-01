@@ -158,7 +158,7 @@ export function LeadershipHighlights() {
   if (metrics.length === 0) return null
 
   return (
-    <section id="impact" className="section-padding bg-card">
+    <section id="impact" className="section-padding">
       <div className="container-wide">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

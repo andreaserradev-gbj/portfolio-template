@@ -62,7 +62,7 @@ export function Competencies() {
   if (achievements.length === 0) return null
 
   return (
-    <section id="achievements" className="section-padding bg-card">
+    <section id="achievements" className="section-padding">
       <div className="container-wide">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

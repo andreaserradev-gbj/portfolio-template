@@ -39,7 +39,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="section-padding bg-card">
+    <section id="contact" className="section-padding">
       <div className="container-wide">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

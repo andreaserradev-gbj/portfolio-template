@@ -65,6 +65,11 @@
         "external": false
       },
       {
+        "href": "#projects",
+        "label": "Projects",
+        "external": false
+      },
+      {
         "href": "#contact",
         "label": "Contact",
         "external": false

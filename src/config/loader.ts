@@ -32,6 +32,8 @@ import {
   type AchievementsSection,
   type Footer,
   type JobBoardScoringConfig,
+  type Project,
+  type ProjectsSection,
 } from './schema'
 
 // ============================================================================
@@ -346,6 +348,16 @@ function getSkillCategories(): NormalizedSkillCategory[] {
 
 export const skillCategories: NormalizedSkillCategory[] = getSkillCategories()
 
+// Projects
+export const projects: Project[] = rawContentConfig.projects ?? []
+
+// Projects section configuration
+export const projectsSection: ProjectsSection = {
+  eyebrow: rawContentConfig.projectsSection?.eyebrow ?? 'Open Source',
+  headline: rawContentConfig.projectsSection?.headline ?? 'Projects',
+  description: rawContentConfig.projectsSection?.description,
+}
+
 // Job board scoring configuration with defaults
 export const jobBoardScoring: JobBoardScoringConfig =
   rawContentConfig.jobBoardScoring ?? {
@@ -515,7 +527,12 @@ export const customSections = rawContentConfig.custom
 
 export type { Experience, Achievement, NavLink, SiteConfig, ContentConfig }
 
-export type { MetricBackContent, JobBoardScoringConfig } from './schema'
+export type {
+  MetricBackContent,
+  JobBoardScoringConfig,
+  Project,
+  ProjectsSection,
+} from './schema'
 
 // Aliased exports for backward compatibility
 export type { NormalizedSkillCategory as SkillCategory }
@@ -540,6 +557,8 @@ const resolvedConfig = {
   skillsDescription,
   skillsSummary,
   skillDetails,
+  projects,
+  projectsSection,
   contact,
   navLinks,
   clients,

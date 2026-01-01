@@ -214,6 +214,15 @@
     @apply py-20 md:py-28 lg:py-32;
   }
 
+  /* Section background alternation classes - applied by App.tsx based on position */
+  .section-bg-card {
+    @apply bg-card;
+  }
+
+  .section-bg-slate {
+    @apply bg-slate-50 dark:bg-navy-950;
+  }
+
   .text-balance {
     text-wrap: balance;
   }
