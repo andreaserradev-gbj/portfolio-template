@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react'
-import { Github, ExternalLink } from 'lucide-react'
+import { Github, ExternalLink, Link } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
@@ -92,12 +92,21 @@ export function Projects() {
 
                 <Button variant="outline" size="sm" asChild className="w-full">
                   <a
-                    href={project.githubUrl}
+                    href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Github className="mr-2 h-4 w-4" />
-                    View on GitHub
+                    {project.url.includes('github.com') ? (
+                      <>
+                        <Github className="mr-2 h-4 w-4" />
+                        View on GitHub
+                      </>
+                    ) : (
+                      <>
+                        <Link className="mr-2 h-4 w-4" />
+                        View Project
+                      </>
+                    )}
                     <ExternalLink className="ml-auto h-3 w-3 opacity-50" />
                   </a>
                 </Button>

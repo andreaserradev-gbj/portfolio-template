@@ -378,7 +378,7 @@ export const ProjectSchema = z.object({
   id: z.string().min(1),
   title: z.string().min(1),
   description: z.string().min(1),
-  githubUrl: z.string().url(),
+  url: z.string().url(),
   tags: z.array(z.string().min(1)).optional(),
   featured: z.boolean().default(false),
 })

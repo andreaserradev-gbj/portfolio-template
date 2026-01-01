@@ -176,7 +176,7 @@ If no projects are found, do NOT include this field (don't use empty array).
   "id": "<kebab-case-id>",
   "title": "<project-name>",
   "description": "<1-2 sentence description>",
-  "githubUrl": "<github-repository-url>",
+  "url": "<project-url>",
   "tags": ["<technology1>", "<technology2>"],
   "featured": <true for most significant projects, false otherwise>
 }

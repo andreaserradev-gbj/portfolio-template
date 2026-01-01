@@ -413,7 +413,7 @@ describe('validateContentConfig - projects', () => {
     id: 'test-project',
     title: 'Test Project',
     description: 'A test project description',
-    githubUrl: 'https://github.com/test/repo',
+    url: 'https://github.com/test/repo',
   }
 
   it('validates minimal project with required fields', () => {
@@ -425,7 +425,7 @@ describe('validateContentConfig - projects', () => {
     expect(result.projects).toHaveLength(1)
     expect(result.projects?.[0].id).toBe('test-project')
     expect(result.projects?.[0].title).toBe('Test Project')
-    expect(result.projects?.[0].githubUrl).toBe('https://github.com/test/repo')
+    expect(result.projects?.[0].url).toBe('https://github.com/test/repo')
   })
 
   it('applies default featured=false', () => {
@@ -479,7 +479,7 @@ describe('validateContentConfig - projects', () => {
           id: 'second-project',
           title: 'Second Project',
           description: 'Another project',
-          githubUrl: 'https://github.com/test/second',
+          url: 'https://github.com/test/second',
           featured: true,
         },
       ],
@@ -528,10 +528,10 @@ describe('validateContentConfig - projects', () => {
     }
   })
 
-  it('rejects invalid githubUrl', () => {
+  it('rejects invalid url', () => {
     const config = {
       ...minimalValidConfig,
-      projects: [{ ...minimalProject, githubUrl: 'not-a-url' }],
+      projects: [{ ...minimalProject, url: 'not-a-url' }],
     }
     expectValidationError(() => validateContentConfig(config))
   })
@@ -563,7 +563,7 @@ describe('validateContentConfig - projects', () => {
   it('rejects missing required fields', () => {
     const config = {
       ...minimalValidConfig,
-      projects: [{ id: 'test' }], // missing title, description, githubUrl
+      projects: [{ id: 'test' }], // missing title, description, url
     }
     expectValidationError(() => validateContentConfig(config))
   })

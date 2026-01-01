@@ -324,7 +324,7 @@
       "id": "distributed-cache",
       "title": "DistCache",
       "description": "A high-performance distributed caching library for Go with consistent hashing, automatic sharding, and built-in metrics. Used in production at scale.",
-      "githubUrl": "https://github.com/johndoe/distcache",
+      "url": "https://github.com/johndoe/distcache",
       "tags": ["Go", "Distributed Systems", "Caching"],
       "featured": true
     },
@@ -332,14 +332,14 @@
       "id": "graphql-codegen",
       "title": "GraphQL Type Generator",
       "description": "CLI tool that generates type-safe Python clients from GraphQL schemas. Supports fragments, subscriptions, and custom scalars.",
-      "githubUrl": "https://github.com/johndoe/gql-typegen",
+      "url": "https://github.com/johndoe/gql-typegen",
       "tags": ["Python", "GraphQL", "Code Generation"]
     },
     {
       "id": "k8s-operator",
       "title": "Redis Cluster Operator",
       "description": "Kubernetes operator for managing Redis clusters with automatic failover, scaling, and backup/restore capabilities.",
-      "githubUrl": "https://github.com/johndoe/redis-operator",
+      "url": "https://github.com/johndoe/redis-operator",
       "tags": ["Kubernetes", "Go", "Redis"]
     }
   ],

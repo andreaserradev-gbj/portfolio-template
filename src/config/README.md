@@ -318,7 +318,7 @@ The Projects section displays open source work and side projects:
       "id": "project-id",
       "title": "Project Name",
       "description": "A brief description of the project and its purpose.",
-      "githubUrl": "https://github.com/username/repo",
+      "url": "https://github.com/username/repo",
       "tags": ["TypeScript", "React", "Node.js"],
       "featured": true
     }
@@ -336,7 +336,7 @@ The Projects section displays open source work and side projects:
 - `id` (required) - Unique identifier for the project
 - `title` (required) - Project name
 - `description` (required) - Brief project description
-- `githubUrl` (required) - GitHub repository URL
+- `url` (required) - Project URL (displays "View on GitHub" for GitHub URLs, "View Project" for others)
 - `tags` (optional) - Array of technology tags
 - `featured` (optional) - Set to `true` to display a featured badge (default: `false`)
 
