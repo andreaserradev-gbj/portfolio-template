@@ -1,5 +1,11 @@
 import { Sun, Moon, Monitor } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip'
 import { useTheme } from '@/hooks/useTheme'
 import { cn } from '@/lib/utils'
 
@@ -40,19 +46,30 @@ export function ThemeToggle() {
   }
 
   return (
-    <Button
-      variant="ghost"
-      size="icon"
-      onClick={cycleTheme}
-      aria-label={getLabel()}
-      className={cn(
-        'relative overflow-hidden',
-        'text-foreground',
-        'hover:bg-muted',
-        'transition-all duration-200'
-      )}
-    >
-      <span className="transition-transform duration-300">{getIcon()}</span>
-    </Button>
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={cycleTheme}
+            aria-label={getLabel()}
+            className={cn(
+              'relative overflow-hidden',
+              'text-foreground',
+              'hover:bg-muted',
+              'transition-all duration-200'
+            )}
+          >
+            <span className="transition-transform duration-300">
+              {getIcon()}
+            </span>
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>{getLabel()}</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   )
 }
