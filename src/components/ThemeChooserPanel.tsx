@@ -1,9 +1,10 @@
 import { useEffect, useRef, useCallback, useState } from 'react'
-import { X, Sun, Moon, Monitor } from 'lucide-react'
+import { X, Sun, Moon, Monitor, LayoutGrid, BookText } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { DesignSystemPreviewCard } from '@/components/DesignSystemPreviewCard'
 import { useDesignSystem } from '@/hooks/useDesignSystem'
 import { useTheme } from '@/hooks/useTheme'
+import { useLayout, type Layout } from '@/hooks/useLayout'
 import { DESIGN_SYSTEMS } from '@/hooks/designSystemConfig'
 import { cn } from '@/lib/utils'
 
@@ -18,9 +19,16 @@ const THEME_OPTIONS = [
   { value: 'dark' as const, label: 'Dark', icon: Moon },
 ]
 
+const LAYOUT_OPTIONS: { value: Layout; label: string; icon: typeof Monitor }[] =
+  [
+    { value: 'cards', label: 'Cards', icon: LayoutGrid },
+    { value: 'editorial', label: 'Editorial', icon: BookText },
+  ]
+
 export function ThemeChooserPanel({ isOpen, onClose }: ThemeChooserPanelProps) {
   const { designSystem, setDesignSystem } = useDesignSystem()
   const { theme, setTheme } = useTheme()
+  const { layout, setLayout } = useLayout()
   const panelRef = useRef<HTMLDivElement>(null)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
   const [isClosing, setIsClosing] = useState(false)
@@ -152,6 +160,38 @@ export function ThemeChooserPanel({ isOpen, onClose }: ThemeChooserPanelProps) {
                   <button
                     key={option.value}
                     onClick={() => setTheme(option.value)}
+                    className={cn(
+                      'flex-1 flex items-center justify-center gap-2 py-3 px-4',
+                      'rounded-button border-ds border transition-all duration-200',
+                      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2',
+                      isSelected
+                        ? 'bg-accent/10 border-accent text-accent'
+                        : 'bg-card border-border text-muted-foreground hover:border-accent/50 hover:text-card-foreground'
+                    )}
+                    role="radio"
+                    aria-checked={isSelected}
+                  >
+                    <Icon className="h-4 w-4" />
+                    <span className="text-sm font-medium">{option.label}</span>
+                  </button>
+                )
+              })}
+            </div>
+          </section>
+
+          {/* Layout Section */}
+          <section>
+            <h3 className="text-sm font-medium text-muted-foreground mb-3">
+              Layout
+            </h3>
+            <div className="flex gap-2" role="radiogroup" aria-label="Layout">
+              {LAYOUT_OPTIONS.map((option) => {
+                const Icon = option.icon
+                const isSelected = layout === option.value
+                return (
+                  <button
+                    key={option.value}
+                    onClick={() => setLayout(option.value)}
                     className={cn(
                       'flex-1 flex items-center justify-center gap-2 py-3 px-4',
                       'rounded-button border-ds border transition-all duration-200',

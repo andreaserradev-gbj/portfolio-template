@@ -125,6 +125,7 @@ export const SiteConfigSchema = z.object({
       reduceMotion: z
         .enum(['respect-system', 'always-reduce', 'ignore'])
         .default('respect-system'),
+      layout: z.enum(['cards', 'editorial']).default('cards'),
     })
     .optional(),
 })
@@ -228,6 +229,9 @@ export const ExperienceSchema = z.object({
   highlights: z.array(z.string()).default([]),
   clients: z.array(z.string()).optional(),
   techStack: z.array(z.string()).optional(),
+  // Editorial-layout extras (optional; loader computes fallbacks if absent)
+  label: z.string().optional(),
+  span: z.string().optional(),
 })
 
 /**
@@ -248,6 +252,8 @@ export const AchievementSchema = z.object({
       })
     )
     .optional(),
+  // Editorial-layout extra (optional; loader derives a fallback if absent)
+  tag: z.string().optional(),
 })
 
 /**
@@ -318,6 +324,8 @@ export const ContactSchema = z.object({
     .string()
     .default("Interested in working together? Let's start a conversation."),
   location: z.string().optional(),
+  // Editorial-layout extra; hidden by editorial sections when absent
+  availability: z.string().optional(),
   preferredMethod: z.enum(['email', 'linkedin', 'form']).default('email'),
   showSocial: z.boolean().default(true),
 })

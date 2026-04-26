@@ -1,0 +1,69 @@
+/* Editorial Design System — document layout, warm paper, ruled grid */
+
+[data-design-system='editorial'] {
+  /* Soft accent washes drawn from the page corners (subtle, single-direction) */
+  background-image:
+    radial-gradient(
+      circle at 20% 0%,
+      color-mix(in oklab, var(--color-accent) 6%, transparent),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      color-mix(in oklab, var(--color-foreground) 4%, transparent),
+      transparent 50%
+    );
+}
+
+/* Subtle paper grain — only when editorial system is active */
+[data-design-system='editorial'] body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: var(--paper-texture-opacity, 0.04);
+  z-index: 1;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Editorial selection styling — accent paper, not the default browser blue */
+[data-design-system='editorial'] ::selection {
+  background: var(--color-editorial-accent-soft, var(--color-accent));
+  color: var(--color-background);
+}
+
+/* Editorial project card hover — subtle wash, not a shadow */
+[data-design-system='editorial'] .editorial-project-card:hover {
+  background: var(--color-editorial-accent-wash, var(--color-muted));
+}
+
+/* Responsive collapse — single column below 900px */
+@media (max-width: 900px) {
+  [data-design-system='editorial'] section {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  [data-design-system='editorial'] .editorial-section-header,
+  [data-design-system='editorial'] .editorial-hero-row,
+  [data-design-system='editorial'] .editorial-hero-grid,
+  [data-design-system='editorial'] .editorial-career-row,
+  [data-design-system='editorial'] .editorial-work-row,
+  [data-design-system='editorial'] .editorial-skills-row,
+  [data-design-system='editorial'] .editorial-skill-line {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  [data-design-system='editorial'] .editorial-numbers-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  [data-design-system='editorial'] .editorial-projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+  [data-design-system='editorial'] section[id='hero'] {
+    padding-top: 100px !important;
+  }
+  [data-design-system='editorial'] .editorial-topnav {
+    display: none !important;
+  }
+}

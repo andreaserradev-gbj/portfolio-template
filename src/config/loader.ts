@@ -266,15 +266,87 @@ const processedHero = {
 }
 
 // Process experience with template strings
-const processedExperience: Experience[] = processTemplates(
+const processedExperienceRaw: Experience[] = processTemplates(
   rawContentConfig.experience || [],
   variables
 )
 
 // Process achievements with template strings
-const processedAchievements: Achievement[] = processTemplates(
+const processedAchievementsRaw: Achievement[] = processTemplates(
   rawContentConfig.achievements || [],
   variables
+)
+
+// ============================================================================
+// EDITORIAL-LAYOUT FALLBACK COMPUTERS
+// ============================================================================
+// The editorial layout reads three optional display fields that most existing
+// portfolios won't set. Compute reasonable defaults so editorial mode works on
+// any portfolio without config edits. Explicit values in JSON always win.
+
+function padOrdinal(n: number): string {
+  return String(n).padStart(2, '0')
+}
+
+/**
+ * Derive a span string ("17 years") from a `period` field.
+ * Handles "1996 — 2013", "January 1996 - May 2013", "May 2013 - Present", etc.
+ * Returns undefined if no usable years can be parsed.
+ */
+function derivePeriodSpan(period: string): string | undefined {
+  const years = (period.match(/\b(19|20)\d{2}\b/g) || []).map(Number)
+  const isOpenEnded = /\b(present|now|today|current)\b/i.test(period)
+
+  if (years.length >= 2) {
+    const span = Math.max(...years) - Math.min(...years)
+    return span > 0 ? `${span} years` : undefined
+  }
+  if (years.length === 1 && isOpenEnded) {
+    const span = currentYear - years[0]
+    return span > 0 ? `${span} years` : undefined
+  }
+  return undefined
+}
+
+function titleCase(str: string): string {
+  return str
+    .split(/[\s_-]+/)
+    .filter(Boolean)
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+    .join(' ')
+}
+
+/**
+ * Derive an achievement tag like "Partnership · since 2013" from category +
+ * the earliest year mentioned in summary / impact / details. Returns just the
+ * title-cased category if no year can be parsed.
+ */
+function deriveAchievementTag(achievement: Achievement): string {
+  const haystack = [
+    achievement.summary,
+    achievement.impact,
+    ...achievement.details,
+    ...(achievement.metrics?.map((m) => `${m.label} ${m.value}`) || []),
+  ].join(' ')
+  const years = (haystack.match(/\b(19|20)\d{2}\b/g) || []).map(Number)
+  const earliest = years.length ? Math.min(...years) : undefined
+  const cat = titleCase(achievement.category)
+  return earliest ? `${cat} · since ${earliest}` : cat
+}
+
+const processedExperience: Experience[] = processedExperienceRaw.map(
+  (exp, i) => ({
+    ...exp,
+    label: exp.label ?? padOrdinal(i + 1),
+    span: exp.span ?? derivePeriodSpan(exp.period),
+  })
+)
+
+const processedAchievements: Achievement[] = processedAchievementsRaw.map(
+  (ach) => ({
+    ...ach,
+    tag: ach.tag ?? deriveAchievementTag(ach),
+  })
 )
 
 // ============================================================================
@@ -470,6 +542,7 @@ export const contact = {
     contactConfig?.ctaText ??
     "Interested in working together? Let's start a conversation.",
   location: contactConfig?.location ?? '',
+  availability: contactConfig?.availability,
 }
 
 // ============================================================================

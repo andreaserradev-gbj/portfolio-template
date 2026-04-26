@@ -8,6 +8,7 @@
 @import './styles/design-systems/hand-drawn.css';
 @import './styles/design-systems/automotive.css';
 @import './styles/design-systems/bauhaus.css';
+@import './styles/design-systems/editorial.css';
 
 /* Enable class-based dark mode for Tailwind CSS v4 */
 @custom-variant dark (&:where(.dark, .dark *));

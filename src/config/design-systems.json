@@ -1,5 +1,5 @@
 {
-  "defaultSystem": "corporate",
+  "defaultSystem": "editorial",
   "defaults": {
     "spacing": {
       "unit": "0.25rem",
@@ -521,6 +521,131 @@
             "paper-texture-opacity": "0",
             "flip-duration": "400ms",
             "flip-easing": "ease-out"
+          }
+        }
+      }
+    },
+    {
+      "id": "editorial",
+      "name": "Editorial",
+      "description": "Document-style editorial layout — warm cream paper, single ochre accent, numbered sections",
+      "supportsDarkMode": true,
+      "fonts": {
+        "display": {
+          "family": "Fraunces",
+          "fallback": "Georgia, serif",
+          "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap"
+        },
+        "body": {
+          "family": "Inter",
+          "fallback": "system-ui, sans-serif",
+          "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+        },
+        "mono": {
+          "family": "JetBrains Mono",
+          "fallback": "ui-monospace, monospace",
+          "googleFontsUrl": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
+        }
+      },
+      "tokens": {
+        "light": {
+          "colors": {
+            "background": "#f4efe6",
+            "foreground": "#1a1714",
+            "muted": "#e8dcc4",
+            "muted-foreground": "#5c534a",
+            "card": "#f4efe6",
+            "card-foreground": "#1a1714",
+            "border": "#c9bfb1",
+            "primary": "#1a1714",
+            "primary-foreground": "#f4efe6",
+            "secondary": "#e8dcc4",
+            "secondary-foreground": "#1a1714",
+            "accent": "#9a6b1f",
+            "accent-foreground": "#f4efe6",
+            "palette": {
+              "editorial-accent-soft": "#c49545",
+              "editorial-accent-wash": "#e8dcc4"
+            }
+          },
+          "shadows": {
+            "sm": "none",
+            "md": "none",
+            "lg": "none",
+            "xl": "none",
+            "card": "none",
+            "card-hover": "none",
+            "button": "none"
+          },
+          "radius": {
+            "sm": "0",
+            "md": "0",
+            "lg": "0",
+            "xl": "0",
+            "2xl": "0",
+            "card": "0",
+            "button": "0",
+            "badge": "9999px"
+          },
+          "border": {
+            "width": "1px",
+            "style": "solid"
+          },
+          "decorative": {
+            "rotation-card": "0deg",
+            "paper-texture-opacity": "0.04",
+            "flip-duration": "0ms",
+            "flip-easing": "linear"
+          }
+        },
+        "dark": {
+          "colors": {
+            "background": "#1a1815",
+            "foreground": "#e6dfd0",
+            "muted": "#2c2620",
+            "muted-foreground": "#9a9082",
+            "card": "#1a1815",
+            "card-foreground": "#e6dfd0",
+            "border": "#3a3631",
+            "primary": "#e6dfd0",
+            "primary-foreground": "#1a1815",
+            "secondary": "#2c2620",
+            "secondary-foreground": "#e6dfd0",
+            "accent": "#d4a855",
+            "accent-foreground": "#1a1815",
+            "palette": {
+              "editorial-accent-soft": "#e6c47a",
+              "editorial-accent-wash": "#2c2620"
+            }
+          },
+          "shadows": {
+            "sm": "none",
+            "md": "none",
+            "lg": "none",
+            "xl": "none",
+            "card": "none",
+            "card-hover": "none",
+            "button": "none"
+          },
+          "radius": {
+            "sm": "0",
+            "md": "0",
+            "lg": "0",
+            "xl": "0",
+            "2xl": "0",
+            "card": "0",
+            "button": "0",
+            "badge": "9999px"
+          },
+          "border": {
+            "width": "1px",
+            "style": "solid"
+          },
+          "decorative": {
+            "rotation-card": "0deg",
+            "paper-texture-opacity": "0.06",
+            "flip-duration": "0ms",
+            "flip-easing": "linear"
           }
         }
       }

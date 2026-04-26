@@ -11,13 +11,24 @@ import { ThemeChooserFAB } from '@/components/ThemeChooserFAB'
 import { ErrorBoundary } from '@/components/ErrorBoundary'
 import { ThemeProvider } from '@/hooks/useTheme'
 import { DesignSystemProvider } from '@/hooks/useDesignSystem'
+import { LayoutProvider, useLayout } from '@/hooks/useLayout'
 import { useRouteView, RouteViewProvider } from '@/hooks/useRouteView'
 import { JobsPage } from '@/components/jobs'
+import {
+  EditorialTopBar,
+  EditorialHero,
+  EditorialCareers,
+  EditorialNumbers,
+  EditorialSelectedWork,
+  EditorialSkillsIndex,
+  EditorialProjects,
+  EditorialContact,
+} from '@/components/editorial'
 import { sections } from '@/config/loader'
 
 // Map section IDs to components
 // Components handle their own empty data checks internally
-const sectionComponents: Record<string, React.FC> = {
+const cardSectionComponents: Record<string, React.FC> = {
   hero: Hero,
   metrics: LeadershipHighlights,
   experience: Experience,
@@ -25,6 +36,16 @@ const sectionComponents: Record<string, React.FC> = {
   skills: Skills,
   projects: Projects,
   contact: Contact,
+}
+
+const editorialSectionComponents: Record<string, React.FC> = {
+  hero: EditorialHero,
+  metrics: EditorialNumbers,
+  experience: EditorialCareers,
+  achievements: EditorialSelectedWork,
+  skills: EditorialSkillsIndex,
+  projects: EditorialProjects,
+  contact: EditorialContact,
 }
 
 // Sections that don't participate in background alternation (have their own unique backgrounds)
@@ -47,6 +68,12 @@ function getSectionBackground(
 }
 
 function PortfolioView() {
+  const { layout } = useLayout()
+  const isEditorial = layout === 'editorial'
+  const sectionComponents = isEditorial
+    ? editorialSectionComponents
+    : cardSectionComponents
+
   // Track alternating index (only for sections that participate)
   let alternatingIndex = 0
 
@@ -55,8 +82,9 @@ function PortfolioView() {
       <a href="#hero" className="skip-link">
         Skip to main content
       </a>
-      <Navigation />
-      <SectionNav />
+      {!isEditorial && <Navigation />}
+      {!isEditorial && <SectionNav />}
+      {isEditorial && <EditorialTopBar />}
       <ThemeChooserFAB />
       <main>
         {sections.map((sectionId) => {
@@ -85,6 +113,11 @@ function PortfolioView() {
 
             // In production, throw to trigger ErrorBoundary rather than silently failing
             throw new Error(errorMessage)
+          }
+
+          // Editorial sections paint their own backgrounds — skip alternation
+          if (isEditorial) {
+            return <Component key={sectionId} />
           }
 
           // Get background class and increment counter for alternating sections
@@ -119,9 +152,11 @@ function App() {
     <ErrorBoundary>
       <DesignSystemProvider>
         <ThemeProvider>
-          <RouteViewProvider>
-            <AppContent />
-          </RouteViewProvider>
+          <LayoutProvider>
+            <RouteViewProvider>
+              <AppContent />
+            </RouteViewProvider>
+          </LayoutProvider>
         </ThemeProvider>
       </DesignSystemProvider>
     </ErrorBoundary>

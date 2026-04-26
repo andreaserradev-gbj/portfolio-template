@@ -27,6 +27,10 @@ const DESIGN_SYSTEM_INFO: Record<
     label: 'Bauhaus',
     description: 'Geometric & bold',
   },
+  editorial: {
+    label: 'Editorial',
+    description: 'Document-style & ruled',
+  },
 }
 
 function CorporatePreview() {
@@ -101,6 +105,38 @@ function AutomotivePreview() {
   )
 }
 
+function EditorialPreview() {
+  return (
+    <div
+      className="w-full h-16 relative overflow-hidden"
+      style={{ background: '#f4efe6' }}
+    >
+      {/* § ordinal mark */}
+      <div className="absolute top-1.5 left-2 flex items-center gap-1">
+        <div className="h-[3px] w-3" style={{ background: '#5c534a' }} />
+        <div className="h-[3px] w-1.5" style={{ background: '#5c534a' }} />
+      </div>
+      {/* Serif headline + accent dot */}
+      <div className="absolute top-5 left-2 right-2 flex items-baseline gap-1">
+        <div
+          className="h-[10px] flex-1 max-w-[60%]"
+          style={{ background: '#1a1714' }}
+        />
+        <div
+          className="h-[6px] w-[6px] rounded-full"
+          style={{ background: '#9a6b1f' }}
+        />
+      </div>
+      {/* Ruled body lines */}
+      <div className="absolute bottom-3 left-2 right-2 h-px bg-[#1a1714]" />
+      <div
+        className="absolute bottom-1 left-2 right-2 h-px"
+        style={{ borderTop: '1px dashed #c9bfb1' }}
+      />
+    </div>
+  )
+}
+
 function BauhausPreview() {
   return (
     <div className="w-full h-16 relative overflow-hidden bg-slate-50 border-2 border-slate-900">
@@ -149,6 +185,7 @@ export function DesignSystemPreviewCard({
         {designSystem === 'hand-drawn' && <HandDrawnPreview />}
         {designSystem === 'automotive' && <AutomotivePreview />}
         {designSystem === 'bauhaus' && <BauhausPreview />}
+        {designSystem === 'editorial' && <EditorialPreview />}
       </div>
 
       {/* Label and description */}
