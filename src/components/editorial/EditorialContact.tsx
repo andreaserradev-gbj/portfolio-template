@@ -216,7 +216,7 @@ export function EditorialContact() {
                 letterSpacing: '0.08em',
               }}
             >
-              HAND-BUILT · {location.toUpperCase()}
+              {location.toUpperCase()}
             </span>
           )}
         </div>

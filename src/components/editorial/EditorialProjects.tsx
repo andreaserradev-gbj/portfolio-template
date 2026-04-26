@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { projects, sections } from '@/config/loader'
+import { projects, projectsSection, sections } from '@/config/loader'
 import { SectionHeader, SmallCaps } from './atoms'
 import { ordinalFor } from './utils'
 
@@ -13,9 +13,9 @@ export function EditorialProjects() {
     >
       <SectionHeader
         num={ordinalFor('projects', sections)}
-        eyebrow="Open source"
-        title="Things I've published."
-        lede="Tools and templates that started as scratch projects and turned into something worth sharing."
+        eyebrow={projectsSection.eyebrow}
+        title={projectsSection.headline}
+        lede={projectsSection.description}
       />
       <div
         style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: 32 }}

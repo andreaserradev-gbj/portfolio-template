@@ -1,4 +1,4 @@
-import { experience, sections } from '@/config/loader'
+import { experience, experienceSection, sections } from '@/config/loader'
 import { SectionHeader, SmallCaps } from './atoms'
 import { ordinalFor } from './utils'
 
@@ -12,9 +12,9 @@ export function EditorialCareers() {
     >
       <SectionHeader
         num={ordinalFor('experience', sections)}
-        eyebrow="Career arc"
-        title="Two careers."
-        lede="Same engineer, two domains. The first taught discipline and client ownership; the second to ship at cloud scale and operate as a fully-autonomous senior."
+        eyebrow={experienceSection.eyebrow}
+        title={experienceSection.headline}
+        lede={experienceSection.description}
       />
 
       <div

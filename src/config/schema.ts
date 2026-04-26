@@ -340,6 +340,16 @@ export const ExperienceSectionSchema = z.object({
 })
 
 /**
+ * Schema for Metrics section configuration.
+ * Optional. Only the editorial layout currently reads it.
+ */
+export const MetricsSectionSchema = z.object({
+  eyebrow: z.string().default('By the numbers'),
+  headline: z.string().default('Numbers'),
+  description: z.string().optional(),
+})
+
+/**
  * Schema for skills summary items (bottom highlight bar).
  */
 export const SkillsSummaryItemSchema = z.object({
@@ -587,6 +597,7 @@ export const ContentConfigSchema = z.object({
 
   // Optional sections
   metrics: z.array(MetricSchema).optional(),
+  metricsSection: MetricsSectionSchema.optional(),
   experience: z.array(ExperienceSchema).optional(),
   experienceSection: ExperienceSectionSchema.optional(),
   achievements: z.array(AchievementSchema).optional(),
@@ -891,6 +902,7 @@ export type SimplifiedSkillsSection = z.infer<
 >
 export type Contact = z.infer<typeof ContactSchema>
 export type ExperienceSection = z.infer<typeof ExperienceSectionSchema>
+export type MetricsSection = z.infer<typeof MetricsSectionSchema>
 export type SkillsSection = z.infer<typeof SkillsSectionSchema>
 export type SkillsSummaryItem = z.infer<typeof SkillsSummaryItemSchema>
 export type AchievementsSection = z.infer<typeof AchievementsSectionSchema>

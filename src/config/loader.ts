@@ -28,6 +28,7 @@ import {
   type DesignSystemsConfig,
   type NormalizedSkillObject,
   type ExperienceSection,
+  type MetricsSection,
   type SkillsSection,
   type AchievementsSection,
   type Footer,
@@ -555,6 +556,13 @@ export const experienceSection: ExperienceSection = {
     rawContentConfig.experienceSection?.eyebrow ?? 'Professional Journey',
   headline: rawContentConfig.experienceSection?.headline ?? 'Career Experience',
   description: rawContentConfig.experienceSection?.description,
+}
+
+// Metrics section configuration (used by the editorial layout's Numbers section)
+export const metricsSection: MetricsSection = {
+  eyebrow: rawContentConfig.metricsSection?.eyebrow ?? 'By the numbers',
+  headline: rawContentConfig.metricsSection?.headline ?? 'Numbers',
+  description: rawContentConfig.metricsSection?.description,
 }
 
 // Auto-generate experience description if not provided

@@ -1,4 +1,4 @@
-import { metrics, sections } from '@/config/loader'
+import { metrics, metricsSection, sections } from '@/config/loader'
 import { SmallCaps } from './atoms'
 import { ordinalFor } from './utils'
 
@@ -27,7 +27,7 @@ export function EditorialNumbers() {
             <SmallCaps>§ {ordinalFor('metrics', sections)}</SmallCaps>
           </div>
           <div>
-            <SmallCaps>By the numbers</SmallCaps>
+            <SmallCaps>{metricsSection.eyebrow}</SmallCaps>
             <h2
               style={{
                 fontFamily: 'var(--font-display)',
@@ -41,8 +41,23 @@ export function EditorialNumbers() {
                 textWrap: 'balance',
               }}
             >
-              The numbers that came out of the work.
+              {metricsSection.headline}
             </h2>
+            {metricsSection.description && (
+              <p
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '1.05rem',
+                  lineHeight: 1.55,
+                  color: 'var(--color-muted-foreground)',
+                  maxWidth: 640,
+                  margin: '12px 0 0',
+                  textWrap: 'pretty',
+                }}
+              >
+                {metricsSection.description}
+              </p>
+            )}
           </div>
         </div>
 

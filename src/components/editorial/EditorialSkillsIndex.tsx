@@ -1,4 +1,4 @@
-import { skillCategories, sections } from '@/config/loader'
+import { skillCategories, skillsSection, sections } from '@/config/loader'
 import { SectionHeader, SmallCaps } from './atoms'
 import { ordinalFor } from './utils'
 
@@ -12,9 +12,9 @@ export function EditorialSkillsIndex() {
     >
       <SectionHeader
         num={ordinalFor('skills', sections)}
-        eyebrow="Skills index"
-        title="What I reach for."
-        lede="The stack across embedded, web and cloud — plus the agentic AI tools I'm building real workflows around now."
+        eyebrow={skillsSection.eyebrow}
+        title={skillsSection.headline}
+        lede={skillsSection.description}
       />
 
       <div

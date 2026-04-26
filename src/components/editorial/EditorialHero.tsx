@@ -162,7 +162,8 @@ export function EditorialHero() {
                     gap: 12,
                   }}
                 >
-                  Read the work <span aria-hidden>↓</span>
+                  {hero.cta?.primary ?? 'Read the work'}{' '}
+                  <span aria-hidden>↓</span>
                 </a>
                 {contact.email && (
                   <a

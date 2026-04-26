@@ -1,13 +1,21 @@
 import { useEffect, useState } from 'react'
-import { hero, sections } from '@/config/loader'
+import {
+  achievementsSection,
+  experienceSection,
+  hero,
+  metricsSection,
+  projectsSection,
+  sections,
+  skillsSection,
+} from '@/config/loader'
 import { ordinalFor } from './utils'
 
-const SECTION_LABEL: Record<string, string> = {
-  metrics: 'Numbers',
-  experience: 'Two careers',
-  achievements: 'Selected work',
-  skills: 'Skills index',
-  projects: 'Open source',
+const SECTION_LABEL: Record<string, () => string> = {
+  metrics: () => metricsSection.eyebrow,
+  experience: () => experienceSection.eyebrow,
+  achievements: () => achievementsSection.eyebrow,
+  skills: () => skillsSection.eyebrow,
+  projects: () => projectsSection.eyebrow,
 }
 
 const SECTION_ANCHOR: Record<string, string> = {
@@ -33,7 +41,7 @@ export function EditorialTopBar() {
     .slice(0, 5)
     .map((id) => ({
       ordinal: ordinalFor(id, sections),
-      label: SECTION_LABEL[id],
+      label: SECTION_LABEL[id](),
       href: SECTION_ANCHOR[id],
     }))
 

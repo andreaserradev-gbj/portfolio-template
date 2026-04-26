@@ -1,4 +1,4 @@
-import { achievements, sections } from '@/config/loader'
+import { achievements, achievementsSection, sections } from '@/config/loader'
 import { SectionHeader, SmallCaps } from './atoms'
 import { ordinalFor } from './utils'
 
@@ -12,9 +12,9 @@ export function EditorialSelectedWork() {
     >
       <SectionHeader
         num={ordinalFor('achievements', sections)}
-        eyebrow="Selected work"
-        title="Things I've owned."
-        lede="A short list of work I've owned end to end. Each one ran for years, not months."
+        eyebrow={achievementsSection.eyebrow}
+        title={achievementsSection.headline}
+        lede={achievementsSection.description}
       />
 
       <div
