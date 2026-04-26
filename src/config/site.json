@@ -112,6 +112,6 @@
     "designSystemSwitcher": true,
     "smoothScroll": true,
     "reduceMotion": "respect-system",
-    "layout": "editorial"
+    "layout": "cards"
   }
 }

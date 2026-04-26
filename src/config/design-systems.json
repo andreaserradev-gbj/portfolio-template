@@ -1,5 +1,5 @@
 {
-  "defaultSystem": "editorial",
+  "defaultSystem": "corporate",
   "defaults": {
     "spacing": {
       "unit": "0.25rem",
