@@ -9,7 +9,6 @@ import {
   sections,
   skillsSection,
 } from '@/config/loader'
-import { ordinalFor } from './utils'
 
 const SECTION_LABEL: Record<string, () => string> = {
   metrics: () => metricsSection.eyebrow,
@@ -52,7 +51,6 @@ export function ConcreteTopBar() {
     .filter((id) => id !== 'hero' && id !== 'contact' && SECTION_LABEL[id])
     .slice(0, 5)
     .map((id) => ({
-      ordinal: ordinalFor(id, sections),
       label: SECTION_LABEL[id](),
       href: SECTION_ANCHOR[id],
     }))
@@ -159,15 +157,6 @@ export function ConcreteTopBar() {
                 e.currentTarget.style.color = 'var(--color-foreground)'
               }}
             >
-              <span
-                style={{
-                  color: 'var(--color-accent)',
-                  marginRight: 8,
-                  fontWeight: 700,
-                }}
-              >
-                {item.ordinal}
-              </span>
               {item.label}
             </a>
           ))}
@@ -249,22 +238,9 @@ export function ConcreteTopBar() {
                 padding: '14px 0',
                 borderBottom:
                   '1px solid var(--color-concrete-rule-faint, var(--color-border))',
-                display: 'flex',
-                gap: 12,
-                alignItems: 'baseline',
                 fontWeight: 500,
               }}
             >
-              <span
-                style={{
-                  color: 'var(--color-accent)',
-                  fontVariantNumeric: 'tabular-nums',
-                  minWidth: 24,
-                  fontWeight: 700,
-                }}
-              >
-                {item.ordinal}
-              </span>
               {item.label}
             </a>
           ))}

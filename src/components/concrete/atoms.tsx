@@ -24,45 +24,6 @@ export function Label({
   )
 }
 
-/**
- * The structural ordinal column that anchors every section.
- * Heavy 900-weight number with gold full-stop, "§ Section Name" below.
- * 100px wide on desktop, collapses on mobile (handled in concrete.css).
- */
-export function OrdinalColumn({ num, name }: { num: string; name: string }) {
-  return (
-    <div
-      className="concrete-ord-col"
-      style={{
-        borderRight: '2px solid var(--color-foreground)',
-        paddingRight: 28,
-        textAlign: 'right',
-      }}
-    >
-      <div
-        style={{
-          fontFamily: 'var(--font-display)',
-          fontWeight: 900,
-          fontSize: 56,
-          lineHeight: 1,
-          letterSpacing: '-0.04em',
-          color: 'var(--color-foreground)',
-        }}
-      >
-        {num}
-        <span style={{ color: 'var(--color-accent)' }}>.</span>
-      </div>
-      <div style={{ marginTop: 14 }}>
-        <Label>§ {name}</Label>
-      </div>
-    </div>
-  )
-}
-
-/**
- * Section header with eyebrow + heavy display heading + optional lede.
- * Lives inside the 1fr content column (NOT the ordinal column).
- */
 export function SectionHeader({
   eyebrow,
   title,
@@ -106,27 +67,6 @@ export function SectionHeader({
         </p>
       )}
     </header>
-  )
-}
-
-/**
- * 100/1fr structural grid wrapper with ordinal column on the left.
- * Used by every non-hero section.
- */
-export function SectionGrid({ children }: { children: ReactNode }) {
-  return (
-    <div
-      className="concrete-section-grid"
-      style={{
-        display: 'grid',
-        gridTemplateColumns: '100px 1fr',
-        gap: 64,
-        maxWidth: 1280,
-        margin: '0 auto',
-      }}
-    >
-      {children}
-    </div>
   )
 }
 
