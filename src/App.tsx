@@ -34,7 +34,7 @@ import {
   ConcreteProjects,
   ConcreteContact,
 } from '@/components/concrete'
-import { sections } from '@/config/loader'
+import { sections, features } from '@/config/loader'
 
 // Map section IDs to components
 // Components handle their own empty data checks internally
@@ -110,7 +110,7 @@ function PortfolioView() {
       {!isCustomLayout && <SectionNav />}
       {isEditorial && <EditorialTopBar />}
       {isConcrete && <ConcreteTopBar />}
-      <ThemeChooserFAB />
+      {features?.designSystemSwitcher && <ThemeChooserFAB />}
       <main>
         {sections.map((sectionId) => {
           const Component = sectionComponents[sectionId]
