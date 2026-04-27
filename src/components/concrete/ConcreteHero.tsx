@@ -145,7 +145,7 @@ export function ConcreteHero() {
             }}
           >
             <a
-              href={hero.cta?.primary?.target ?? '#experience'}
+              href="#experience"
               style={{
                 fontFamily: 'var(--font-mono)',
                 fontSize: 12,
@@ -161,7 +161,7 @@ export function ConcreteHero() {
                 gap: 12,
               }}
             >
-              {hero.cta?.primary?.text ?? 'See My Impact'}
+              {hero.cta?.primary ?? 'See My Impact'}
               <span aria-hidden>↓</span>
             </a>
             {contact.email && (
