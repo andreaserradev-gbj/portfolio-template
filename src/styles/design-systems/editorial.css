@@ -38,32 +38,66 @@
   background: var(--color-editorial-accent-wash, var(--color-muted));
 }
 
-/* Responsive collapse — single column below 900px */
+/* Editorial topbar — desktop padding (overridable on mobile) */
+.editorial-topbar-inner {
+  padding: 16px 40px;
+}
+
+/*
+ * Responsive collapse — single column below 900px.
+ * Scoped to [data-layout='editorial'] (not design-system) because the
+ * editorial *layout* can be combined with any design system.
+ */
 @media (max-width: 900px) {
-  [data-design-system='editorial'] section {
+  [data-layout='editorial'] section {
     padding-left: 24px !important;
     padding-right: 24px !important;
   }
-  [data-design-system='editorial'] .editorial-section-header,
-  [data-design-system='editorial'] .editorial-hero-row,
-  [data-design-system='editorial'] .editorial-hero-grid,
-  [data-design-system='editorial'] .editorial-career-row,
-  [data-design-system='editorial'] .editorial-work-row,
-  [data-design-system='editorial'] .editorial-skills-row,
-  [data-design-system='editorial'] .editorial-skill-line {
+  [data-layout='editorial'] .editorial-section-header,
+  [data-layout='editorial'] .editorial-section-row,
+  [data-layout='editorial'] .editorial-hero-row,
+  [data-layout='editorial'] .editorial-hero-grid,
+  [data-layout='editorial'] .editorial-career-row,
+  [data-layout='editorial'] .editorial-work-row,
+  [data-layout='editorial'] .editorial-skills-row,
+  [data-layout='editorial'] .editorial-skill-line {
     grid-template-columns: 1fr !important;
     gap: 16px !important;
   }
-  [data-design-system='editorial'] .editorial-numbers-grid {
+  [data-layout='editorial'] .editorial-numbers-grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
-  [data-design-system='editorial'] .editorial-projects-grid {
+  [data-layout='editorial'] .editorial-projects-grid {
     grid-template-columns: 1fr !important;
   }
-  [data-design-system='editorial'] section[id='hero'] {
+  [data-layout='editorial'] section[id='hero'] {
     padding-top: 100px !important;
   }
-  [data-design-system='editorial'] .editorial-topnav {
+  .editorial-topbar-inner {
+    padding: 12px 20px;
+  }
+  .editorial-topnav {
+    display: none !important;
+  }
+  .editorial-mobile-toggle {
+    display: inline-flex !important;
+  }
+  .editorial-mobile-menu {
+    display: block !important;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 280ms ease;
+    background: color-mix(in oklab, var(--color-background) 96%, transparent);
+  }
+  .editorial-mobile-menu[data-open='true'] {
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+  }
+}
+
+/* Hide subtitle on very narrow screens to keep the brand on one line */
+@media (max-width: 420px) {
+  .editorial-topbar-subtitle {
     display: none !important;
   }
 }

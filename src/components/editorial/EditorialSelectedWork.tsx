@@ -18,6 +18,7 @@ export function EditorialSelectedWork() {
       />
 
       <div
+        className="editorial-section-row"
         style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: 32 }}
       >
         <div />

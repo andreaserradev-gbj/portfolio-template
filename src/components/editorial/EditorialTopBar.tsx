@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Menu, X } from 'lucide-react'
 import {
   achievementsSection,
   experienceSection,
@@ -28,6 +29,7 @@ const SECTION_ANCHOR: Record<string, string> = {
 
 export function EditorialTopBar() {
   const [scrolled, setScrolled] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -35,6 +37,16 @@ export function EditorialTopBar() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  useEffect(() => {
+    if (mobileOpen) {
+      const prev = document.body.style.overflow
+      document.body.style.overflow = 'hidden'
+      return () => {
+        document.body.style.overflow = prev
+      }
+    }
+  }, [mobileOpen])
 
   const navItems = sections
     .filter((id) => id !== 'hero' && id !== 'contact' && SECTION_LABEL[id])
@@ -46,6 +58,7 @@ export function EditorialTopBar() {
     }))
 
   const showContactCTA = sections.includes('contact')
+  const barOpaque = scrolled || mobileOpen
 
   return (
     <div
@@ -56,21 +69,21 @@ export function EditorialTopBar() {
         left: 0,
         right: 0,
         zIndex: 50,
-        background: scrolled
+        background: barOpaque
           ? 'color-mix(in oklab, var(--color-background) 92%, transparent)'
           : 'transparent',
-        backdropFilter: scrolled ? 'saturate(140%) blur(8px)' : 'none',
+        backdropFilter: barOpaque ? 'saturate(140%) blur(8px)' : 'none',
         borderBottom: `1px solid ${
-          scrolled ? 'var(--color-border)' : 'transparent'
+          barOpaque ? 'var(--color-border)' : 'transparent'
         }`,
         transition: 'background 200ms, border-color 200ms',
       }}
     >
       <div
+        className="editorial-topbar-inner"
         style={{
           maxWidth: 1240,
           margin: '0 auto',
-          padding: '16px 40px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -79,12 +92,15 @@ export function EditorialTopBar() {
       >
         <a
           href="#hero"
+          onClick={() => setMobileOpen(false)}
+          className="editorial-topbar-brand"
           style={{
             display: 'flex',
             alignItems: 'baseline',
             gap: 12,
             textDecoration: 'none',
             color: 'var(--color-foreground)',
+            minWidth: 0,
           }}
         >
           <span
@@ -93,18 +109,24 @@ export function EditorialTopBar() {
               fontSize: 22,
               fontWeight: 500,
               letterSpacing: '-0.01em',
+              whiteSpace: 'nowrap',
             }}
           >
             {hero.name}
           </span>
           {hero.title && (
             <span
+              className="editorial-topbar-subtitle"
               style={{
                 fontFamily: 'var(--font-mono)',
                 fontSize: 11,
                 letterSpacing: '0.1em',
                 color: 'var(--color-muted-foreground)',
                 textTransform: 'uppercase',
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                minWidth: 0,
               }}
             >
               {hero.title}
@@ -154,6 +176,102 @@ export function EditorialTopBar() {
                 background: 'var(--color-foreground)',
                 textDecoration: 'none',
                 padding: '10px 16px',
+              }}
+            >
+              Get in touch →
+            </a>
+          )}
+        </nav>
+
+        <button
+          type="button"
+          className="editorial-mobile-toggle"
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={mobileOpen}
+          aria-controls="editorial-mobile-menu"
+          onClick={() => setMobileOpen((v) => !v)}
+          style={{
+            display: 'none',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: 40,
+            height: 40,
+            background: 'transparent',
+            border: '1px solid var(--color-border)',
+            color: 'var(--color-foreground)',
+            cursor: 'pointer',
+            flexShrink: 0,
+          }}
+        >
+          {mobileOpen ? <X size={18} /> : <Menu size={18} />}
+        </button>
+      </div>
+
+      <div
+        id="editorial-mobile-menu"
+        className="editorial-mobile-menu"
+        data-open={mobileOpen}
+        style={{
+          display: 'none',
+          borderTop: mobileOpen
+            ? '1px solid var(--color-border)'
+            : '1px solid transparent',
+        }}
+      >
+        <nav
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            padding: '16px 24px 24px',
+            gap: 4,
+          }}
+        >
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={() => setMobileOpen(false)}
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: 13,
+                letterSpacing: '0.06em',
+                color: 'var(--color-foreground)',
+                textDecoration: 'none',
+                textTransform: 'uppercase',
+                padding: '14px 0',
+                borderBottom: '1px solid var(--color-border)',
+                display: 'flex',
+                gap: 12,
+                alignItems: 'baseline',
+              }}
+            >
+              <span
+                style={{
+                  opacity: 0.5,
+                  fontVariantNumeric: 'tabular-nums',
+                  minWidth: 24,
+                }}
+              >
+                {item.ordinal}
+              </span>
+              {item.label}
+            </a>
+          ))}
+          {showContactCTA && (
+            <a
+              href="#contact"
+              onClick={() => setMobileOpen(false)}
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: 13,
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                color: 'var(--color-background)',
+                background: 'var(--color-foreground)',
+                textDecoration: 'none',
+                padding: '16px 20px',
+                marginTop: 16,
+                textAlign: 'center',
               }}
             >
               Get in touch →
