@@ -125,6 +125,7 @@ export const SiteConfigSchema = z.object({
       reduceMotion: z
         .enum(['respect-system', 'always-reduce', 'ignore'])
         .default('respect-system'),
+      layout: z.enum(['cards', 'editorial']).default('cards'),
     })
     .optional(),
 })
@@ -228,6 +229,9 @@ export const ExperienceSchema = z.object({
   highlights: z.array(z.string()).default([]),
   clients: z.array(z.string()).optional(),
   techStack: z.array(z.string()).optional(),
+  // Editorial-layout extras (optional; loader computes fallbacks if absent)
+  label: z.string().optional(),
+  span: z.string().optional(),
 })
 
 /**
@@ -248,6 +252,8 @@ export const AchievementSchema = z.object({
       })
     )
     .optional(),
+  // Editorial-layout extra (optional; loader derives a fallback if absent)
+  tag: z.string().optional(),
 })
 
 /**
@@ -318,6 +324,8 @@ export const ContactSchema = z.object({
     .string()
     .default("Interested in working together? Let's start a conversation."),
   location: z.string().optional(),
+  // Editorial-layout extra; hidden by editorial sections when absent
+  availability: z.string().optional(),
   preferredMethod: z.enum(['email', 'linkedin', 'form']).default('email'),
   showSocial: z.boolean().default(true),
 })
@@ -328,6 +336,16 @@ export const ContactSchema = z.object({
 export const ExperienceSectionSchema = z.object({
   eyebrow: z.string().default('Professional Journey'),
   headline: z.string().default('Career Experience'),
+  description: z.string().optional(),
+})
+
+/**
+ * Schema for Metrics section configuration.
+ * Optional. Only the editorial layout currently reads it.
+ */
+export const MetricsSectionSchema = z.object({
+  eyebrow: z.string().default('By the numbers'),
+  headline: z.string().default('Numbers'),
   description: z.string().optional(),
 })
 
@@ -579,6 +597,7 @@ export const ContentConfigSchema = z.object({
 
   // Optional sections
   metrics: z.array(MetricSchema).optional(),
+  metricsSection: MetricsSectionSchema.optional(),
   experience: z.array(ExperienceSchema).optional(),
   experienceSection: ExperienceSectionSchema.optional(),
   achievements: z.array(AchievementSchema).optional(),
@@ -883,6 +902,7 @@ export type SimplifiedSkillsSection = z.infer<
 >
 export type Contact = z.infer<typeof ContactSchema>
 export type ExperienceSection = z.infer<typeof ExperienceSectionSchema>
+export type MetricsSection = z.infer<typeof MetricsSectionSchema>
 export type SkillsSection = z.infer<typeof SkillsSectionSchema>
 export type SkillsSummaryItem = z.infer<typeof SkillsSummaryItemSchema>
 export type AchievementsSection = z.infer<typeof AchievementsSectionSchema>

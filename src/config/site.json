@@ -111,6 +111,7 @@
     "darkMode": true,
     "designSystemSwitcher": true,
     "smoothScroll": true,
-    "reduceMotion": "respect-system"
+    "reduceMotion": "respect-system",
+    "layout": "cards"
   }
 }

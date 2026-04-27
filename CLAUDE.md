@@ -46,7 +46,8 @@ Variables defined in content.json `variables` field.
 ## URL Parameters
 
 ?theme=light|dark|system
-?design=corporate|hand-drawn|automotive|bauhaus
+?design=corporate|hand-drawn|automotive|bauhaus|editorial
+?layout=cards|editorial
 ?view=jobs (when job board enabled)
 
 ## HN Job Board Feature

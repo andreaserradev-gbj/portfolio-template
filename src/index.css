@@ -8,6 +8,7 @@
 @import './styles/design-systems/hand-drawn.css';
 @import './styles/design-systems/automotive.css';
 @import './styles/design-systems/bauhaus.css';
+@import './styles/design-systems/editorial.css';
 
 /* Enable class-based dark mode for Tailwind CSS v4 */
 @custom-variant dark (&:where(.dark, .dark *));
@@ -436,9 +437,25 @@
   }
 }
 
-/* Skip link for accessibility */
+/* Skip link for accessibility — visually hidden until keyboard-focused */
 .skip-link {
-  @apply absolute -top-12 left-1/2 -translate-x-1/2 z-50 px-4 py-2 bg-navy-900 text-white rounded-md font-medium transition-all focus:top-4;
+  @apply absolute left-1/2 -translate-x-1/2 z-50 px-4 py-2 bg-navy-900 text-white rounded-md font-medium;
+  top: 1rem;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  clip: auto;
+  clip-path: none;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  white-space: normal;
 }
 
 /* Design system transition - smooth switching */
