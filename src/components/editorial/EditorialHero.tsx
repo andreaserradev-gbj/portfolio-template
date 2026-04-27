@@ -83,149 +83,139 @@ export function EditorialHero() {
         </div>
       )}
 
-      <div
-        className="editorial-hero-row"
-        style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: 32 }}
-      >
-        <div style={{ paddingTop: 14 }}>
-          <SmallCaps>§ 00 / Profile</SmallCaps>
-        </div>
-        <div>
-          <h1
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontWeight: 400,
-              fontSize: 'clamp(3.4rem, 9vw, 8rem)',
-              lineHeight: 0.95,
-              letterSpacing: '-0.035em',
-              color: 'var(--color-foreground)',
-              margin: 0,
-            }}
-          >
-            {rest && (
-              <>
-                {rest}
-                <br />
-              </>
-            )}
-            {last}
-            <span style={{ color: 'var(--color-accent)' }}>.</span>
-          </h1>
+      <div>
+        <h1
+          style={{
+            fontFamily: 'var(--font-display)',
+            fontWeight: 400,
+            fontSize: 'clamp(3.4rem, 9vw, 8rem)',
+            lineHeight: 0.95,
+            letterSpacing: '-0.035em',
+            color: 'var(--color-foreground)',
+            margin: 0,
+          }}
+        >
+          {rest && (
+            <>
+              {rest}
+              <br />
+            </>
+          )}
+          {last}
+          <span style={{ color: 'var(--color-accent)' }}>.</span>
+        </h1>
 
-          <div
-            className="editorial-hero-grid"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1.4fr 1fr',
-              gap: 56,
-              marginTop: 56,
-              alignItems: 'start',
-            }}
-          >
-            <div>
-              <p
+        <div
+          className="editorial-hero-grid"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1.4fr 1fr',
+            gap: 56,
+            marginTop: 56,
+            alignItems: 'start',
+          }}
+        >
+          <div>
+            <p
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontWeight: 400,
+                fontSize: 'clamp(1.4rem, 2.2vw, 1.85rem)',
+                lineHeight: 1.35,
+                letterSpacing: '-0.01em',
+                color: 'var(--color-foreground)',
+                margin: 0,
+                textWrap: 'pretty',
+              }}
+            >
+              {hero.tagline}
+            </p>
+
+            <div
+              style={{
+                display: 'flex',
+                gap: 24,
+                marginTop: 40,
+                flexWrap: 'wrap',
+              }}
+            >
+              <a
+                href="#experience"
                 style={{
-                  fontFamily: 'var(--font-display)',
-                  fontWeight: 400,
-                  fontSize: 'clamp(1.4rem, 2.2vw, 1.85rem)',
-                  lineHeight: 1.35,
-                  letterSpacing: '-0.01em',
-                  color: 'var(--color-foreground)',
-                  margin: 0,
-                  textWrap: 'pretty',
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: 13,
+                  letterSpacing: '0.06em',
+                  textTransform: 'uppercase',
+                  color: 'var(--color-background)',
+                  background: 'var(--color-foreground)',
+                  textDecoration: 'none',
+                  padding: '16px 24px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 12,
                 }}
               >
-                {hero.tagline}
-              </p>
-
-              <div
-                style={{
-                  display: 'flex',
-                  gap: 24,
-                  marginTop: 40,
-                  flexWrap: 'wrap',
-                }}
-              >
+                {hero.cta?.primary ?? 'Read the work'}{' '}
+                <span aria-hidden>↓</span>
+              </a>
+              {contact.email && (
                 <a
-                  href="#experience"
+                  href={`mailto:${contact.email}`}
                   style={{
                     fontFamily: 'var(--font-mono)',
                     fontSize: 13,
                     letterSpacing: '0.06em',
                     textTransform: 'uppercase',
-                    color: 'var(--color-background)',
-                    background: 'var(--color-foreground)',
+                    color: 'var(--color-foreground)',
                     textDecoration: 'none',
                     padding: '16px 24px',
+                    border: '1px solid var(--color-foreground)',
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: 12,
                   }}
                 >
-                  {hero.cta?.primary ?? 'Read the work'}{' '}
-                  <span aria-hidden>↓</span>
+                  {contact.email}
                 </a>
-                {contact.email && (
-                  <a
-                    href={`mailto:${contact.email}`}
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: 13,
-                      letterSpacing: '0.06em',
-                      textTransform: 'uppercase',
-                      color: 'var(--color-foreground)',
-                      textDecoration: 'none',
-                      padding: '16px 24px',
-                      border: '1px solid var(--color-foreground)',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: 12,
-                    }}
-                  >
-                    {contact.email}
-                  </a>
-                )}
-              </div>
+              )}
             </div>
+          </div>
 
-            {facts.length > 0 && (
-              <div
-                style={{
-                  borderTop: '1px solid var(--color-foreground)',
-                  paddingTop: 16,
-                }}
-              >
-                {facts.map(([k, v]) => (
-                  <div
-                    key={k}
+          {facts.length > 0 && (
+            <div
+              style={{
+                borderTop: '1px solid var(--color-foreground)',
+                paddingTop: 16,
+              }}
+            >
+              {facts.map(([k, v]) => (
+                <div
+                  key={k}
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: '100px 1fr',
+                    gap: 16,
+                    padding: '14px 0',
+                    borderBottom: '1px solid var(--color-border)',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: 13,
+                  }}
+                >
+                  <span
                     style={{
-                      display: 'grid',
-                      gridTemplateColumns: '100px 1fr',
-                      gap: 16,
-                      padding: '14px 0',
-                      borderBottom: '1px solid var(--color-border)',
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: 13,
+                      color: 'var(--color-muted-foreground)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.08em',
+                      fontSize: 11,
                     }}
                   >
-                    <span
-                      style={{
-                        color: 'var(--color-muted-foreground)',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.08em',
-                        fontSize: 11,
-                      }}
-                    >
-                      {k}
-                    </span>
-                    <span style={{ color: 'var(--color-foreground)' }}>
-                      {v}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
+                    {k}
+                  </span>
+                  <span style={{ color: 'var(--color-foreground)' }}>{v}</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>

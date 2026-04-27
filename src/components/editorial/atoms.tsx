@@ -44,69 +44,47 @@ export function Rule({ vertical = false }: { vertical?: boolean }) {
 }
 
 export function SectionHeader({
-  num,
   eyebrow,
   title,
   lede,
 }: {
-  num: string
   eyebrow: string
   title: ReactNode
   lede?: ReactNode
 }) {
   return (
-    <header
-      className="editorial-section-header"
-      style={{
-        display: 'grid',
-        gridTemplateColumns: '120px 1fr',
-        gap: 32,
-        marginBottom: 56,
-      }}
-    >
-      <div style={{ paddingTop: 8 }}>
-        <div
+    <header style={{ marginBottom: 56 }}>
+      <SmallCaps>{eyebrow}</SmallCaps>
+      <h2
+        style={{
+          fontFamily: 'var(--font-display)',
+          fontWeight: 400,
+          fontSize: 'clamp(2.4rem, 4.5vw, 3.6rem)',
+          lineHeight: 1.05,
+          letterSpacing: '-0.02em',
+          margin: '12px 0 0',
+          color: 'var(--color-foreground)',
+          maxWidth: 880,
+          textWrap: 'balance',
+        }}
+      >
+        {title}
+      </h2>
+      {lede && (
+        <p
           style={{
-            fontFamily: 'var(--font-mono)',
-            fontSize: 12,
-            letterSpacing: '0.1em',
+            fontFamily: 'var(--font-body)',
+            fontSize: '1.1rem',
+            lineHeight: 1.55,
             color: 'var(--color-muted-foreground)',
+            maxWidth: 720,
+            margin: '16px 0 0',
+            textWrap: 'pretty',
           }}
         >
-          § {num}
-        </div>
-      </div>
-      <div>
-        <SmallCaps>{eyebrow}</SmallCaps>
-        <h2
-          style={{
-            fontFamily: 'var(--font-display)',
-            fontWeight: 400,
-            fontSize: 'clamp(2.4rem, 4.5vw, 3.6rem)',
-            lineHeight: 1.05,
-            letterSpacing: '-0.02em',
-            margin: '12px 0 0',
-            color: 'var(--color-foreground)',
-          }}
-        >
-          {title}
-        </h2>
-        {lede && (
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '1.1rem',
-              lineHeight: 1.55,
-              color: 'var(--color-muted-foreground)',
-              maxWidth: 640,
-              margin: '16px 0 0',
-              textWrap: 'pretty',
-            }}
-          >
-            {lede}
-          </p>
-        )}
-      </div>
+          {lede}
+        </p>
+      )}
     </header>
   )
 }

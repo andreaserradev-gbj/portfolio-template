@@ -26,20 +26,12 @@
     padding-left: 24px !important;
     padding-right: 24px !important;
   }
-  [data-layout='concrete'] .concrete-section-grid,
-  [data-layout='concrete'] .concrete-hero-grid,
   [data-layout='concrete'] .concrete-career-row,
   [data-layout='concrete'] .concrete-work-row,
   [data-layout='concrete'] .concrete-skill-row,
   [data-layout='concrete'] .concrete-contact-row {
     grid-template-columns: 1fr !important;
     gap: 24px !important;
-  }
-  [data-layout='concrete'] .concrete-section-grid > .concrete-ord-col {
-    border-right: none !important;
-    border-bottom: 2px solid var(--color-foreground) !important;
-    padding: 0 0 16px 0 !important;
-    text-align: left !important;
   }
   [data-layout='concrete'] .concrete-stats {
     grid-template-columns: repeat(2, 1fr) !important;
