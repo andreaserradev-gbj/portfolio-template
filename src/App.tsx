@@ -24,6 +24,16 @@ import {
   EditorialProjects,
   EditorialContact,
 } from '@/components/editorial'
+import {
+  ConcreteTopBar,
+  ConcreteHero,
+  ConcreteCareers,
+  ConcreteNumbers,
+  ConcreteSelectedWork,
+  ConcreteSkillsIndex,
+  ConcreteProjects,
+  ConcreteContact,
+} from '@/components/concrete'
 import { sections } from '@/config/loader'
 
 // Map section IDs to components
@@ -48,6 +58,16 @@ const editorialSectionComponents: Record<string, React.FC> = {
   contact: EditorialContact,
 }
 
+const concreteSectionComponents: Record<string, React.FC> = {
+  hero: ConcreteHero,
+  metrics: ConcreteNumbers,
+  experience: ConcreteCareers,
+  achievements: ConcreteSelectedWork,
+  skills: ConcreteSkillsIndex,
+  projects: ConcreteProjects,
+  contact: ConcreteContact,
+}
+
 // Sections that don't participate in background alternation (have their own unique backgrounds)
 const FIXED_BACKGROUND_SECTIONS = new Set(['hero'])
 
@@ -70,9 +90,13 @@ function getSectionBackground(
 function PortfolioView() {
   const { layout } = useLayout()
   const isEditorial = layout === 'editorial'
+  const isConcrete = layout === 'concrete'
+  const isCustomLayout = isEditorial || isConcrete
   const sectionComponents = isEditorial
     ? editorialSectionComponents
-    : cardSectionComponents
+    : isConcrete
+      ? concreteSectionComponents
+      : cardSectionComponents
 
   // Track alternating index (only for sections that participate)
   let alternatingIndex = 0
@@ -82,9 +106,10 @@ function PortfolioView() {
       <a href="#hero" className="skip-link">
         Skip to main content
       </a>
-      {!isEditorial && <Navigation />}
-      {!isEditorial && <SectionNav />}
+      {!isCustomLayout && <Navigation />}
+      {!isCustomLayout && <SectionNav />}
       {isEditorial && <EditorialTopBar />}
+      {isConcrete && <ConcreteTopBar />}
       <ThemeChooserFAB />
       <main>
         {sections.map((sectionId) => {
@@ -115,8 +140,8 @@ function PortfolioView() {
             throw new Error(errorMessage)
           }
 
-          // Editorial sections paint their own backgrounds — skip alternation
-          if (isEditorial) {
+          // Editorial / concrete sections paint their own backgrounds — skip alternation
+          if (isCustomLayout) {
             return <Component key={sectionId} />
           }
 
