@@ -1,5 +1,13 @@
 import { useEffect, useRef, useCallback, useState } from 'react'
-import { X, Sun, Moon, Monitor, LayoutGrid, BookText } from 'lucide-react'
+import {
+  X,
+  Sun,
+  Moon,
+  Monitor,
+  LayoutGrid,
+  BookText,
+  Square,
+} from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { DesignSystemPreviewCard } from '@/components/DesignSystemPreviewCard'
 import { useDesignSystem } from '@/hooks/useDesignSystem'
@@ -23,6 +31,7 @@ const LAYOUT_OPTIONS: { value: Layout; label: string; icon: typeof Monitor }[] =
   [
     { value: 'cards', label: 'Cards', icon: LayoutGrid },
     { value: 'editorial', label: 'Editorial', icon: BookText },
+    { value: 'concrete', label: 'Concrete', icon: Square },
   ]
 
 export function ThemeChooserPanel({ isOpen, onClose }: ThemeChooserPanelProps) {

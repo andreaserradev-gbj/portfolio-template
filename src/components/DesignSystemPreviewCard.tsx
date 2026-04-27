@@ -31,6 +31,10 @@ const DESIGN_SYSTEM_INFO: Record<
     label: 'Editorial',
     description: 'Document-style & ruled',
   },
+  concrete: {
+    label: 'Concrete',
+    description: 'Architectural & restrained',
+  },
 }
 
 function CorporatePreview() {
@@ -137,6 +141,39 @@ function EditorialPreview() {
   )
 }
 
+function ConcretePreview() {
+  return (
+    <div
+      className="w-full h-16 relative overflow-hidden"
+      style={{ background: '#d8d6d2' }}
+    >
+      {/* 2px structural top rule */}
+      <div
+        className="absolute top-0 left-0 right-0 h-[2px]"
+        style={{ background: '#2c2a28' }}
+      />
+      {/* heavy display block + gold full-stop dot */}
+      <div className="absolute top-3 left-2 right-2 flex items-end gap-1">
+        <div
+          className="h-3 flex-1 max-w-[55%]"
+          style={{ background: '#2c2a28' }}
+        />
+        <div className="h-2 w-2" style={{ background: '#b08648' }} />
+      </div>
+      {/* faint inner divider */}
+      <div
+        className="absolute bottom-4 left-2 right-2 h-px"
+        style={{ background: '#b8b4ac' }}
+      />
+      {/* 2px structural bottom rule */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-[2px]"
+        style={{ background: '#2c2a28' }}
+      />
+    </div>
+  )
+}
+
 function BauhausPreview() {
   return (
     <div className="w-full h-16 relative overflow-hidden bg-slate-50 border-2 border-slate-900">
@@ -186,6 +223,7 @@ export function DesignSystemPreviewCard({
         {designSystem === 'automotive' && <AutomotivePreview />}
         {designSystem === 'bauhaus' && <BauhausPreview />}
         {designSystem === 'editorial' && <EditorialPreview />}
+        {designSystem === 'concrete' && <ConcretePreview />}
       </div>
 
       {/* Label and description */}

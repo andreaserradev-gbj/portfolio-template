@@ -125,7 +125,7 @@ export const SiteConfigSchema = z.object({
       reduceMotion: z
         .enum(['respect-system', 'always-reduce', 'ignore'])
         .default('respect-system'),
-      layout: z.enum(['cards', 'editorial']).default('cards'),
+      layout: z.enum(['cards', 'editorial', 'concrete']).default('cards'),
     })
     .optional(),
 })

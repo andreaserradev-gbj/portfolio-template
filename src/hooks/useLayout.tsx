@@ -8,14 +8,18 @@ import {
 } from 'react'
 import { features } from '@/config/loader'
 
-export type Layout = 'cards' | 'editorial'
+export type Layout = 'cards' | 'editorial' | 'concrete'
 
-const LAYOUTS: readonly Layout[] = ['cards', 'editorial']
+const LAYOUTS: readonly Layout[] = ['cards', 'editorial', 'concrete']
 const STORAGE_KEY = 'portfolio-layout'
 const URL_PARAM = 'layout'
 
 const CONFIG_DEFAULT_LAYOUT: Layout =
-  features?.layout === 'editorial' ? 'editorial' : 'cards'
+  features?.layout === 'editorial'
+    ? 'editorial'
+    : features?.layout === 'concrete'
+      ? 'concrete'
+      : 'cards'
 
 interface LayoutContextType {
   layout: Layout

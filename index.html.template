@@ -41,11 +41,11 @@
     <!-- JSON-LD Structured Data -->
     {{#if structuredData.enabled}}{{jsonld}}{{/if}}
 
-    <!-- Fonts - Corporate + Hand-Drawn + Automotive + Bauhaus + Editorial Typography -->
+    <!-- Fonts - Corporate + Hand-Drawn + Automotive + Bauhaus + Editorial + Concrete Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Kalam:wght@400;700&family=Outfit:wght@400;500;700;900&family=Patrick+Hand&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@300;400;500;700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Kalam:wght@400;700&family=Outfit:wght@400;500;700;900&family=Patrick+Hand&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 

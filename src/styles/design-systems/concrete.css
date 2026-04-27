@@ -1,0 +1,109 @@
+/* Concrete & Light Design System — architectural minimalism, structural rules, kintsugi gold */
+
+/* Concrete selection — gold wash, not the default browser blue */
+[data-design-system='concrete'] ::selection {
+  background: var(--color-concrete-gold-soft, var(--color-accent));
+  color: var(--color-background);
+}
+
+/* Concrete project card hover — bg-elev wash (no shadow change; concrete has no shadows) */
+[data-design-system='concrete'] .concrete-project-card:hover {
+  background: var(--color-concrete-elev, var(--color-muted));
+}
+
+/* Concrete topbar — desktop padding (overridable on mobile) */
+.concrete-topbar-inner {
+  padding: 18px 40px;
+}
+
+/*
+ * Responsive collapse — single column below 900px.
+ * Scoped to [data-layout='concrete'] (not design-system) because the
+ * concrete *layout* could in principle be combined with any design system.
+ */
+@media (max-width: 900px) {
+  [data-layout='concrete'] section {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  [data-layout='concrete'] .concrete-section-grid,
+  [data-layout='concrete'] .concrete-hero-grid,
+  [data-layout='concrete'] .concrete-career-row,
+  [data-layout='concrete'] .concrete-work-row,
+  [data-layout='concrete'] .concrete-skill-row,
+  [data-layout='concrete'] .concrete-contact-row {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  [data-layout='concrete'] .concrete-section-grid > .concrete-ord-col {
+    border-right: none !important;
+    border-bottom: 2px solid var(--color-foreground) !important;
+    padding: 0 0 16px 0 !important;
+    text-align: left !important;
+  }
+  [data-layout='concrete'] .concrete-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  [data-layout='concrete'] .concrete-stats > .concrete-stat:nth-child(2n) {
+    border-right: none !important;
+  }
+  [data-layout='concrete'] .concrete-stats > .concrete-stat:nth-child(n + 3) {
+    border-top: 1px solid var(--color-concrete-rule-faint, var(--color-border)) !important;
+  }
+  [data-layout='concrete'] .concrete-facts-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  [data-layout='concrete'] .concrete-facts-row > .concrete-fact:nth-child(2n) {
+    border-right: none !important;
+  }
+  [data-layout='concrete']
+    .concrete-facts-row
+    > .concrete-fact:nth-child(n + 3) {
+    border-top: 1px solid var(--color-concrete-rule-faint, var(--color-border)) !important;
+  }
+  [data-layout='concrete'] .concrete-projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+  [data-layout='concrete'] .concrete-work-metrics {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  [data-layout='concrete'] section[id='hero'] {
+    padding-top: 100px !important;
+  }
+  .concrete-topbar-inner {
+    padding: 14px 20px !important;
+  }
+  .concrete-topnav {
+    display: none !important;
+  }
+  .concrete-mobile-toggle {
+    display: inline-flex !important;
+  }
+  .concrete-mobile-menu {
+    display: block !important;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 280ms ease;
+    background: color-mix(in oklab, var(--color-background) 96%, transparent);
+  }
+  .concrete-mobile-menu[data-open='true'] {
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+  }
+}
+
+/* Hide subtitle on very narrow screens to keep the brand on one line */
+@media (max-width: 420px) {
+  .concrete-topbar-subtitle {
+    display: none !important;
+  }
+  [data-layout='concrete'] .concrete-stats {
+    grid-template-columns: 1fr !important;
+  }
+  [data-layout='concrete'] .concrete-stats > .concrete-stat {
+    border-right: none !important;
+  }
+  [data-layout='concrete'] .concrete-stats > .concrete-stat:nth-child(n + 2) {
+    border-top: 1px solid var(--color-concrete-rule-faint, var(--color-border)) !important;
+  }
+}

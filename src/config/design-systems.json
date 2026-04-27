@@ -649,6 +649,133 @@
           }
         }
       }
+    },
+    {
+      "id": "concrete",
+      "name": "Concrete & Light",
+      "description": "Architectural minimalism — cool concrete, structural 2px rules, kintsugi gold accent, heavy display contrasted with light body",
+      "supportsDarkMode": true,
+      "fonts": {
+        "display": {
+          "family": "Hanken Grotesk",
+          "fallback": "system-ui, sans-serif",
+          "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700;900&display=swap"
+        },
+        "body": {
+          "family": "Hanken Grotesk",
+          "fallback": "system-ui, sans-serif",
+          "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&display=swap"
+        },
+        "mono": {
+          "family": "JetBrains Mono",
+          "fallback": "ui-monospace, monospace",
+          "googleFontsUrl": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
+        }
+      },
+      "tokens": {
+        "light": {
+          "colors": {
+            "background": "#d8d6d2",
+            "foreground": "#2c2a28",
+            "muted": "#cecbc4",
+            "muted-foreground": "#6e6a64",
+            "card": "#d8d6d2",
+            "card-foreground": "#2c2a28",
+            "border": "#2c2a28",
+            "primary": "#2c2a28",
+            "primary-foreground": "#d8d6d2",
+            "secondary": "#cecbc4",
+            "secondary-foreground": "#2c2a28",
+            "accent": "#b08648",
+            "accent-foreground": "#1a1816",
+            "palette": {
+              "concrete-elev": "#cecbc4",
+              "concrete-rule-faint": "#b8b4ac",
+              "concrete-gold-soft": "#d4b07a"
+            }
+          },
+          "shadows": {
+            "sm": "none",
+            "md": "none",
+            "lg": "none",
+            "xl": "none",
+            "card": "none",
+            "card-hover": "none",
+            "button": "none"
+          },
+          "radius": {
+            "sm": "0",
+            "md": "0",
+            "lg": "0",
+            "xl": "0",
+            "2xl": "0",
+            "card": "0",
+            "button": "0",
+            "badge": "9999px"
+          },
+          "border": {
+            "width": "2px",
+            "style": "solid"
+          },
+          "decorative": {
+            "rotation-card": "0deg",
+            "paper-texture-opacity": "0",
+            "flip-duration": "0ms",
+            "flip-easing": "linear"
+          }
+        },
+        "dark": {
+          "colors": {
+            "background": "#1a1816",
+            "foreground": "#d8d4cc",
+            "muted": "#221f1c",
+            "muted-foreground": "#8a857c",
+            "card": "#1a1816",
+            "card-foreground": "#d8d4cc",
+            "border": "#d8d4cc",
+            "primary": "#d8d4cc",
+            "primary-foreground": "#1a1816",
+            "secondary": "#221f1c",
+            "secondary-foreground": "#d8d4cc",
+            "accent": "#c69a5d",
+            "accent-foreground": "#1a1816",
+            "palette": {
+              "concrete-elev": "#221f1c",
+              "concrete-rule-faint": "#3a3631",
+              "concrete-gold-soft": "#6f5230"
+            }
+          },
+          "shadows": {
+            "sm": "none",
+            "md": "none",
+            "lg": "none",
+            "xl": "none",
+            "card": "none",
+            "card-hover": "none",
+            "button": "none"
+          },
+          "radius": {
+            "sm": "0",
+            "md": "0",
+            "lg": "0",
+            "xl": "0",
+            "2xl": "0",
+            "card": "0",
+            "button": "0",
+            "badge": "9999px"
+          },
+          "border": {
+            "width": "2px",
+            "style": "solid"
+          },
+          "decorative": {
+            "rotation-card": "0deg",
+            "paper-texture-opacity": "0",
+            "flip-duration": "0ms",
+            "flip-easing": "linear"
+          }
+        }
+      }
     }
   ]
 }
