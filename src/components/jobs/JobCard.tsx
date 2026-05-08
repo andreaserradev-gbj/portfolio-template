@@ -34,6 +34,13 @@ function formatDate(date: Date): string {
   return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
 }
 
+// Force every anchor that opens a new tab to be safe against tab-napping.
+DOMPurify.addHook('afterSanitizeAttributes', (node) => {
+  if (node.tagName === 'A' && node.getAttribute('target') === '_blank') {
+    node.setAttribute('rel', 'noopener noreferrer')
+  }
+})
+
 /**
  * Sanitize HTML content from HN API to prevent XSS attacks
  */
@@ -54,7 +61,7 @@ function sanitizeHtml(html: string): string {
       'pre',
     ],
     ALLOWED_ATTR: ['href', 'target', 'rel'],
-    ADD_ATTR: ['target', 'rel'],
+    ALLOWED_URI_REGEXP: /^(?:https?:|mailto:|#)/i,
   })
 }
 
