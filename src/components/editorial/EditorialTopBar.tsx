@@ -147,6 +147,7 @@ export function EditorialTopBar() {
                 textDecoration: 'none',
                 textTransform: 'uppercase',
                 transition: 'color 150ms',
+                whiteSpace: 'nowrap',
               }}
               onMouseOver={(e) => {
                 e.currentTarget.style.color = 'var(--color-accent)'
@@ -170,6 +171,7 @@ export function EditorialTopBar() {
                 background: 'var(--color-foreground)',
                 textDecoration: 'none',
                 padding: '10px 16px',
+                whiteSpace: 'nowrap',
               }}
             >
               Get in touch →

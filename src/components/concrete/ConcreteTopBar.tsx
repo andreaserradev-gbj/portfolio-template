@@ -149,6 +149,7 @@ export function ConcreteTopBar() {
                 textTransform: 'uppercase',
                 fontWeight: 500,
                 transition: 'color 150ms',
+                whiteSpace: 'nowrap',
               }}
               onMouseOver={(e) => {
                 e.currentTarget.style.color = 'var(--color-accent)'
@@ -173,6 +174,7 @@ export function ConcreteTopBar() {
                 textDecoration: 'none',
                 padding: '12px 18px',
                 fontWeight: 700,
+                whiteSpace: 'nowrap',
               }}
             >
               Get in touch →
