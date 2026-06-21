@@ -1,4 +1,3 @@
-import { useRef, useState, useEffect } from 'react'
 import {
   Code2,
   Cloud,
@@ -22,6 +21,7 @@ import {
   skillsSummary,
 } from '@/config/loader'
 import { cn } from '@/lib/utils'
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 
 const categoryIcons: Record<
   string,
@@ -37,26 +37,8 @@ const categoryIcons: Record<
 }
 
 export function Skills() {
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
+  const { ref: sectionRef, isVisible } =
+    useIntersectionObserver<HTMLDivElement>()
 
   // Return null if no skills to display
   if (skillCategories.length === 0) return null

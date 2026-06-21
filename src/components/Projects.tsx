@@ -1,5 +1,5 @@
-import { useRef, useState, useEffect } from 'react'
 import { Github, ExternalLink, Link } from 'lucide-react'
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
@@ -13,26 +13,8 @@ import { projects, projectsSection } from '@/config/loader'
 import { cn } from '@/lib/utils'
 
 export function Projects() {
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
+  const { ref: sectionRef, isVisible } =
+    useIntersectionObserver<HTMLDivElement>()
 
   if (projects.length === 0) return null
 

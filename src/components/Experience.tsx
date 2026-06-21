@@ -1,5 +1,6 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import { MapPin, Calendar, ChevronDown, Building2 } from 'lucide-react'
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -11,27 +12,9 @@ import {
 import { cn } from '@/lib/utils'
 
 export function Experience() {
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const { ref: sectionRef, isVisible } =
+    useIntersectionObserver<HTMLDivElement>()
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
 
   // Return null if no experience to display
   if (experience.length === 0) return null
