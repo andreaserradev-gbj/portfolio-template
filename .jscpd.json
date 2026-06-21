@@ -1,0 +1,16 @@
+{
+  "path": ["src"],
+  "format": ["typescript", "tsx", "css"],
+  "minTokens": 50,
+  "minLines": 5,
+  "ignore": [
+    "**/examples/**",
+    "**/.backup/**",
+    "**/generated/**",
+    "**/__tests__/**",
+    "**/styles/design-systems/**"
+  ],
+  "threshold": 4,
+  "gitignore": true,
+  "reporters": ["console"]
+}
