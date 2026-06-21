@@ -1,62 +1,10 @@
-import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import {
-  achievementsSection,
-  experienceSection,
-  hero,
-  metricsSection,
-  projectsSection,
-  sections,
-  skillsSection,
-} from '@/config/loader'
-
-const SECTION_LABEL: Record<string, () => string> = {
-  metrics: () => metricsSection.eyebrow,
-  experience: () => experienceSection.eyebrow,
-  achievements: () => achievementsSection.eyebrow,
-  skills: () => skillsSection.eyebrow,
-  projects: () => projectsSection.eyebrow,
-}
-
-const SECTION_ANCHOR: Record<string, string> = {
-  metrics: '#impact',
-  experience: '#experience',
-  achievements: '#achievements',
-  skills: '#skills',
-  projects: '#projects',
-}
+import { hero } from '@/config/loader'
+import { useTopBarNav } from '@/hooks/useTopBarNav'
 
 export function ConcreteTopBar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [mobileOpen, setMobileOpen] = useState(false)
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  useEffect(() => {
-    if (mobileOpen) {
-      const prev = document.body.style.overflow
-      document.body.style.overflow = 'hidden'
-      return () => {
-        document.body.style.overflow = prev
-      }
-    }
-  }, [mobileOpen])
-
-  const navItems = sections
-    .filter((id) => id !== 'hero' && id !== 'contact' && SECTION_LABEL[id])
-    .slice(0, 5)
-    .map((id) => ({
-      label: SECTION_LABEL[id](),
-      href: SECTION_ANCHOR[id],
-    }))
-
-  const showContactCTA = sections.includes('contact')
-  const barOpaque = scrolled || mobileOpen
+  const { mobileOpen, setMobileOpen, navItems, showContactCTA, barOpaque } =
+    useTopBarNav()
 
   return (
     <div
@@ -149,6 +97,7 @@ export function ConcreteTopBar() {
                 textTransform: 'uppercase',
                 fontWeight: 500,
                 transition: 'color 150ms',
+                whiteSpace: 'nowrap',
               }}
               onMouseOver={(e) => {
                 e.currentTarget.style.color = 'var(--color-accent)'
@@ -173,6 +122,7 @@ export function ConcreteTopBar() {
                 textDecoration: 'none',
                 padding: '12px 18px',
                 fontWeight: 700,
+                whiteSpace: 'nowrap',
               }}
             >
               Get in touch →

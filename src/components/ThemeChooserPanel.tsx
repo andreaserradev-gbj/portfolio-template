@@ -10,6 +10,7 @@ import {
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { DesignSystemPreviewCard } from '@/components/DesignSystemPreviewCard'
+import { SegmentedOptionGroup } from '@/components/SegmentedOptionGroup'
 import { useDesignSystem } from '@/hooks/useDesignSystem'
 import { useTheme } from '@/hooks/useTheme'
 import { useLayout, type Layout } from '@/hooks/useLayout'
@@ -153,72 +154,22 @@ export function ThemeChooserPanel({ isOpen, onClose }: ThemeChooserPanelProps) {
           </section>
 
           {/* Theme Section */}
-          <section>
-            <h3 className="text-sm font-medium text-muted-foreground mb-3">
-              Color Mode
-            </h3>
-            <div
-              className="flex gap-2"
-              role="radiogroup"
-              aria-label="Color mode"
-            >
-              {THEME_OPTIONS.map((option) => {
-                const Icon = option.icon
-                const isSelected = theme === option.value
-                return (
-                  <button
-                    key={option.value}
-                    onClick={() => setTheme(option.value)}
-                    className={cn(
-                      'flex-1 flex items-center justify-center gap-2 py-3 px-4',
-                      'rounded-button border-ds border transition-all duration-200',
-                      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2',
-                      isSelected
-                        ? 'bg-accent/10 border-accent text-accent'
-                        : 'bg-card border-border text-muted-foreground hover:border-accent/50 hover:text-card-foreground'
-                    )}
-                    role="radio"
-                    aria-checked={isSelected}
-                  >
-                    <Icon className="h-4 w-4" />
-                    <span className="text-sm font-medium">{option.label}</span>
-                  </button>
-                )
-              })}
-            </div>
-          </section>
+          <SegmentedOptionGroup
+            title="Color Mode"
+            ariaLabel="Color mode"
+            options={THEME_OPTIONS}
+            selected={theme}
+            onSelect={setTheme}
+          />
 
           {/* Layout Section */}
-          <section>
-            <h3 className="text-sm font-medium text-muted-foreground mb-3">
-              Layout
-            </h3>
-            <div className="flex gap-2" role="radiogroup" aria-label="Layout">
-              {LAYOUT_OPTIONS.map((option) => {
-                const Icon = option.icon
-                const isSelected = layout === option.value
-                return (
-                  <button
-                    key={option.value}
-                    onClick={() => setLayout(option.value)}
-                    className={cn(
-                      'flex-1 flex items-center justify-center gap-2 py-3 px-4',
-                      'rounded-button border-ds border transition-all duration-200',
-                      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2',
-                      isSelected
-                        ? 'bg-accent/10 border-accent text-accent'
-                        : 'bg-card border-border text-muted-foreground hover:border-accent/50 hover:text-card-foreground'
-                    )}
-                    role="radio"
-                    aria-checked={isSelected}
-                  >
-                    <Icon className="h-4 w-4" />
-                    <span className="text-sm font-medium">{option.label}</span>
-                  </button>
-                )
-              })}
-            </div>
-          </section>
+          <SegmentedOptionGroup
+            title="Layout"
+            ariaLabel="Layout"
+            options={LAYOUT_OPTIONS}
+            selected={layout}
+            onSelect={setLayout}
+          />
         </div>
 
         {/* Footer hint */}

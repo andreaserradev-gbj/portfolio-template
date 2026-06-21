@@ -1,10 +1,12 @@
-import { useRef, useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Handshake, TrendingUp, Globe, Calendar } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { ProgressRing } from '@/components/ui/progress-ring'
 import { FlipCard } from '@/components/ui/flip-card'
 import { useDesignSystem } from '@/hooks/useDesignSystem'
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
+import { useAnimatedCounter } from '@/hooks/useAnimatedCounter'
 import { metrics, achievements, type Metric } from '@/config/loader'
 import { cn } from '@/lib/utils'
 
@@ -49,29 +51,7 @@ function AnimatedCounter({
   suffix: string
   isVisible: boolean
 }) {
-  const [displayValue, setDisplayValue] = useState(0)
-
-  useEffect(() => {
-    if (!isVisible) return
-
-    const duration = 2000
-    const steps = 60
-    const stepValue = value / steps
-    const stepDuration = duration / steps
-    let current = 0
-
-    const timer = setInterval(() => {
-      current += stepValue
-      if (current >= value) {
-        setDisplayValue(value)
-        clearInterval(timer)
-      } else {
-        setDisplayValue(Math.floor(current))
-      }
-    }, stepDuration)
-
-    return () => clearInterval(timer)
-  }, [value, isVisible])
+  const displayValue = useAnimatedCounter({ end: value, isVisible })
 
   return (
     <span className="tabular-nums">
@@ -126,29 +106,11 @@ const categoryColors: Record<string, string> = {
 }
 
 export function LeadershipHighlights() {
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const { ref: sectionRef, isVisible } =
+    useIntersectionObserver<HTMLDivElement>({ threshold: 0.2 })
   const [flippedIndex, setFlippedIndex] = useState<number | null>(null)
   const { designSystem } = useDesignSystem()
   const isBauhaus = designSystem === 'bauhaus'
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.2 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
 
   const handleFlip = (index: number) => {
     setFlippedIndex(flippedIndex === index ? null : index)

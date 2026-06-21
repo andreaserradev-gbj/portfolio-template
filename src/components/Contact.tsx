@@ -1,32 +1,15 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import { Mail, Linkedin, MapPin, Copy, Check, ExternalLink } from 'lucide-react'
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { contact, footer } from '@/config/loader'
 import { cn } from '@/lib/utils'
 
 export function Contact() {
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const { ref: sectionRef, isVisible } =
+    useIntersectionObserver<HTMLDivElement>({ threshold: 0.2 })
   const [copiedField, setCopiedField] = useState<string | null>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.2 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
 
   const copyToClipboard = async (text: string, field: string) => {
     try {

@@ -134,15 +134,27 @@ describe('processJobs', () => {
     })
 
     it('handles jobs at exactly maxAgeDays boundary', () => {
-      const now = new Date()
-      const exactlyMaxAge = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000) // Exactly 30 days ago
+      // Freeze the clock so the job's postedAt and the filter's cutoff
+      // (Date.now() inside processJobs) share one instant -- otherwise the
+      // few ms between them push an "exactly 30 days ago" job past the
+      // cutoff and the boundary case flakes.
+      vi.useFakeTimers()
+      vi.setSystemTime(new Date('2026-01-15T00:00:00.000Z'))
+      try {
+        const now = new Date()
+        const exactlyMaxAge = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000) // Exactly 30 days ago
 
-      const jobs = [createMockJob({ id: 'boundary', postedAt: exactlyMaxAge })]
+        const jobs = [
+          createMockJob({ id: 'boundary', postedAt: exactlyMaxAge }),
+        ]
 
-      const result = callProcessJobs(service, jobs)
+        const result = callProcessJobs(service, jobs)
 
-      // Should be included (>= cutoff, not >)
-      expect(result).toHaveLength(1)
+        // Should be included (>= cutoff, not >)
+        expect(result).toHaveLength(1)
+      } finally {
+        vi.useRealTimers()
+      }
     })
   })
 

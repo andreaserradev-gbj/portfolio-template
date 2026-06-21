@@ -1,0 +1,14 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "ignoreBinaries": ["which", "claude"],
+  "entry": [
+    "src/components/ui/**",
+    "src/config/schema.ts",
+    "src/config/loader.ts",
+    "src/lib/skillMatcher.ts",
+    "src/lib/jobsCache.ts",
+    "src/hooks/designSystemConfig.ts",
+    "src/types/providers.ts",
+    "src/types/hn.ts"
+  ]
+}

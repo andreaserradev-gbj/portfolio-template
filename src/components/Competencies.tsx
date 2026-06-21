@@ -1,5 +1,6 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import { Handshake, Layers, Users, Trophy, ChevronDown } from 'lucide-react'
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { achievements, achievementsSection } from '@/config/loader'
@@ -36,27 +37,9 @@ const categoryConfig: Record<
 }
 
 export function Competencies() {
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const { ref: sectionRef, isVisible } =
+    useIntersectionObserver<HTMLDivElement>()
   const [expandedId, setExpandedId] = useState<string | null>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
 
   // Return null if no achievements to display
   if (achievements.length === 0) return null
